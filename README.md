@@ -10,7 +10,7 @@ Install YARP, gazebo, and gazebo_yarp_plugins
 Add CER models to the GAZEBO_MODEL_PATH.
 
 ```
-export GAZEBO_MODEL_PATH=<cer-sim>/gazebo
+export GAZEBO_MODEL_PATH=<cer-sim>/cer-gazebo
 ```
 
 
