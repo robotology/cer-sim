@@ -1,7 +1,7 @@
 <launch>
 
-  <arg name="model" default="$(find urdf_tutorial)/urdf/cer.urdf"/>
-  <arg name="rvizconfig" default="$(find urdf_tutorial)/rviz/cer.rviz" />
+  <arg name="model" default="$(find cer_rviz)/urdf/cer.urdf"/>
+  <arg name="rvizconfig" default="$(find cer_rviz)/rviz/cer.rviz" />
 
   <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg model)" />
 
