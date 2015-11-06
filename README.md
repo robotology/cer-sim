@@ -17,6 +17,8 @@ export GAZEBO_MODEL_PATH=<cer-sim>/cer-gazebo
 RViz
 ----
 
+Init and build the catkin workspace
+
 
 ```
 cd <cer-sim>/catkin_ws/src
@@ -35,11 +37,23 @@ fi
 
 
 
+Start roscore
 
-Launch with
+```
+roscore
+```
+
+Start yarp server
+
+```
+yarp server --ros
+```
+
+start rviz and robot-state-publisher with
+
 ```
 roslaunch cer-rviz cer.launch
 ```
 
-(NOTE: Probably something is still missing)
-
+geomagic-marker
+---------------
