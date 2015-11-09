@@ -23,6 +23,14 @@ void GeomagicMarkerPort::onRead(yarp::os::Bottle &b)
         return;
     }
 
+    yarp::os::Stamp stamp;
+    getEnvelope(stamp);
+    if(!stamp.isValid()) {
+        stamp.update();
+    }
+    int sec = (int)stamp.getTime();
+    int nsec = (int)((stamp.getTime() - ts.header.stamp.sec) * 1e9);
+
     double x     = b.get(0).asDouble();
     double y     = b.get(1).asDouble();
     double z     = b.get(2).asDouble();
@@ -34,18 +42,11 @@ void GeomagicMarkerPort::onRead(yarp::os::Bottle &b)
     double qz = (cos(roll/2) * cos(pitch/2) * sin(yaw/2) - sin(roll/2) * sin(pitch/2) * cos(yaw/2));
     double qw = (cos(roll/2) * cos(pitch/2) * cos(yaw/2) + sin(roll/2) * sin(pitch/2) * sin(yaw/2));
 
-    yarp::os::Stamp stamp;
-    getEnvelope(stamp);
-    if(!stamp.isValid()) {
-        stamp.update();
-    }
-
-
     tf2_msgs_TFMessage tf;
     geometry_msgs_TransformStamped ts;
     ts.header.frame_id = "/torso_chest";
-    ts.header.stamp.sec = (int)stamp.getTime();
-    ts.header.stamp.nsec = 0; //FIXME
+    ts.header.stamp.sec = sec;
+    ts.header.stamp.nsec = nsec;
 
     ts.child_frame_id = "/geomagic";
     ts.transform.translation.x = x;
@@ -62,8 +63,8 @@ void GeomagicMarkerPort::onRead(yarp::os::Bottle &b)
     visualization_msgs_Marker marker;
     marker.header.frame_id = "/geomagic";
 
-    marker.header.stamp.sec = (int)stamp.getTime();
-    marker.header.stamp.nsec = 0; //FIXME
+    marker.header.stamp.sec = sec;
+    marker.header.stamp.nsec = nsec;
 
     marker.lifetime.sec = 60;
     marker.lifetime.nsec = 0;
