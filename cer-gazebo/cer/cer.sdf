@@ -1251,8 +1251,6 @@
     </plugin> 
 -->
 
-
-    </plugin>
     <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
