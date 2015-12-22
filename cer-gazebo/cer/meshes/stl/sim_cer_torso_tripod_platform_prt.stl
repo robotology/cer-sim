@@ -13,14 +13,14 @@ solid SIM_CER_TORSO_TRIPOD_PLATFORM
       vertex -1.600000e+01 1.512414e-14 6.250000e+02
     endloop
   endfacet
-  facet normal 1.000000e+00 2.005579e-15 0.000000e+00
+  facet normal 1.000000e+00 5.469761e-16 0.000000e+00
     outer loop
       vertex 1.190000e+02 -7.794229e+01 6.350000e+02
       vertex 1.190000e+02 -7.794229e+01 6.250000e+02
       vertex 1.190000e+02 7.794229e+01 6.250000e+02
     endloop
   endfacet
-  facet normal 1.000000e+00 2.005579e-15 0.000000e+00
+  facet normal 1.000000e+00 5.469761e-16 0.000000e+00
     outer loop
       vertex 1.190000e+02 -7.794229e+01 6.350000e+02
       vertex 1.190000e+02 7.794229e+01 6.250000e+02
