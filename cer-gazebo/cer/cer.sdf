@@ -88,13 +88,23 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='mobile_base_r_tyre'>
       <pose>0 -0.15 0.16 0 -0 0</pose>
@@ -141,13 +151,23 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='torso_tripod_slider_eq'>
       <pose>0.074 0 0.231 0 -0 0</pose>
@@ -194,16 +214,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='torso_tripod_pin_eq'>
-      <pose>0.074 0 0.63 -3.14159 -0 0</pose>
+      <pose>0.074 0 0.63 3.14159 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.25</mass>
@@ -247,16 +277,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='torso_tripod_platform'>
-      <pose>0.074 0 0.63 0 -0 0</pose>
+      <pose>0.074 0 0.63 -0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.25</mass>
@@ -292,7 +332,7 @@
       <child>torso_tripod_platform</child>
       <parent>torso_tripod_pin_eq</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 1 -0</xyz>
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
@@ -300,16 +340,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='torso_chest'>
-      <pose>0.074 0 0.63 0 -0 0</pose>
+      <pose>0.074 0 0.63 -0 -0 0</pose>
       <inertial>
         <pose>-0.036697 1e-05 0.206634 0 -0 0</pose>
         <mass>10</mass>
@@ -345,7 +395,7 @@
       <child>torso_chest</child>
       <parent>torso_tripod_platform</parent>
       <axis>
-        <xyz>-0 -0 1</xyz>
+        <xyz>0 0 1</xyz>
         <limit>
           <lower>-1.0472</lower>
           <upper>1.0472</upper>
@@ -353,16 +403,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_clavicle'>
-      <pose>-0.01 0.17 0.97 0 -0 0</pose>
+      <pose>-0.01 0.17 0.97 -0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
@@ -406,16 +466,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_shoulder'>
-      <pose>-0.01 0.17 0.97 0 -0 0</pose>
+      <pose>-0.01 0.17 0.97 -0 -0 0</pose>
       <inertial>
         <pose>0 0.034 -0.055 0 -0 0</pose>
         <mass>1</mass>
@@ -451,7 +521,7 @@
       <child>l_shoulder</child>
       <parent>l_clavicle</parent>
       <axis>
-        <xyz>1 -0 0</xyz>
+        <xyz>1 0 0</xyz>
         <limit>
           <lower>-0.174533</lower>
           <upper>1.74533</upper>
@@ -459,16 +529,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_upperarm'>
-      <pose>-0.01 0.204 0.86 0 -0 0</pose>
+      <pose>-0.01 0.204 0.86 -0 -0 0</pose>
       <inertial>
         <pose>0 0 -0.0705 0 -0 0</pose>
         <mass>1</mass>
@@ -504,7 +584,7 @@
       <child>l_upperarm</child>
       <parent>l_shoulder</parent>
       <axis>
-        <xyz>-0 -0 1</xyz>
+        <xyz>0 0 1</xyz>
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
@@ -512,16 +592,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_forearm'>
-      <pose>-0.01 0.204 0.719 0 -0 0</pose>
+      <pose>-0.01 0.204 0.719 -0 -0 0</pose>
       <inertial>
         <pose>0 0 -0.0355 0 -0 0</pose>
         <mass>0.5</mass>
@@ -557,7 +647,7 @@
       <child>l_forearm</child>
       <parent>l_upperarm</parent>
       <axis>
-        <xyz>0 -1 -0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>0</lower>
           <upper>2.44346</upper>
@@ -565,16 +655,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_wrist_tripod_base'>
-      <pose>-0.01 0.204 0.648 0 -0 0</pose>
+      <pose>-0.01 0.204 0.648 -0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
@@ -610,7 +710,7 @@
       <child>l_wrist_tripod_base</child>
       <parent>l_forearm</parent>
       <axis>
-        <xyz>-0 -0 1</xyz>
+        <xyz>0 0 1</xyz>
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
@@ -618,16 +718,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_wrist_tripod_slider_eq'>
-      <pose>-0.01 0.204 0.719 0 -0 0</pose>
+      <pose>-0.01 0.204 0.719 -0 -0 0</pose>
       <inertial>
         <pose>0 0 -0.181 0 -0 0</pose>
         <mass>0.2</mass>
@@ -663,7 +773,7 @@
       <child>l_wrist_tripod_slider_eq</child>
       <parent>l_wrist_tripod_base</parent>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 -0 -1</xyz>
         <limit>
           <lower>0.0</lower>
           <upper>0.12</upper>
@@ -671,16 +781,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_wrist_tripod_pin_eq'>
-      <pose>-0.01 0.204 0.428 -3.05732 1.57079 -3.05732</pose>
+      <pose>-0.01 0.204 0.428 2.30723 1.57079 2.30723</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
@@ -716,7 +836,7 @@
       <child>l_wrist_tripod_pin_eq</child>
       <parent>l_wrist_tripod_slider_eq</parent>
       <axis>
-        <xyz>1 -0 0</xyz>
+        <xyz>1 0 0</xyz>
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
@@ -724,16 +844,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_hand_root'>
-      <pose>-0.01 0.205 0.428 0 -0 0</pose>
+      <pose>-0.01 0.205 0.428 -0 -0 0</pose>
       <inertial>
         <pose>0 -0.001 -0.030193 0 -0 0</pose>
         <mass>0.5</mass>
@@ -769,7 +899,7 @@
       <child>l_hand_root</child>
       <parent>l_wrist_tripod_pin_eq</parent>
       <axis>
-        <xyz>0 -1 -0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
@@ -777,16 +907,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_hand_paddle'>
-      <pose>-0.01 0.19139 0.360023 0 -0 0</pose>
+      <pose>-0.01 0.19139 0.360023 -0 -0 0</pose>
       <inertial>
         <pose>0 0 -0.0387 0 -0 0</pose>
         <mass>0.1</mass>
@@ -822,7 +962,7 @@
       <child>l_hand_paddle</child>
       <parent>l_hand_root</parent>
       <axis>
-        <xyz>-1 -0 -0</xyz>
+        <xyz>-1 0 -0</xyz>
         <limit>
           <lower>0</lower>
           <upper>1.0472</upper>
@@ -830,16 +970,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='l_hand_thumb'>
-      <pose>-0.01 0.184352 0.385156 0 -0 0</pose>
+      <pose>-0.01 0.184352 0.385156 -0 -0 0</pose>
       <inertial>
         <pose>0 -0.025716 -0.018464 0 -0 0</pose>
         <mass>0.1</mass>
@@ -883,16 +1033,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='neck'>
-      <pose>-0.02 0.000647 1 0 -0 0</pose>
+      <pose>-0.02 0.000647 1 -0 -0 0</pose>
       <inertial>
         <pose>0.005658 -0.000647 0.06232 0 -0 0</pose>
         <mass>0.5</mass>
@@ -928,7 +1088,7 @@
       <child>neck</child>
       <parent>torso_chest</parent>
       <axis>
-        <xyz>0 1 0</xyz>
+        <xyz>0 1 -0</xyz>
         <limit>
           <lower>-0.523599</lower>
           <upper>1.39626</upper>
@@ -936,16 +1096,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='head'>
-      <pose>-0.008321 -0 1.15838 0 -0 0</pose>
+      <pose>-0.008321 0 1.15838 -0 -0 0</pose>
       <inertial>
         <pose>0.048654 -2e-06 -0.00409 0 -0 0</pose>
         <mass>2</mass>
@@ -966,6 +1136,30 @@
             <uri>model://cer/meshes/stl/sim_cer_head_prt.stl</uri>
           </mesh>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
       </collision>
       <visual name='head_visual'>
         <pose>0.008321 0 -1.15838 0 -0 0</pose>
@@ -976,12 +1170,75 @@
           </mesh>
         </geometry>
       </visual>
+      <velocity_decay/>
+      <sensor name='left_camera' type='camera'>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <pose>0.066821 0.0325 -0.06838 0 -0 0</pose>
+        <camera name='__default__'>
+          <horizontal_fov>1.5708</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <plugin name='left_camera_plugin' filename='libgazebo_yarp_camera.so'>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_camera.ini</yarpConfigurationFile>
+        </plugin>
+      </sensor>
+      <velocity_decay/>
+      <sensor name='right_camera' type='camera'>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <pose>0.066821 -0.0325 -0.06838 0 -0 0</pose>
+        <camera name='__default__'>
+          <horizontal_fov>1.5708</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+          </image>
+          <clip>
+            <near>0.1</near>
+            <far>100</far>
+          </clip>
+        </camera>
+        <plugin name='right_camera_plugin' filename='libgazebo_yarp_camera.so'>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_camera.ini</yarpConfigurationFile>
+        </plugin>
+      </sensor>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <sensor name='asus_xtion' type='depth'>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <pose>0.077021 0 0.04662 0 -0 0</pose>
+        <camera name='__default__'>
+          <horizontal_fov>1.39626</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>3000</far>
+          </clip>
+        </camera>
+        <plugin name='depth_camera_plugin' filename='libgazebo_yarp_depthCamera.so'>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
+        </plugin>
+      </sensor>
     </link>
     <joint name='neck_yaw' type='revolute'>
       <child>head</child>
       <parent>neck</parent>
       <axis>
-        <xyz>0.173648 -0 0.984808</xyz>
+        <xyz>0.173648 0 0.984808</xyz>
         <limit>
           <lower>-1.39626</lower>
           <upper>1.39626</upper>
@@ -989,16 +1246,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_clavicle'>
-      <pose>-0.01 -0.17 0.97 0 -0 0</pose>
+      <pose>-0.01 -0.17 0.97 -0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
@@ -1034,7 +1301,7 @@
       <child>r_clavicle</child>
       <parent>torso_chest</parent>
       <axis>
-        <xyz>-0 -0.970296 0.241922</xyz>
+        <xyz>0 -0.970296 0.241922</xyz>
         <limit>
           <lower>-0.349066</lower>
           <upper>1.74533</upper>
@@ -1042,16 +1309,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_shoulder'>
-      <pose>-0.01 -0.17 0.97 0 -0 0</pose>
+      <pose>-0.01 -0.17 0.97 -0 -0 0</pose>
       <inertial>
         <pose>0 -0.034 -0.055 0 -0 0</pose>
         <mass>1</mass>
@@ -1087,7 +1364,7 @@
       <child>r_shoulder</child>
       <parent>r_clavicle</parent>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>-1 0 -0</xyz>
         <limit>
           <lower>-0.174533</lower>
           <upper>1.74533</upper>
@@ -1095,16 +1372,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_upperarm'>
-      <pose>-0.01 -0.204 0.86 0 -0 0</pose>
+      <pose>-0.01 -0.204 0.86 -0 -0 0</pose>
       <inertial>
         <pose>0 0 -0.0705 0 -0 0</pose>
         <mass>1</mass>
@@ -1140,7 +1427,7 @@
       <child>r_upperarm</child>
       <parent>r_shoulder</parent>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 -0 -1</xyz>
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
@@ -1148,16 +1435,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_forearm'>
-      <pose>-0.01 -0.204 0.719 0 -0 0</pose>
+      <pose>-0.01 -0.204 0.719 -0 -0 0</pose>
       <inertial>
         <pose>0 0 -0.0355 0 -0 0</pose>
         <mass>0.5</mass>
@@ -1193,7 +1490,7 @@
       <child>r_forearm</child>
       <parent>r_upperarm</parent>
       <axis>
-        <xyz>0 -1 -0</xyz>
+        <xyz>0 -1 0</xyz>
         <limit>
           <lower>0</lower>
           <upper>2.44346</upper>
@@ -1201,16 +1498,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_wrist_tripod_base'>
-      <pose>-0.01 -0.204 0.648 0 -0 0</pose>
+      <pose>-0.01 -0.204 0.648 -0 -0 0</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
@@ -1246,7 +1553,7 @@
       <child>r_wrist_tripod_base</child>
       <parent>r_forearm</parent>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 -0 -1</xyz>
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
@@ -1254,16 +1561,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_wrist_tripod_slider_eq'>
-      <pose>-0.01 -0.204 0.719 0 -0 0</pose>
+      <pose>-0.01 -0.204 0.719 -0 -0 0</pose>
       <inertial>
         <pose>0 0 -0.181 0 -0 0</pose>
         <mass>0.2</mass>
@@ -1299,7 +1616,7 @@
       <child>r_wrist_tripod_slider_eq</child>
       <parent>r_wrist_tripod_base</parent>
       <axis>
-        <xyz>0 0 -1</xyz>
+        <xyz>0 -0 -1</xyz>
         <limit>
           <lower>0.0</lower>
           <upper>0.12</upper>
@@ -1307,16 +1624,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_wrist_tripod_pin_eq'>
-      <pose>-0.01 -0.204 0.428 -3.14159 -0 1.5708</pose>
+      <pose>-0.01 -0.204 0.428 3.14159 0 1.5708</pose>
       <inertial>
         <pose>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
@@ -1352,7 +1679,7 @@
       <child>r_wrist_tripod_pin_eq</child>
       <parent>r_wrist_tripod_slider_eq</parent>
       <axis>
-        <xyz>-1 0 0</xyz>
+        <xyz>-1 0 -0</xyz>
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
@@ -1360,16 +1687,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_hand_root'>
-      <pose>-0.01 -0.203 0.428 0 0 0</pose>
+      <pose>-0.01 -0.203 0.428 -0 -0 0</pose>
       <inertial>
         <pose>0 -0.001 -0.030193 0 -0 0</pose>
         <mass>0.5</mass>
@@ -1405,7 +1742,7 @@
       <child>r_hand_root</child>
       <parent>r_wrist_tripod_pin_eq</parent>
       <axis>
-        <xyz>-0 -1 -0</xyz>
+        <xyz>-0 -1 0</xyz>
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
@@ -1413,16 +1750,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_hand_paddle'>
-      <pose>-0.01 -0.19139 0.360023 0 0 0</pose>
+      <pose>-0.01 -0.19139 0.360023 -0 -0 0</pose>
       <inertial>
         <pose>0 0 -0.0387 0 -0 0</pose>
         <mass>0.1</mass>
@@ -1458,7 +1805,7 @@
       <child>r_hand_paddle</child>
       <parent>r_hand_root</parent>
       <axis>
-        <xyz>1 0 -0</xyz>
+        <xyz>1 0 0</xyz>
         <limit>
           <lower>0</lower>
           <upper>1.0472</upper>
@@ -1466,16 +1813,26 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <link name='r_hand_thumb'>
-      <pose>-0.01 -0.184352 0.385156 0 0 0</pose>
+      <pose>-0.01 -0.184352 0.385156 -0 -0 0</pose>
       <inertial>
         <pose>0 0.025716 -0.018464 0 -0 0</pose>
         <mass>0.1</mass>
@@ -1511,7 +1868,7 @@
       <child>r_hand_thumb</child>
       <parent>r_hand_root</parent>
       <axis>
-        <xyz>-1 -0 0</xyz>
+        <xyz>-1 -0 -0</xyz>
         <limit>
           <lower>0</lower>
           <upper>1.22173</upper>
@@ -1519,13 +1876,23 @@
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>0.1</damping>
+          <damping>1</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
         </dynamics>
         <use_parent_model_frame>1</use_parent_model_frame>
       </axis>
+      <physics>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
     </joint>
     <static>0</static>
     <plugin name='controlboard_torso_yaw' filename='libgazebo_yarp_controlboard.so'>

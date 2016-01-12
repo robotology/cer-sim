@@ -35,36 +35,6 @@
     <child link="base_center"/>
     <dynamics damping="0.1"/>
   </joint>
-  <link name="mobile_base_l_tyre">
-    <inertial>
-      <origin xyz="0 0.034423 0" rpy="0 0 0"/>
-      <mass value="3.0"/>
-      <inertia ixx="0.0200167" ixy="0.0" ixz="0.0" iyy="0.0376153" iyz="0.0" izz="0.0200167"/>
-    </inertial>
-    <visual>
-      <origin xyz="0 -0.15 -0.16" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="model://cer/meshes/stl/sim_cer_mobilebase_l_tyre_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-      <material name="black">
-        <color rgba="0 0 0 1"/>
-      </material>
-    </visual>
-    <collision>
-      <origin xyz="0 -0.15 -0.16" rpy="0 0 0"/>
-      <geometry>
-        <mesh filename="model://cer/meshes/stl/sim_cer_mobilebase_l_tyre_prt.stl" scale="0.001 0.001 0.001"/>
-      </geometry>
-    </collision>
-  </link>
-  <joint name="mobile_base_l_wheel" type="revolute">
-    <origin xyz="0 0.15 0.16" rpy="0 0 0"/>
-    <axis xyz="0.0 1.0 0.0"/>
-    <parent link="mobile_base_body"/>
-    <child link="mobile_base_l_tyre"/>
-    <limit effort="50000" lower="-17.4358392274" upper="17.4358392274" velocity="50000"/>
-    <dynamics damping="0.1"/>
-  </joint>
   <link name="mobile_base_r_tyre">
     <inertial>
       <origin xyz="0 -0.034423 0" rpy="0 0 0"/>
@@ -76,8 +46,8 @@
       <geometry>
         <mesh filename="model://cer/meshes/stl/sim_cer_mobilebase_r_tyre_prt.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="red">
-        <color rgba="1 0 0 1"/>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
       </material>
     </visual>
     <collision>
@@ -92,8 +62,38 @@
     <axis xyz="0.0 1.0 0.0"/>
     <parent link="mobile_base_body"/>
     <child link="mobile_base_r_tyre"/>
-    <limit effort="50000" lower="-17.4358392274" upper="17.4358392274" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-17.43583922742335" upper="17.43583922742335" velocity="50000"/>
+    <dynamics damping="1.0"/>
+  </joint>
+  <link name="mobile_base_l_tyre">
+    <inertial>
+      <origin xyz="0 0.034423 0" rpy="0 0 0"/>
+      <mass value="3.0"/>
+      <inertia ixx="0.0200167" ixy="0.0" ixz="0.0" iyy="0.0376153" iyz="0.0" izz="0.0200167"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 -0.15 -0.16" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://cer/meshes/stl/sim_cer_mobilebase_l_tyre_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 -0.15 -0.16" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="model://cer/meshes/stl/sim_cer_mobilebase_l_tyre_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="mobile_base_l_wheel" type="revolute">
+    <origin xyz="0 0.15 0.16" rpy="0 0 0"/>
+    <axis xyz="0.0 1.0 0.0"/>
+    <parent link="mobile_base_body"/>
+    <child link="mobile_base_l_tyre"/>
+    <limit effort="50000" lower="-17.43583922742335" upper="17.43583922742335" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="torso_tripod_slider_eq">
     <inertial>
@@ -123,7 +123,7 @@
     <parent link="mobile_base_body"/>
     <child link="torso_tripod_slider_eq"/>
     <limit effort="50000" lower="-0.05" upper="0.15" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="torso_tripod_pin_eq">
     <inertial>
@@ -148,12 +148,12 @@
     </collision>
   </link>
   <joint name="torso_tripod_roll_eq" type="revolute">
-    <origin xyz="0 0 0.399" rpy="3.14159265359 0 0"/>
+    <origin xyz="0 0 0.399" rpy="3.141592653589793 0 0"/>
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="torso_tripod_slider_eq"/>
     <child link="torso_tripod_pin_eq"/>
-    <limit effort="50000" lower="-0.523598775598" upper="0.523598775598" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="torso_tripod_platform">
     <inertial>
@@ -178,12 +178,12 @@
     </collision>
   </link>
   <joint name="torso_tripod_pitch_eq" type="revolute">
-    <origin xyz="0 0 0" rpy="3.14159265359 0 0"/>
+    <origin xyz="0 0 0" rpy="3.141592653589793 0 0"/>
     <axis xyz="0.0 1.0 0.0"/>
     <parent link="torso_tripod_pin_eq"/>
     <child link="torso_tripod_platform"/>
-    <limit effort="50000" lower="-0.523598775598" upper="0.523598775598" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="oriented_xfw_ylf_zup_torso_tripod_platform"/>
   <joint name="oriented_xfw_ylf_zup_torso_tripod_platform_fixed_joint" type="fixed">
@@ -194,7 +194,7 @@
   </joint>
   <link name="oriented_xbk_yrg_zup_torso_tripod_platform"/>
   <joint name="oriented_xbk_yrg_zup_torso_tripod_platform_fixed_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 3.14159265359"/>
+    <origin xyz="0 0 0" rpy="0 0 3.141592653589793"/>
     <parent link="torso_tripod_platform"/>
     <child link="oriented_xbk_yrg_zup_torso_tripod_platform"/>
     <dynamics damping="0.1"/>
@@ -226,8 +226,8 @@
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="torso_tripod_platform"/>
     <child link="torso_chest"/>
-    <limit effort="50000" lower="-1.0471975512" upper="1.0471975512" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-1.0471975511965976" upper="1.0471975511965976" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="torso"/>
   <joint name="torso_fixed_joint" type="fixed">
@@ -261,8 +261,8 @@
     <axis xyz="0.0 -0.970296 -0.241922"/>
     <parent link="torso_chest"/>
     <child link="l_clavicle"/>
-    <limit effort="50000" lower="-0.349065850399" upper="1.74532925199" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.3490658503988659" upper="1.7453292519943295" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_shoulder">
     <inertial>
@@ -291,8 +291,8 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="l_clavicle"/>
     <child link="l_shoulder"/>
-    <limit effort="50000" lower="-0.174532925199" upper="1.74532925199" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.17453292519943295" upper="1.7453292519943295" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_upperarm">
     <inertial>
@@ -321,8 +321,8 @@
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="l_shoulder"/>
     <child link="l_upperarm"/>
-    <limit effort="50000" lower="-1.57079632679" upper="1.57079632679" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-1.5707963267948966" upper="1.5707963267948966" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_forearm">
     <inertial>
@@ -351,8 +351,8 @@
     <axis xyz="0.0 -1.0 0.0"/>
     <parent link="l_upperarm"/>
     <child link="l_forearm"/>
-    <limit effort="50000" lower="0.0" upper="2.44346095279" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="0.0" upper="2.443460952792061" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_wrist_tripod_base">
     <inertial>
@@ -381,12 +381,12 @@
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="l_forearm"/>
     <child link="l_wrist_tripod_base"/>
-    <limit effort="50000" lower="-1.57079632679" upper="1.57079632679" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-1.5707963267948966" upper="1.5707963267948966" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="oriented_l_wrist_tripodbase"/>
   <joint name="oriented_l_wrist_tripodbase_fixed_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="3.14159265359 0 -1.57079632679"/>
+    <origin xyz="0 0 0" rpy="3.141592653589793 0 -1.5707963267948966"/>
     <parent link="l_wrist_tripod_base"/>
     <child link="oriented_l_wrist_tripodbase"/>
     <dynamics damping="0.1"/>
@@ -417,7 +417,7 @@
     <parent link="l_wrist_tripod_base"/>
     <child link="l_wrist_tripod_slider_eq"/>
     <limit effort="50000" lower="0.0" upper="0.12" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_wrist_tripod_pin_eq">
     <inertial>
@@ -440,12 +440,12 @@
     </collision>
   </link>
   <joint name="l_wrist_tripod_roll_eq" type="revolute">
-    <origin xyz="0 0 -0.291" rpy="0 1.57079632679 0"/>
+    <origin xyz="0 0 -0.291" rpy="0 1.5707963267948966 0"/>
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="l_wrist_tripod_slider_eq"/>
     <child link="l_wrist_tripod_pin_eq"/>
-    <limit effort="50000" lower="-0.523598775598" upper="0.523598775598" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_hand_root">
     <inertial>
@@ -468,12 +468,12 @@
     </collision>
   </link>
   <joint name="l_wrist_tripod_pitch_eq" type="revolute">
-    <origin xyz="0 0.001 0" rpy="0 -1.57079632679 0"/>
+    <origin xyz="0 0.001 0" rpy="0 -1.5707963267948966 0"/>
     <axis xyz="0.0 -1.0 0.0"/>
     <parent link="l_wrist_tripod_pin_eq"/>
     <child link="l_hand_root"/>
-    <limit effort="50000" lower="-0.523598775598" upper="0.523598775598" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_wrist"/>
   <joint name="l_wrist_fixed_joint" type="fixed">
@@ -484,7 +484,7 @@
   </joint>
   <link name="l_gripper"/>
   <joint name="l_gripper_fixed_joint" type="fixed">
-    <origin xyz="0 -0.024941 -0.065778" rpy="3.14159265359 1.22173095597 -1.57079632679"/>
+    <origin xyz="0 -0.024941 -0.065778" rpy="3.141592653589793 1.221730955967807 -1.5707963267948968"/>
     <parent link="l_hand_root"/>
     <child link="l_gripper"/>
     <dynamics damping="0.1"/>
@@ -514,12 +514,12 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="l_hand_root"/>
     <child link="l_hand_thumb"/>
-    <limit effort="50000" lower="0.0" upper="1.2217304764" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="0.0" upper="1.2217304763960306" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_hand_thumb_tip"/>
   <joint name="l_hand_thumb_tip_fixed_joint" type="fixed">
-    <origin xyz="0 -0.0513860000782 -0.0458929999125" rpy="3.14159265359 1.22173095426 -1.57079632679"/>
+    <origin xyz="0 -0.0513860000782 -0.0458929999125" rpy="3.141592653589793 1.2217309542643466 -1.570796326794897"/>
     <parent link="l_hand_thumb"/>
     <child link="l_hand_thumb_tip"/>
     <dynamics damping="0.1"/>
@@ -549,12 +549,12 @@
     <axis xyz="-1.0 0.0 0.0"/>
     <parent link="l_hand_root"/>
     <child link="l_hand_paddle"/>
-    <limit effort="50000" lower="0.0" upper="1.0471975512" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="0.0" upper="1.0471975511965976" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="l_hand_paddle_tip"/>
   <joint name="l_hand_paddle_tip_fixed_joint" type="fixed">
-    <origin xyz="0 0 -0.084994" rpy="3.14159265359 1.22173095597 -1.57079632679"/>
+    <origin xyz="0 0 -0.084994" rpy="3.141592653589793 1.221730955967807 -1.5707963267948968"/>
     <parent link="l_hand_paddle"/>
     <child link="l_hand_paddle_tip"/>
     <dynamics damping="0.1"/>
@@ -584,8 +584,8 @@
     <axis xyz="0.0 -0.970296 0.241922"/>
     <parent link="torso_chest"/>
     <child link="r_clavicle"/>
-    <limit effort="50000" lower="-0.349065850399" upper="1.74532925199" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.3490658503988659" upper="1.7453292519943295" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_shoulder">
     <inertial>
@@ -612,8 +612,8 @@
     <axis xyz="-1.0 0.0 0.0"/>
     <parent link="r_clavicle"/>
     <child link="r_shoulder"/>
-    <limit effort="50000" lower="-0.174532925199" upper="1.74532925199" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.17453292519943295" upper="1.7453292519943295" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_upperarm">
     <inertial>
@@ -640,8 +640,8 @@
     <axis xyz="0.0 0.0 -1.0"/>
     <parent link="r_shoulder"/>
     <child link="r_upperarm"/>
-    <limit effort="50000" lower="-1.57079632679" upper="1.57079632679" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-1.5707963267948966" upper="1.5707963267948966" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_forearm">
     <inertial>
@@ -668,8 +668,8 @@
     <axis xyz="0.0 -1.0 0.0"/>
     <parent link="r_upperarm"/>
     <child link="r_forearm"/>
-    <limit effort="50000" lower="0.0" upper="2.44346095279" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="0.0" upper="2.443460952792061" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_wrist_tripod_base">
     <inertial>
@@ -696,12 +696,12 @@
     <axis xyz="0.0 0.0 -1.0"/>
     <parent link="r_forearm"/>
     <child link="r_wrist_tripod_base"/>
-    <limit effort="50000" lower="-1.57079632679" upper="1.57079632679" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-1.5707963267948966" upper="1.5707963267948966" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="oriented_r_wrist_tripodbase"/>
   <joint name="oriented_r_wrist_tripodbase_fixed_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="3.14159265359 0 1.57079632679"/>
+    <origin xyz="0 0 0" rpy="3.141592653589793 0 1.5707963267948966"/>
     <parent link="r_wrist_tripod_base"/>
     <child link="oriented_r_wrist_tripodbase"/>
     <dynamics damping="0.1"/>
@@ -732,7 +732,7 @@
     <parent link="r_wrist_tripod_base"/>
     <child link="r_wrist_tripod_slider_eq"/>
     <limit effort="50000" lower="0.0" upper="0.12" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_wrist_tripod_pin_eq">
     <inertial>
@@ -755,12 +755,12 @@
     </collision>
   </link>
   <joint name="r_wrist_tripod_roll_eq" type="revolute">
-    <origin xyz="0 0 -0.291" rpy="3.14159265359 0 1.57079632679"/>
+    <origin xyz="0 0 -0.291" rpy="3.141592653589793 0 1.5707963267948966"/>
     <axis xyz="0.0 -1.0 0.0"/>
     <parent link="r_wrist_tripod_slider_eq"/>
     <child link="r_wrist_tripod_pin_eq"/>
-    <limit effort="50000" lower="-0.523598775598" upper="0.523598775598" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_hand_root">
     <inertial>
@@ -783,12 +783,12 @@
     </collision>
   </link>
   <joint name="r_wrist_tripod_pitch_eq" type="revolute">
-    <origin xyz="0.001 0 0" rpy="3.14159265359 0 1.57079632679"/>
+    <origin xyz="0.001 0 0" rpy="3.141592653589793 0 1.5707963267948966"/>
     <axis xyz="0.0 -1.0 0.0"/>
     <parent link="r_wrist_tripod_pin_eq"/>
     <child link="r_hand_root"/>
-    <limit effort="50000" lower="-0.523598775598" upper="0.523598775598" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_wrist"/>
   <joint name="r_wrist_fixed_joint" type="fixed">
@@ -799,7 +799,7 @@
   </joint>
   <link name="r_gripper"/>
   <joint name="r_gripper_fixed_joint" type="fixed">
-    <origin xyz="0 0.022941 -0.065778" rpy="0 1.22173095597 1.57079632679"/>
+    <origin xyz="0 0.022941 -0.065778" rpy="0 1.221730955967806 1.5707963267948957"/>
     <parent link="r_hand_root"/>
     <child link="r_gripper"/>
     <dynamics damping="0.1"/>
@@ -829,12 +829,12 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="r_hand_root"/>
     <child link="r_hand_paddle"/>
-    <limit effort="50000" lower="0.0" upper="1.0471975512" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="0.0" upper="1.0471975511965976" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_hand_paddle_tip"/>
   <joint name="r_hand_paddle_tip_fixed_joint" type="fixed">
-    <origin xyz="0 0 -0.084994" rpy="0 1.22173095597 1.57079632679"/>
+    <origin xyz="0 0 -0.084994" rpy="0 1.221730955967806 1.5707963267948957"/>
     <parent link="r_hand_paddle"/>
     <child link="r_hand_paddle_tip"/>
     <dynamics damping="0.1"/>
@@ -864,12 +864,12 @@
     <axis xyz="-1.0 0.0 0.0"/>
     <parent link="r_hand_root"/>
     <child link="r_hand_thumb"/>
-    <limit effort="50000" lower="0.0" upper="1.2217304764" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="0.0" upper="1.2217304763960306" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="r_hand_thumb_tip"/>
   <joint name="r_hand_thumb_tip_fixed_joint" type="fixed">
-    <origin xyz="0 0.051386 -0.045893" rpy="0 1.22173095597 1.57079632679"/>
+    <origin xyz="0 0.051386 -0.045893" rpy="0 1.221730955967806 1.5707963267948957"/>
     <parent link="r_hand_thumb"/>
     <child link="r_hand_thumb_tip"/>
     <dynamics damping="0.1"/>
@@ -899,8 +899,8 @@
     <axis xyz="0.0 1.0 0.0"/>
     <parent link="torso_chest"/>
     <child link="neck"/>
-    <limit effort="50000" lower="-0.523598775598" upper="1.3962634016" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-0.5235987755982988" upper="1.3962634015954636" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
   <link name="head">
     <inertial>
@@ -929,28 +929,28 @@
     <axis xyz="0.173648 0.0 0.984808"/>
     <parent link="neck"/>
     <child link="head"/>
-    <limit effort="50000" lower="-1.3962634016" upper="1.3962634016" velocity="50000"/>
-    <dynamics damping="0.1"/>
+    <limit effort="50000" lower="-1.3962634015954636" upper="1.3962634015954636" velocity="50000"/>
+    <dynamics damping="1.0"/>
   </joint>
-  <link name="head_asus_xtion"/>
-  <joint name="head_asus_xtion_fixed_joint" type="fixed">
+  <link name="asus_xtion"/>
+  <joint name="asus_xtion_fixed_joint" type="fixed">
     <origin xyz="0.07702051 0 0.04662" rpy="0 0 0"/>
     <parent link="head"/>
-    <child link="head_asus_xtion"/>
+    <child link="asus_xtion"/>
     <dynamics damping="0.1"/>
   </joint>
-  <link name="head_right_cam"/>
-  <joint name="head_right_cam_fixed_joint" type="fixed">
+  <link name="right_camera"/>
+  <joint name="right_camera_fixed_joint" type="fixed">
     <origin xyz="0.06682051 -0.0325 -0.06838" rpy="0 0 0"/>
     <parent link="head"/>
-    <child link="head_right_cam"/>
+    <child link="right_camera"/>
     <dynamics damping="0.1"/>
   </joint>
-  <link name="head_left_cam"/>
-  <joint name="head_left_cam_fixed_joint" type="fixed">
+  <link name="left_camera"/>
+  <joint name="left_camera_fixed_joint" type="fixed">
     <origin xyz="0.06682051 0.0325 -0.06838" rpy="0 0 0"/>
     <parent link="head"/>
-    <child link="head_left_cam"/>
+    <child link="left_camera"/>
     <dynamics damping="0.1"/>
   </joint>
   <link name="gaze"/>
@@ -960,6 +960,70 @@
     <child link="gaze"/>
     <dynamics damping="0.1"/>
   </joint>
+  <gazebo reference="head">
+    <sensor name="left_camera" type="camera">
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <pose>0.06682051 0.0325 -0.06838 0.0 -0.0 0.0</pose>
+      <camera>
+    <horizontal_fov>1.5708</horizontal_fov>
+    <image>
+        <width>320</width>
+        <height>240</height>
+    </image>
+    <clip>
+        <near>0.1</near>
+        <far>100</far>
+    </clip>
+</camera>
+      <plugin filename="libgazebo_yarp_camera.so" name="left_camera_plugin">
+    <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_camera.ini</yarpConfigurationFile>
+</plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="head">
+    <sensor name="right_camera" type="camera">
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <pose>0.06682051 -0.0325 -0.06838 0.0 -0.0 0.0</pose>
+      <camera>
+    <horizontal_fov>1.5708</horizontal_fov>
+    <image>
+        <width>320</width>
+        <height>240</height>
+    </image>
+    <clip>
+        <near>0.1</near>
+        <far>100</far>
+    </clip>
+</camera>
+      <plugin filename="libgazebo_yarp_camera.so" name="right_camera_plugin">
+    <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_camera.ini</yarpConfigurationFile>
+</plugin>
+    </sensor>
+  </gazebo>
+  <gazebo reference="head">
+    <sensor name="asus_xtion" type="depth">
+      <always_on>1</always_on>
+      <update_rate>30</update_rate>
+      <pose>0.07702051 0.0 0.04662 0.0 -0.0 0.0</pose>
+      <camera>
+    <horizontal_fov>1.3962634</horizontal_fov>
+    <image>
+        <width>320</width>
+        <height>240</height>
+        <format>R8G8B8</format>
+    </image>
+    <clip>
+        <near>0.02</near>
+        <far>3000</far>
+    </clip>
+</camera>
+      <plugin filename="libgazebo_yarp_depthCamera.so" name="depth_camera_plugin">
+    <yarpConfigurationFile>model://cer/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
+</plugin>
+    </sensor>
+  </gazebo>
   <gazebo>
 <plugin name="controlboard_torso_yaw" filename="libgazebo_yarp_controlboard.so">
   <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso_yaw.ini</yarpConfigurationFile>
@@ -1019,5 +1083,89 @@
 <plugin name="controlboard_all" filename="libgazebo_yarp_controlboard.so">
   <yarpConfigurationFile>model://cer/conf/gazebo_cer_all.ini</yarpConfigurationFile>
 </plugin>
+</gazebo>
+  <gazebo reference="mobile_base_l_wheel">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="mobile_base_r_wheel">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="torso_tripod_heave_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="torso_tripod_roll_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="torso_tripod_pitch_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="torso_yaw">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="neck_pitch">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="neck_yaw">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_shoulder_pitch">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_shoulder_roll">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_shoulder_yaw">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_elbow">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_wrist_prosupination">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_wrist_tripod_heave_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_wrist_tripod_roll_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_wrist_tripod_pitch_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_hand_paddle_joint">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="l_hand_thumb_joint">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_shoulder_pitch">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_shoulder_roll">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_shoulder_yaw">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_elbow">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_wrist_prosupination">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_wrist_tripod_heave_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_wrist_tripod_roll_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_wrist_tripod_pitch_eq">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_hand_paddle_joint">
+  <implicitSpringDamper>1</implicitSpringDamper>
+</gazebo>
+  <gazebo reference="r_hand_thumb_joint">
+  <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
 </robot>
