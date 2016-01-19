@@ -44,7 +44,7 @@ Add to .bashrc
 
 ```bash
 if [ -f <cer-sim>/catkin-ws/devel/setup.bash ]; then
-  . ~/Workspace/catkin-ws/devel/setup.bash
+  . <cer-sim>/catkin-ws/devel/setup.bash
 fi
 ```
 
