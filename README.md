@@ -65,7 +65,7 @@ yarp server --ros
 Start rviz and robot-state-publisher:
 
 ```
-roslaunch cer-rviz cer.launch
+roslaunch cer_rviz cer.launch
 ```
 
 geomagic-marker
