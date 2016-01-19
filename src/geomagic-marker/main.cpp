@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     yarp::os::Network yarp;
     if(!yarp.checkNetwork())
     {
-        yFatal() << "YARP network not available"; 
+        yFatal() << "YARP network not available";
     }
 
     yarp::os::ResourceFinder &rf = yarp::os::ResourceFinder::getResourceFinderSingleton();
