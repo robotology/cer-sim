@@ -1,4 +1,5 @@
-Add RFModule to convert from RGB + Depth map into pointcloud.
+RFModule to convert from RGB + Depth map into pointcloud.
+------
 
 Required parameters:
 
@@ -21,19 +22,20 @@ scale: scale factor for depth values -> 1 for data coming from gazebo depth plug
 How to run:
 
 FROM XTION DEVICE:
-
+```
 roscore
 yarpserver --ros
 yarpdev --device OpenNI2DeviceServer
 ./RGBD2pointCloud --remoteImagePort /camera/rgb/image_rect_color  --remoteDepthPort /camera/depth/image --pitch 1.5 --scale 0.001
 rviz  --> add pointCloud2; topic /RGBS2PointCloud/pcloud_out, fixed frame camera_link
+```
 
 FROM GAZEBO:
-
+```
 roscore
 yarpserver --ros
 gazebo  --> insert model with depthCamera sensor
 ./RGBD2pointCloud  --remoteImagePort /iCub/colorCamera  --remoteDepthPort /iCub/depthCamera --pitch 1.5 --scale 1
 rviz  --> add pointCloud2; topic /RGBS2PointCloud/pcloud_out, fixed frame camera_link
-
+```
 
