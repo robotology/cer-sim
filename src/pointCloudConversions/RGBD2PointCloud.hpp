@@ -43,8 +43,10 @@ private:
 
     yarp::os::BufferedPort<yarp::os::Bottle>   pointCloud_outputPort;
 
+    int mirrorX;
+    int mirrorY;
+    int mirrorZ;
 
-    int flip_h;
     double roll;
     double pitch;
     double yaw;

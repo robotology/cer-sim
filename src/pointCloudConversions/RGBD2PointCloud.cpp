@@ -22,9 +22,11 @@ RGBD2PointCloud::RGBD2PointCloud()
     width           = 0;
     height          = 0;
     point_cloud_msg.header.seq = 0;
-    flip_h = 1;
     frame_id = "/camera_link";
     scaleFactor = 1;
+    mirrorX = 1;
+    mirrorY = 1;
+    mirrorZ = 1;
 }
 
 RGBD2PointCloud::~RGBD2PointCloud()
@@ -98,10 +100,11 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
     pitch = rf.check("pitch", Value(0)).asDouble();
     yaw   = rf.check("yaw",   Value(0)).asDouble();
     frame_id = rf.check("frame_id",   Value("/camera_link")).asString();
+    rf.check("mirrorX") ? mirrorX = -1 : mirrorX = 1;
+    rf.check("mirrorY") ? mirrorY = -1 : mirrorY = 1;
+    rf.check("mirrorZ") ? mirrorZ = -1 : mirrorZ = 1;
 
-    if(rf.check("flip_h"))
-        flip_h= -1;
-
+    yInfo() << "Mirrors: x=" << mirrorX << " y=" << mirrorY << " z= " << mirrorZ;
     scaleFactor = rf.check("scale",   Value(1)).asDouble();
 
     return true;
@@ -109,7 +112,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
 
 double RGBD2PointCloud::getPeriod()
 {
-    return 0.1;
+    return 0.05;
 }
 
 bool RGBD2PointCloud::updateModule()
@@ -139,6 +142,7 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
     if(!ret)
     {
         yError() << "Cannot read from ports";
+        return false;
     }
 
     int d_width  = depthImage.width();
@@ -150,7 +154,7 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
     if( (d_width != c_width) && (d_height != c_height) )
     {
         yError() << "Size does not match";
-        return true;
+        return false;
     }
 
     width  = d_width;
@@ -195,6 +199,7 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
     double startHorizontal = -tan(halfFovHorizontalRad);
     double startVertical = tan(halfFovVerticalRad);
 
+
     // convert depth to point cloud
     for (uint32_t j=0; j<height; j++)
     {
@@ -202,9 +207,9 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
         {
             double depth = depthDataRaw[index++] * scaleFactor;
 
-            *iter_x = (float) depth *(startHorizontal + ((float) j)*stepHorizontal);
-            *iter_y = (float) depth *(startVertical - ((float) i)*stepVertical);
-            *iter_z = depth;
+            *iter_x = (float) mirrorX * depth *(startHorizontal + ((float) j)*stepHorizontal);
+            *iter_y = (float) mirrorY * depth *(startVertical - ((float) i)*stepVertical);
+            *iter_z = mirrorZ * depth;
 
             // color source for asus xtion is bgr (can be set/get somehow?)
             iter_rgb[2] = (uint8_t) colorDataRaw[i*3+j*width*3+0];
