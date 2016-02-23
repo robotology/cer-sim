@@ -27,6 +27,7 @@ RGBD2PointCloud::RGBD2PointCloud()
     mirrorX = 1;
     mirrorY = 1;
     mirrorZ = 1;
+    publishTF = false;
 }
 
 RGBD2PointCloud::~RGBD2PointCloud()
@@ -36,6 +37,21 @@ RGBD2PointCloud::~RGBD2PointCloud()
 
 bool RGBD2PointCloud::configure(ResourceFinder& rf)
 {
+    if(rf.check("help"))
+    {
+        yInfo() << " Required parameters:";
+        yInfo() << "\tremoteImagePort: remote port streaming rgb images";
+        yInfo() << "\tremoteDepthPort: remote port streaming depth images";
+        yInfo() << " Optional parameters:";
+        yInfo() << "\tscale: scale factor to apply to depth data. For Gazebo has to be 1, for xtion sensor 0.001 in order to scale data to [m]";
+        yInfo() << "\tmirrorX, mirrorY, mirrorZ: add it to mirror the resulting point cloud on the corresponding axes (no param, just '--mirrorx')";
+        yInfo() << "\ttf: if present a tf will be published. This requires 7 parameters";
+        yInfo() << "\t  reference frame name,\n\t  x,y,z translations [m], \n\t  roll, pitch, yaw rotations [rad]\n";
+        yInfo() << "\t  For example --tf base_link 0.1 0.0 0.0   1.56 0.0 0.0   -- no parenthesis";
+        return false;
+    }
+
+
     if(!rf.check("remoteImagePort") || !rf.check("remoteDepthPort"))
     {
         yError() << "Missing required parameters: remoteImagePort or remoteDepthPort";
@@ -96,15 +112,36 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
             yInfo() << "Connection is done!";
     }
 
-    roll  = rf.check("roll",  Value(0)).asDouble();
-    pitch = rf.check("pitch", Value(0)).asDouble();
-    yaw   = rf.check("yaw",   Value(0)).asDouble();
+    Bottle tf = rf.findGroup("tf");
+    if(!tf.isNull() )
+    {
+        if(tf.size() != 1+7)
+        {
+            yError() << "TF parameter must have 7 elements: reference frame name, x,y,z [m] translations, roll, pitch, yaw rotations [rad]\n" \
+            "For example --tf base_link 0.1 0.0 0.0     1.56 0.0 0.0   -- no parenthesis";
+            return false;
+        }
+
+        translation.resize(3);
+        rotation.resize(3);
+        rotation_frame_id   = tf.get(1).asString();
+        translation[0]      = tf.get(2).asDouble();
+        translation[1]      = tf.get(3).asDouble();
+        translation[2]      = tf.get(4).asDouble();
+
+        rotation[0]         = tf.get(5).asDouble();
+        rotation[1]         = tf.get(6).asDouble();
+        rotation[2]         = tf.get(7).asDouble();
+
+    }
+
     frame_id = rf.check("frame_id",   Value("/camera_link")).asString();
     rf.check("mirrorX") ? mirrorX = -1 : mirrorX = 1;
     rf.check("mirrorY") ? mirrorY = -1 : mirrorY = 1;
     rf.check("mirrorZ") ? mirrorZ = -1 : mirrorZ = 1;
 
     yInfo() << "Mirrors: x=" << mirrorX << " y=" << mirrorY << " z= " << mirrorZ;
+    yInfo() << "Frame id: " << frame_id;
     scaleFactor = rf.check("scale",   Value(1)).asDouble();
 
     return true;
@@ -112,7 +149,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
 
 double RGBD2PointCloud::getPeriod()
 {
-    return 0.05;
+    return 0.3;
 }
 
 bool RGBD2PointCloud::updateModule()
@@ -120,22 +157,13 @@ bool RGBD2PointCloud::updateModule()
     yInfo() << "RGBD2PointCloud is running fine";
 
     bool ret = convertRGBD_2_XYZRGB();
-    ros::spinOnce (); //@@@@@@@@@@
+    ros::spinOnce ();
     return ret;
 }
 
 
 bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
 {
-
-//    colorImage = imageFrame_inputPort.read();
-//    depthImage = depthFrame_inputPort.read();
-//    int d_width  = depthImage->width();
-//    int d_height = depthImage->height();
-//    int c_width  = colorImage->width();
-//    int c_height = colorImage->height();
-
-
     bool ret = imageFrame_inputPort.read(colorImage);
     ret &= depthFrame_inputPort.read(depthImage);
 
@@ -162,7 +190,6 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
 
     sensor_msgs::PointCloud2Modifier pcd_modifier(point_cloud_msg);
     pcd_modifier.setPointCloud2FieldsByString(2, "xyz", "rgb");
-    // convert to flat array shape, we need to reconvert later
     pcd_modifier.resize(width * height);
     point_cloud_msg.is_dense = false;
 
@@ -180,8 +207,6 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
     sensor_msgs::PointCloud2Iterator<uint8_t> iter_rgb(point_cloud_msg, "rgb");
 
     int index = 0;
-//    float* colorDataRaw = (float*)colorImage->getRawImage();
-//    float* depthDataRaw = (float*)depthImage->getRawImage();
 
     unsigned char* colorDataRaw = (unsigned char*)colorImage.getRawImage();
     float* depthDataRaw = (float*)depthImage.getRawImage();
@@ -191,30 +216,45 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
     double fl = ((double)this->width) / (2.0 *tan(hfov/2.0));
 
     double fovHorizontalDeg = 58.62;
-    double fovVerticalDeg = 45.666;
     double halfFovHorizontalRad = fovHorizontalDeg*M_PI/360.0;
-    double halfFovVerticalRad = fovVerticalDeg*M_PI/360.0;
-    double stepHorizontal = 2.0*tan(halfFovHorizontalRad)/((double) width);
-    double stepVertical = 2.0*tan(halfFovVerticalRad)/((double) height);
-    double startHorizontal = -tan(halfFovHorizontalRad);
-    double startVertical = tan(halfFovVerticalRad);
+//     double fovVerticalDeg = 45.666;
+//     double halfFovVerticalRad = fovVerticalDeg*M_PI/360.0;
 
+    double f=(width/2)/sin(halfFovHorizontalRad)*cos(halfFovHorizontalRad); // / sqrt(2);
 
     // convert depth to point cloud
-    for (uint32_t j=0; j<height; j++)
+    for (int32_t j=0; j<height; j++)
     {
-        for (uint32_t i=0; i<width; i++, ++iter_x, ++iter_y, ++iter_z, ++iter_rgb)
+        for (int32_t i=0; i<width; i++, ++iter_x, ++iter_y, ++iter_z, ++iter_rgb)
         {
             double depth = depthDataRaw[index++] * scaleFactor;
 
-            *iter_x = (float) mirrorX * depth *(startHorizontal + ((float) j)*stepHorizontal);
-            *iter_y = (float) mirrorY * depth *(startVertical - ((float) i)*stepVertical);
-            *iter_z = mirrorZ * depth;
+            double u = -(i - 0.5*(width-1));
+            double v = (0.5*(height-1) -j);
+            //gazebo
+            *iter_x = (float) depth;
+            *iter_y = (float) *iter_x * u/f;
+            *iter_z = (float) *iter_x * v/f;
+            // end gazebo
 
-            // color source for asus xtion is bgr (can be set/get somehow?)
-            iter_rgb[2] = (uint8_t) colorDataRaw[i*3+j*width*3+0];
-            iter_rgb[1] = (uint8_t) colorDataRaw[i*3+j*width*3+1];
-            iter_rgb[0] = (uint8_t) colorDataRaw[i*3+j*width*3+2];
+            int new_i;
+            if( (*iter_x) > 0)
+                new_i = (i + (int) ( (0.03 *f/(*iter_x)) +0.5) );
+            else
+                new_i = i;
+
+            if( (new_i >= width) || (new_i < 0))
+            {
+                iter_rgb[2] = 0;
+                iter_rgb[1] = 0;
+                iter_rgb[0] = 0;
+            }
+            else
+            {
+                iter_rgb[2] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +0];
+                iter_rgb[1] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +1];
+                iter_rgb[0] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +2];
+            }
         }
     }
 
@@ -224,20 +264,12 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
 
     pcloud_outTopic.publish (point_cloud_msg);
 
-    if (frame_id.compare("/base_link") != 0)
+    if(publishTF)
     {
         tf::StampedTransform camera_base_tf(
-                    tf::Transform(tf::createQuaternionFromRPY(roll, pitch, yaw),
-                    tf::Vector3(0.0,0.0,1.0)),ros::Time::now(),
-                    "/base_link", frame_id);
-        tf_broadcaster->sendTransform(camera_base_tf);
-    }
-    else
-    {
-        tf::StampedTransform camera_base_tf(
-                    tf::Transform(tf::createQuaternionFromRPY(0.0, 0.0, 0.0),
-                    tf::Vector3(0.0,0.0,0.0)),ros::Time::now(),
-                    "/base_link", frame_id);
+                    tf::Transform(tf::createQuaternionFromRPY(rotation[0], rotation[1], rotation[2]),
+                    tf::Vector3(translation[0], translation[1], translation[2])), ros::Time::now(),
+                    rotation_frame_id.c_str(), frame_id);
         tf_broadcaster->sendTransform(camera_base_tf);
     }
     return true;

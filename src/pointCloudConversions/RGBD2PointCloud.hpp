@@ -5,6 +5,7 @@
 #include <yarp/os/BufferedPort.h>
 #include <yarp/dev/PolyDriver.h>
 #include <yarp/sig/Image.h>
+#include <yarp/sig/Vector.h>
 
 #include <ros/ros.h>
 #include <tf/tf.h>
@@ -47,9 +48,11 @@ private:
     int mirrorY;
     int mirrorZ;
 
-    double roll;
-    double pitch;
-    double yaw;
+    bool publishTF;
+    std::string rotation_frame_id;
+    yarp::sig::Vector translation;
+    yarp::sig::Vector rotation;
+
     double scaleFactor;
 
     // ROS stuff
