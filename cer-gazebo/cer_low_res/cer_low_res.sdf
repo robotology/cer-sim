@@ -43,6 +43,34 @@
           </mesh>
         </geometry>
       </visual>
+      <sensor name ='base_laser' type='ray'>
+      <pose>0.3 0 0.1 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>5.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+        <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
+           <yarpConfigurationFile>model://cer/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+        </plugin>
+      </sensor>
     </link>
     <link name='mobile_base_l_tyre'>
       <pose>0 0.15 0.16 0 -0 0</pose>
@@ -85,11 +113,11 @@
         <limit>
           <lower>-17.4358</lower>
           <upper>17.4358</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -148,11 +176,11 @@
         <limit>
           <lower>-17.4358</lower>
           <upper>17.4358</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -211,11 +239,11 @@
         <limit>
           <lower>-0.05</lower>
           <upper>0.15</upper>
-          <effort>50000</effort>
+          <effort>2000</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>1000</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -274,7 +302,7 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
@@ -337,7 +365,7 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
@@ -400,11 +428,11 @@
         <limit>
           <lower>-1.0472</lower>
           <upper>1.0472</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -463,11 +491,11 @@
         <limit>
           <lower>-0.349066</lower>
           <upper>1.74533</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -526,11 +554,11 @@
         <limit>
           <lower>-0.174533</lower>
           <upper>1.74533</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -589,11 +617,11 @@
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -652,11 +680,11 @@
         <limit>
           <lower>0</lower>
           <upper>2.44346</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -715,11 +743,11 @@
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -778,7 +806,7 @@
         <limit>
           <lower>0.0</lower>
           <upper>0.12</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
@@ -841,11 +869,11 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -904,11 +932,11 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -967,11 +995,11 @@
         <limit>
           <lower>0</lower>
           <upper>1.0472</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1030,11 +1058,11 @@
         <limit>
           <lower>0</lower>
           <upper>1.22173</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1060,7 +1088,7 @@
         <inertia>
           <ixx>0.00110442</ixx>
           <ixy>0</ixy>
-          <ixz>-6.96774e-05</ixz>
+          <ixz>-6.96774e-04</ixz>
           <iyy>0.00111727</iyy>
           <iyz>0</iyz>
           <izz>0.000112854</izz>
@@ -1093,11 +1121,11 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>1.39626</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1122,7 +1150,7 @@
         <mass>2</mass>
         <inertia>
           <ixx>0.0133792</ixx>
-          <ixy>-1.68274e-07</ixy>
+          <ixy>-1.68274e-04</ixy>
           <ixz>0.000330609</ixz>
           <iyy>0.00439722</iyy>
           <iyz>0</iyz>
@@ -1188,7 +1216,7 @@
           </clip>
         </camera>
         <plugin name='left_camera_plugin' filename='libgazebo_yarp_camera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_camera.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_left_camera.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
       <velocity_decay/>
@@ -1208,7 +1236,7 @@
           </clip>
         </camera>
         <plugin name='right_camera_plugin' filename='libgazebo_yarp_camera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_camera.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_right_camera.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
       <gravity>1</gravity>
@@ -1231,7 +1259,7 @@
           </clip>
         </camera>
      <!--   <plugin name='depth_camera_plugin' filename='libgazebo_yarp_depthCamera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
         </plugin>-->
       </sensor> 
     </link>
@@ -1243,11 +1271,11 @@
         <limit>
           <lower>-1.39626</lower>
           <upper>1.39626</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1306,11 +1334,11 @@
         <limit>
           <lower>-0.349066</lower>
           <upper>1.74533</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1369,11 +1397,11 @@
         <limit>
           <lower>-0.174533</lower>
           <upper>1.74533</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1432,11 +1460,11 @@
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1495,11 +1523,11 @@
         <limit>
           <lower>0</lower>
           <upper>2.44346</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1558,11 +1586,11 @@
         <limit>
           <lower>-1.5708</lower>
           <upper>1.5708</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1621,7 +1649,7 @@
         <limit>
           <lower>0.0</lower>
           <upper>0.12</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
@@ -1684,11 +1712,11 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1747,11 +1775,11 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1810,11 +1838,11 @@
         <limit>
           <lower>0</lower>
           <upper>1.0472</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1873,11 +1901,11 @@
         <limit>
           <lower>0</lower>
           <upper>1.22173</upper>
-          <effort>50000</effort>
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
-          <damping>100</damping>
+          <damping>10</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -1897,46 +1925,49 @@
     </joint>
     <static>0</static>
     <plugin name='controlboard_torso_yaw' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso_yaw.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_torso_yaw.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_torso' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_torso_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_upper_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_upper_arm.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_left_upper_arm.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_wrist' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_wrist.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_left_wrist.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_wrist_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_upper_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_upper_arm.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_right_upper_arm.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_wrist' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_wrist.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_right_wrist.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_wrist_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_head.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_head.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_hand' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_hand.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_left_hand.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_hand' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_hand.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_right_hand.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_all' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_all.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_all.ini</yarpConfigurationFile>
+    </plugin>
+    <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
+      <yarpConfigurationFile>model://cer_low_res/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
   </model>
 </sdf>

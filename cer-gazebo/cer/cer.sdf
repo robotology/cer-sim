@@ -43,6 +43,34 @@
           </mesh>
         </geometry>
       </visual>
+      <sensor name ='base_laser' type='ray'>
+      <pose>0.3 0 0.1 0 0 0</pose>
+      <visualize>true</visualize>
+      <update_rate>40</update_rate>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>360</samples>
+            <resolution>1</resolution>
+            <min_angle>-3.14</min_angle>
+            <max_angle>3.14</max_angle>
+          </horizontal>
+        </scan>
+        <range>
+          <min>0.10</min>
+          <max>5.0</max>
+          <resolution>0.01</resolution>
+        </range>
+        <noise>
+          <type>gaussian</type>
+          <mean>0.0</mean>
+          <stddev>0.005</stddev>
+        </noise>
+      </ray>
+        <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
+           <yarpConfigurationFile>model://cer/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+        </plugin>
+      </sensor>
     </link>
     <link name='mobile_base_l_tyre'>
       <pose>0 0.15 0.16 0 -0 0</pose>
@@ -1230,9 +1258,9 @@
             <far>3000</far>
           </clip>
         </camera>
-        <plugin name='depth_camera_plugin' filename='libgazebo_yarp_depthCamera.so'>
+   <!--     <plugin name='depth_camera_plugin' filename='libgazebo_yarp_depthCamera.so'>
           <yarpConfigurationFile>model://cer/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
-        </plugin>
+        </plugin> -->
       </sensor>
     </link>
     <joint name='neck_yaw' type='revolute'>
@@ -1902,7 +1930,7 @@
     <plugin name='controlboard_torso' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_torso_tripod' filename='libgazeboTripod.so'>
+    <plugin name='controlboard_torso_tripod' filename='tripodMotionControl.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_upper_arm' filename='libgazebo_yarp_controlboard.so'>
@@ -1911,7 +1939,7 @@
     <plugin name='controlboard_left_wrist' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_wrist.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_left_wrist_tripod' filename='libgazeboTripod.so'>
+    <plugin name='controlboard_left_wrist_tripod' filename='tripodMotionControl.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_upper_arm' filename='libgazebo_yarp_controlboard.so'>
@@ -1920,7 +1948,7 @@
     <plugin name='controlboard_right_wrist' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_wrist.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_right_wrist_tripod' filename='libgazeboTripod.so'>
+    <plugin name='controlboard_right_wrist_tripod' filename='tripodMotionControl.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
@@ -1937,6 +1965,9 @@
     </plugin>
     <plugin name='controlboard_all' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_all.ini</yarpConfigurationFile>
+    </plugin>
+    <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
+      <yarpConfigurationFile>model://cer_low_res/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
   </model>
 </sdf>
