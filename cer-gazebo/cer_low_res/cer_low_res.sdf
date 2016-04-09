@@ -68,7 +68,7 @@
         </noise>
       </ray>
         <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-           <yarpConfigurationFile>model://cer/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+           <yarpConfigurationFile>model://cer_low_res/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
     </link>
