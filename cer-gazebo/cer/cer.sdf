@@ -111,9 +111,9 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-17.4358</lower>
-          <upper>17.4358</upper>
-          <effort>50000</effort>
+        <!--  <lower>-17.4358</lower> -->
+        <!--  <upper>17.4358</upper> -->
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
@@ -174,9 +174,9 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-17.4358</lower>
-          <upper>17.4358</upper>
-          <effort>50000</effort>
+          <!-- <lower>-17.4358</lower> -->
+          <!-- <upper>17.4358</upper> -->
+          <effort>100</effort>
           <velocity>50000</velocity>
         </limit>
         <dynamics>
