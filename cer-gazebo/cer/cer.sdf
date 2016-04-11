@@ -1200,43 +1200,37 @@
         </geometry>
       </visual>
       <velocity_decay/>
-      <sensor name='left_camera' type='camera'>
+      <sensor name="multicamera_sensor" type="multicamera">
+        <pose>0.066821 0 -0.06838 0 0 0</pose>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
-        <pose>0.066821 0.0325 -0.06838 0 -0 0</pose>
-        <camera name='__default__'>
+        <visualize>true</visualize>
+        <camera name='left_camera'>
+          <pose>0 +0.0325 0 0 0 0</pose>
           <horizontal_fov>1.5708</horizontal_fov>
           <image>
-            <width>320</width>
-            <height>240</height>
+            <width>640</width>
+            <height>480</height>
           </image>
           <clip>
             <near>0.1</near>
             <far>100</far>
           </clip>
         </camera>
-        <plugin name='left_camera_plugin' filename='libgazebo_yarp_camera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_camera.ini</yarpConfigurationFile>
-        </plugin>
-      </sensor>
-      <velocity_decay/>
-      <sensor name='right_camera' type='camera'>
-        <always_on>1</always_on>
-        <update_rate>30</update_rate>
-        <pose>0.066821 -0.0325 -0.06838 0 -0 0</pose>
-        <camera name='__default__'>
+        <camera name='right_camera'>
+          <pose>0 -0.0325 0 0 0 0</pose>
           <horizontal_fov>1.5708</horizontal_fov>
           <image>
-            <width>320</width>
-            <height>240</height>
+            <width>640</width>
+            <height>480</height>
           </image>
           <clip>
             <near>0.1</near>
             <far>100</far>
           </clip>
         </camera>
-        <plugin name='right_camera_plugin' filename='libgazebo_yarp_camera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_camera.ini</yarpConfigurationFile>
+        <plugin name='multicamera_plugin' filename='libgazebo_yarp_multicamera.so'>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
       <gravity>1</gravity>
