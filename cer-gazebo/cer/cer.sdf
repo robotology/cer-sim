@@ -1967,7 +1967,7 @@
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_all.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
-      <yarpConfigurationFile>model://cer_low_res/conf/worldInterface.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
   </model>
 </sdf>
