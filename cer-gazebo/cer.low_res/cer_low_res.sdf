@@ -20,7 +20,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer/meshes/stl/low_res/sim_cer_mobilebase_body_prt.stl</uri>
+            <uri>model://cer/meshes/stl/low_res/sim_cer_mobilebase_body_laser_prt.stl</uri>
           </mesh>
         </geometry>
         <surface>
@@ -44,7 +44,7 @@
         </geometry>
       </visual>
       <sensor name ='base_laser' type='ray'>
-      <pose>0.3 0 0.1 0 0 0</pose>
+      <pose>0.070 0 0.191 0 0 0</pose>
       <visualize>true</visualize>
       <update_rate>40</update_rate>
       <ray>
