@@ -92,7 +92,7 @@
     <axis xyz="1.0 0.0 0.0"/>
     <parent link="torso_slider_eq_link"/>
     <child link="torso_pin_eq_link"/>
-    <limit effort="30.0" lower="-0.523598775598" upper="0.523598775598" velocity="3.14"/>
+    <limit effort="50.0" lower="-0.523598775598" upper="0.523598775598" velocity="3.14"/>
     <dynamics damping="100.0"/>
   </joint>
   <link name="torso_platform_link">
@@ -122,7 +122,7 @@
     <axis xyz="0.0 1.0 0.0"/>
     <parent link="torso_pin_eq_link"/>
     <child link="torso_platform_link"/>
-    <limit effort="30.0" lower="-0.523598775598" upper="0.523598775598" velocity="3.14"/>
+    <limit effort="50.0" lower="-0.523598775598" upper="0.523598775598" velocity="3.14"/>
     <dynamics damping="100.0"/>
   </joint>
   <link name="oriented_xfw_ylf_zup_torso_platform"/>
@@ -326,7 +326,7 @@
     <axis xyz="0.0 -1.0 0.0"/>
     <parent link="r_upperarm_link"/>
     <child link="r_elbow_sphere_link"/>
-    <limit effort="20.0" lower="0.0" upper="1.76278254451" velocity="3.14"/>
+    <limit effort="20.0" lower="0.0" upper="1.74532925199" velocity="3.14"/>
     <dynamics damping="10.0"/>
   </joint>
   <link name="r_forearm_link">
@@ -351,7 +351,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="r_wrist_prosupination_joint" type="revolute">
+  <joint name="r_wrist_pronosupination_joint" type="revolute">
     <origin xyz="0 0 -0.071" rpy="0 0 0"/>
     <axis xyz="0.0 0.0 -1.0"/>
     <parent link="r_elbow_sphere_link"/>
@@ -734,7 +734,7 @@
     <axis xyz="0.0 -1.0 0.0"/>
     <parent link="l_upperarm_link"/>
     <child link="l_elbow_sphere_link"/>
-    <limit effort="20.0" lower="0.0" upper="1.76278254451" velocity="3.14"/>
+    <limit effort="20.0" lower="0.0" upper="1.74532925199" velocity="3.14"/>
     <dynamics damping="10.0"/>
   </joint>
   <link name="l_forearm_link">
@@ -757,7 +757,7 @@
       </geometry>
     </collision>
   </link>
-  <joint name="l_wrist_prosupination_joint" type="revolute">
+  <joint name="l_wrist_pronosupination_joint" type="revolute">
     <origin xyz="0 0 -0.071" rpy="0 0 0"/>
     <axis xyz="0.0 0.0 1.0"/>
     <parent link="l_elbow_sphere_link"/>
@@ -1343,7 +1343,7 @@
   <gazebo reference="l_elbow_joint">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
-  <gazebo reference="l_wrist_prosupination_joint">
+  <gazebo reference="l_wrist_pronosupination_joint">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
   <gazebo reference="l_wrist_heave_eq_joint">
@@ -1379,7 +1379,7 @@
   <gazebo reference="r_elbow_joint">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
-  <gazebo reference="r_wrist_prosupination_joint">
+  <gazebo reference="r_wrist_pronosupination_joint">
   <implicitSpringDamper>1</implicitSpringDamper>
 </gazebo>
   <gazebo reference="r_wrist_heave_eq_joint">

@@ -302,7 +302,7 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
-          <effort>30</effort>
+          <effort>50</effort>
           <velocity>3.14</velocity>
         </limit>
         <dynamics>
@@ -365,7 +365,7 @@
         <limit>
           <lower>-0.523599</lower>
           <upper>0.523599</upper>
-          <effort>30</effort>
+          <effort>50</effort>
           <velocity>3.14</velocity>
         </limit>
         <dynamics>
@@ -697,7 +697,7 @@
         <xyz>-0 -1 -0</xyz>
         <limit>
           <lower>0</lower>
-          <upper>1.76278</upper>
+          <upper>1.74533</upper>
           <effort>20</effort>
           <velocity>3.14</velocity>
         </limit>
@@ -753,7 +753,7 @@
         </geometry>
       </visual>
     </link>
-    <joint name='l_wrist_prosupination_joint' type='revolute'>
+    <joint name='l_wrist_pronosupination_joint' type='revolute'>
       <child>l_forearm_link</child>
       <parent>l_elbow_sphere_link</parent>
       <axis>
@@ -1669,7 +1669,7 @@
         <xyz>-0 -1 -0</xyz>
         <limit>
           <lower>0</lower>
-          <upper>1.76278</upper>
+          <upper>1.74533</upper>
           <effort>20</effort>
           <velocity>3.14</velocity>
         </limit>
@@ -1725,7 +1725,7 @@
         </geometry>
       </visual>
     </link>
-    <joint name='r_wrist_prosupination_joint' type='revolute'>
+    <joint name='r_wrist_pronosupination_joint' type='revolute'>
       <child>r_forearm_link</child>
       <parent>r_elbow_sphere_link</parent>
       <axis>
