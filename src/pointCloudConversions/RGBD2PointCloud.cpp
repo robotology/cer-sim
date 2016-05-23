@@ -10,6 +10,7 @@
 #include <ros/init.h>
 #include "RGBD2PointCloud.hpp"
 
+
 using namespace std;
 using namespace yarp::os;
 using namespace yarp::sig;
@@ -37,6 +38,30 @@ RGBD2PointCloud::~RGBD2PointCloud()
 
 bool RGBD2PointCloud::configure(ResourceFinder& rf)
 {
+    //looking for ROS parameters
+    string  topicName, nodeName;
+    Bottle& rosParam = rf.findGroup("ROS");
+    if(!rosParam.isNull())
+    {
+        if (rosParam.check("ROS_topicName"))
+        {
+            topicName = rosParam.find("ROS_topicName").asString();
+        }
+        else
+        {
+            topicName = "/RGBD2PointCloud";
+        }
+        if (rosParam.check("ROS_nodeName"))
+        {
+            nodeName = rosParam.find("ROS_nodeName").asString();
+        }
+        else
+        {
+            topicName = "/RGBD2PointCloudNode";
+        }
+    }
+    
+    
     if(rf.check("help"))
     {
         yInfo() << " Required parameters:";
@@ -59,10 +84,10 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
     }
 
     int ciao = 0;
-    ros::init(ciao, NULL, "my_node_name");
+    ros::init(ciao, NULL, nodeName);
     ros::Time::init();
     rosNode         = new ros::NodeHandle();
-    pcloud_outTopic = rosNode->advertise<sensor_msgs::PointCloud2 >("/RGBD2PointCloud/pcloud_out", 1);
+    pcloud_outTopic = rosNode->advertise<sensor_msgs::PointCloud2 >(topicName, 1);
     tf_broadcaster  = new tf::TransformBroadcaster;
 
     yarp::os::ConstString remoteImagePort_name = rf.find("remoteImagePort").asString();
@@ -135,7 +160,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
 
     }
 
-    frame_id = rf.check("frame_id",   Value("/camera_link")).asString();
+    frame_id = rosParam.check("frame_id", Value("/camera_link")).asString();
     rf.check("mirrorX") ? mirrorX = -1 : mirrorX = 1;
     rf.check("mirrorY") ? mirrorY = -1 : mirrorY = 1;
     rf.check("mirrorZ") ? mirrorZ = -1 : mirrorZ = 1;
@@ -149,7 +174,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
 
 double RGBD2PointCloud::getPeriod()
 {
-    return 0.3;
+    return 0.033;
 }
 
 bool RGBD2PointCloud::updateModule()
