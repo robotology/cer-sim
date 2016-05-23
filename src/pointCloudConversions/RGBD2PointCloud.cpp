@@ -7,9 +7,17 @@
 #include <yarp/sig/Image.h>
 #include <yarp/sig/Vector.h>
 
-#include <ros/init.h>
 #include "RGBD2PointCloud.hpp"
+#include <yarp/os/NetFloat32.h>
 
+YARP_BEGIN_PACK
+typedef struct {
+    yarp::os::NetFloat32  x;
+    yarp::os::NetFloat32  y;
+    yarp::os::NetFloat32  z;
+    char        rgba[4];
+} PC_Point;
+YARP_END_PACK
 
 using namespace std;
 using namespace yarp::os;
@@ -22,7 +30,7 @@ RGBD2PointCloud::RGBD2PointCloud()
     use_RGBD_client = false;
     width           = 0;
     height          = 0;
-    point_cloud_msg.header.seq = 0;
+    rosPC_data.header.seq = 0;
     frame_id = "/camera_link";
     scaleFactor = 1;
     mirrorX = 1;
@@ -41,7 +49,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
     //looking for ROS parameters
     string  topicName, nodeName;
     Bottle& rosParam = rf.findGroup("ROS");
-    if(!rosParam.isNull())
+//     if(!rosParam.isNull())
     {
         if (rosParam.check("ROS_topicName"))
         {
@@ -57,7 +65,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
         }
         else
         {
-            topicName = "/RGBD2PointCloudNode";
+            nodeName = "/RGBD2PointCloudNode";
         }
     }
     
@@ -83,12 +91,18 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
         return false;
     }
 
-    int ciao = 0;
-    ros::init(ciao, NULL, nodeName);
-    ros::Time::init();
-    rosNode         = new ros::NodeHandle();
-    pcloud_outTopic = rosNode->advertise<sensor_msgs::PointCloud2 >(topicName, 1);
-    tf_broadcaster  = new tf::TransformBroadcaster;
+    yInfo() << "Node  name is " << nodeName;
+    yInfo() << "Topic name is " << topicName;
+
+    rosNode = new yarp::os::Node(nodeName);
+    if(!pointCloud_outTopic.topic(topicName))
+    {
+        yError() << " opening " << topicName << " Topic, check your yarp-ROS network configuration\n";
+        return false;
+    }
+
+    // TBD: This is for debug only. Implement later
+//     tf_broadcaster  = new tf::TransformBroadcaster;
 
     yarp::os::ConstString remoteImagePort_name = rf.find("remoteImagePort").asString();
     yarp::os::ConstString remoteDepthPort_name = rf.find("remoteDepthPort").asString();
@@ -96,6 +110,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
     // cannot use because OpenNI2DeviceServer does not uses RGBDSensorWrapper yet
     if(use_RGBD_client)
     {
+        // TBD: make ports opened by this device to use custom names
         yarp::os::Property params;
         params.put("device", "RGBDSensorClient");
         params.put("localImagePort","/RGBD2PointCloud/rgb/in:i");
@@ -125,6 +140,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
             return false;
         }
 
+        // TBD: make ports opened by this device to use custom names
         ret &= yarp::os::Network::connect(remoteImagePort_name, "/RGBD2PointCloud/rgb/in:i");
         ret &= yarp::os::Network::connect(remoteDepthPort_name, "/RGBD2PointCloud/depth/in:i");
 
@@ -137,28 +153,30 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
             yInfo() << "Connection is done!";
     }
 
-    Bottle tf = rf.findGroup("tf");
-    if(!tf.isNull() )
-    {
-        if(tf.size() != 1+7)
-        {
-            yError() << "TF parameter must have 7 elements: reference frame name, x,y,z [m] translations, roll, pitch, yaw rotations [rad]\n" \
-            "For example --tf base_link 0.1 0.0 0.0     1.56 0.0 0.0   -- no parenthesis";
-            return false;
-        }
-
-        translation.resize(3);
-        rotation.resize(3);
-        rotation_frame_id   = tf.get(1).asString();
-        translation[0]      = tf.get(2).asDouble();
-        translation[1]      = tf.get(3).asDouble();
-        translation[2]      = tf.get(4).asDouble();
-
-        rotation[0]         = tf.get(5).asDouble();
-        rotation[1]         = tf.get(6).asDouble();
-        rotation[2]         = tf.get(7).asDouble();
-
-    }
+    //
+    // TBD: This is for debug only. Implement later
+    //
+//     Bottle tf = rf.findGroup("tf");
+//     if(!tf.isNull() )
+//     {
+//         if(tf.size() != 1+7)
+//         {
+//             yError() << "TF parameter must have 7 elements: reference frame name, x,y,z [m] translations, roll, pitch, yaw rotations [rad]\n" \
+//             "For example --tf base_link 0.1 0.0 0.0     1.56 0.0 0.0   -- no parenthesis";
+//             return false;
+//         }
+//
+//         translation.resize(3);
+//         rotation.resize(3);
+//         rotation_frame_id   = tf.get(1).asString();
+//         translation[0]      = tf.get(2).asDouble();
+//         translation[1]      = tf.get(3).asDouble();
+//         translation[2]      = tf.get(4).asDouble();
+//
+//         rotation[0]         = tf.get(5).asDouble();
+//         rotation[1]         = tf.get(6).asDouble();
+//         rotation[2]         = tf.get(7).asDouble();
+//     }
 
     frame_id = rosParam.check("frame_id", Value("/camera_link")).asString();
     rf.check("mirrorX") ? mirrorX = -1 : mirrorX = 1;
@@ -169,6 +187,40 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
     yInfo() << "Frame id: " << frame_id;
     scaleFactor = rf.check("scale",   Value(1)).asDouble();
 
+
+    // Initialize the ROS pointCloud data with const values (width & height still unknown here)
+    rosPC_data.header.seq++;
+    rosPC_data.header.frame_id = frame_id;
+
+    rosPC_data.fields.resize(4);
+    rosPC_data.fields[0].name       = "x";
+    rosPC_data.fields[0].offset     = 0;    // offset in bytes from start of each point
+    rosPC_data.fields[0].datatype   = 7;    // 7 = FLOAT32
+    rosPC_data.fields[0].count      = 1;    // how many FLOAT32 used for 'x'
+
+    rosPC_data.fields[1].name       = "y";
+    rosPC_data.fields[1].offset     = 4;    // offset in bytes from start of each point
+    rosPC_data.fields[1].datatype   = 7;    // 7 = FLOAT32
+    rosPC_data.fields[1].count      = 1;    // how many FLOAT32 used for 'y'
+
+    rosPC_data.fields[2].name       = "z";
+    rosPC_data.fields[2].offset     = 8;    // offset in bytes from start of each point
+    rosPC_data.fields[2].datatype   = 7;    // 7 = FLOAT32
+    rosPC_data.fields[2].count      = 1;    // how many FLOAT32 used for 'z'
+
+    rosPC_data.fields[3].name       = "rgb";
+    rosPC_data.fields[3].offset     = 12;   // offset in bytes from start of each point
+    rosPC_data.fields[3].datatype   = 6;    // 6 = UINT32
+    rosPC_data.fields[3].count      = 1;    // how many UINT32 used for 'rgb'
+
+    static uint32_t endianness = 0x00000001;
+
+    *(const char *) &endianness == 0x01 ? rosPC_data.is_bigendian = false : \
+                                         rosPC_data.is_bigendian = true;
+
+    yAssert(sizeof(PC_Point) == 16);
+    rosPC_data.point_step = sizeof(PC_Point);
+    rosPC_data.is_dense = true;   // what this field actually means?? When is it false??
     return true;
 }
 
@@ -179,18 +231,21 @@ double RGBD2PointCloud::getPeriod()
 
 bool RGBD2PointCloud::updateModule()
 {
-    yInfo() << "RGBD2PointCloud is running fine";
+//     yInfo() << "RGBD2PointCloud is running fine";
 
     bool ret = convertRGBD_2_XYZRGB();
-    ros::spinOnce ();
     return ret;
 }
+
 
 
 bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
 {
     bool ret = imageFrame_inputPort.read(colorImage);
     ret &= depthFrame_inputPort.read(depthImage);
+
+    imageFrame_inputPort.getEnvelope(colorStamp);
+    depthFrame_inputPort.getEnvelope(depthStamp);
 
     if(!ret)
     {
@@ -203,39 +258,31 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
     int c_width  = colorImage.width();
     int c_height = colorImage.height();
 
-
     if( (d_width != c_width) && (d_height != c_height) )
     {
         yError() << "Size does not match";
         return false;
     }
 
+    float tmp_sec;
     width  = d_width;
     height = d_height;
 
-    sensor_msgs::PointCloud2Modifier pcd_modifier(point_cloud_msg);
-    pcd_modifier.setPointCloud2FieldsByString(2, "xyz", "rgb");
-    pcd_modifier.resize(width * height);
-    point_cloud_msg.is_dense = false;
+    rosPC_data.width  = width;
+    rosPC_data.height = height;
+    rosPC_data.row_step   = rosPC_data.point_step*width;
 
-    point_cloud_msg.header.seq++;
-    point_cloud_msg.width  = width;
-    point_cloud_msg.height = height;
-    point_cloud_msg.header.frame_id = frame_id;
-    point_cloud_msg.header.stamp = ros::Time::now();
+    rosPC_data.header.stamp.nsec = (NetUint32) modf(depthStamp.getTime(), &tmp_sec);
+    rosPC_data.header.stamp.sec  = tmp_sec;
 
-    point_cloud_msg.row_step = point_cloud_msg.point_step * width;
 
-    sensor_msgs::PointCloud2Iterator<float> iter_x(point_cloud_msg, "x");
-    sensor_msgs::PointCloud2Iterator<float> iter_y(point_cloud_msg, "y");
-    sensor_msgs::PointCloud2Iterator<float> iter_z(point_cloud_msg, "z");
-    sensor_msgs::PointCloud2Iterator<uint8_t> iter_rgb(point_cloud_msg, "rgb");
 
     int index = 0;
 
     unsigned char* colorDataRaw = (unsigned char*)colorImage.getRawImage();
     float* depthDataRaw = (float*)depthImage.getRawImage();
 
+    // This data should be got at runtime from device (cameraInfo topic or rpc)
     double hfov = 58 * 3.14 / 360;
 
     double fl = ((double)this->width) / (2.0 *tan(hfov/2.0));
@@ -247,48 +294,68 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
 
     double f=(width/2)/sin(halfFovHorizontalRad)*cos(halfFovHorizontalRad); // / sqrt(2);
 
+    PC_Point point;
+    rosPC_data.data.resize(width*height*rosPC_data.point_step);
+
+    PC_Point *iter = (PC_Point*) &rosPC_data.data[0];
+
     // convert depth to point cloud
     for (int32_t j=0; j<height; j++)
     {
-        for (int32_t i=0; i<width; i++, ++iter_x, ++iter_y, ++iter_z, ++iter_rgb)
+        for (int32_t i=0; i<width; i++)
         {
             double depth = depthDataRaw[index++] * scaleFactor;
 
             double u = -(i - 0.5*(width-1));
             double v = (0.5*(height-1) -j);
+
+            point.x = (NetFloat32) depth;
+            point.y = (NetFloat32) depth * u/f;
+            point.z = (NetFloat32) depth * v/f;
+
             //gazebo
+            /*
             *iter_x = (float) depth;
             *iter_y = (float) *iter_x * u/f;
             *iter_z = (float) *iter_x * v/f;
+            * */
             // end gazebo
 
             int new_i;
-            if( (*iter_x) > 0)
-                new_i = (i + (int) ( (0.03 *f/(*iter_x)) +0.5) );
+            if( depth > 0)
+                new_i = (i + (int) ( (0.03 *f/depth) +0.5) );
             else
                 new_i = i;
 
             if( (new_i >= width) || (new_i < 0))
             {
+                /*
                 iter_rgb[2] = 0;
                 iter_rgb[1] = 0;
                 iter_rgb[0] = 0;
+                */
+
+                point.rgba[2] = 0;
+                point.rgba[1] = 0;
+                point.rgba[0] = 0;
             }
             else
             {
-                iter_rgb[2] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +0];
-                iter_rgb[1] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +1];
-                iter_rgb[0] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +2];
+                point.rgba[2] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +0];
+                point.rgba[1] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +1];
+                point.rgba[0] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +2];
             }
+
+            *iter = point;
+            iter++;
         }
     }
 
-    // reconvert to original height and width after the flat reshape
-    point_cloud_msg.height = height;
-    point_cloud_msg.width = width;
 
-    pcloud_outTopic.publish (point_cloud_msg);
+    pointCloud_outTopic.write(rosPC_data);
 
+    // TBD: for debugging purpose only
+    /*
     if(publishTF)
     {
         tf::StampedTransform camera_base_tf(
@@ -297,6 +364,7 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
                     rotation_frame_id.c_str(), frame_id);
         tf_broadcaster->sendTransform(camera_base_tf);
     }
+    */
     return true;
 }
 
@@ -308,6 +376,8 @@ bool RGBD2PointCloud::interruptModule()
 
     imageFrame_inputPort.close();
     depthFrame_inputPort.close();
+
+    pointCloud_outTopic.close();
 }
 
 bool RGBD2PointCloud::close()
