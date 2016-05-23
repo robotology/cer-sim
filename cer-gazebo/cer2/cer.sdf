@@ -2232,6 +2232,12 @@
     <plugin name='controlboard_right_hand' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_hand.ini</yarpConfigurationFile>
     </plugin>
+    <plugin name='controlboard_right_arm' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
+    </plugin>
+    <plugin name='controlboard_left_arm' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
+    </plugin>
     <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer2/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
