@@ -213,10 +213,13 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
     rosPC_data.fields[3].datatype   = 6;    // 6 = UINT32
     rosPC_data.fields[3].count      = 1;    // how many UINT32 used for 'rgb'
 
-    static uint32_t endianness = 0x00000001;
-
-    *(const char *) &endianness == 0x01 ? rosPC_data.is_bigendian = false : \
-                                         rosPC_data.is_bigendian = true;
+#if defined(YARP_BIG_ENDIAN)
+    rosPC_data.is_bigendian = true;
+#elif defined(YARP_LITTLE_ENDIAN)
+    rosPC_data.is_bigendian = false;
+#else
+    #error "Cannot detect endianness"
+#endif
 
     yAssert(sizeof(PC_Point) == 16);
     rosPC_data.point_step = sizeof(PC_Point);
