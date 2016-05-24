@@ -1,4 +1,6 @@
 #include <iostream>
+#include <yarp/conf/numeric.h>
+
 #include <yarp/os/all.h>
 #include <yarp/dev/all.h>
 #include <yarp/sig/all.h>
@@ -234,13 +236,15 @@ double RGBD2PointCloud::getPeriod()
 
 bool RGBD2PointCloud::updateModule()
 {
-//     yInfo() << "RGBD2PointCloud is running fine";
+    static double start = yarp::os::Time::now();
 
-    bool ret = convertRGBD_2_XYZRGB();
-    return ret;
+    if(yarp::os::Time::now() - start > 3.0f)
+    {
+        yInfo() << "RGBD2PointCloud is running fine.";
+        start = yarp::os::Time::now();
+    }
+    return convertRGBD_2_XYZRGB();
 }
-
-
 
 bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
 {
@@ -278,8 +282,6 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
     rosPC_data.header.stamp.nsec = (NetUint32) modf(depthStamp.getTime(), &tmp_sec);
     rosPC_data.header.stamp.sec  = tmp_sec;
 
-
-
     int index = 0;
 
     unsigned char* colorDataRaw = (unsigned char*)colorImage.getRawImage();
@@ -316,14 +318,6 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
             point.y = (NetFloat32) depth * u/f;
             point.z = (NetFloat32) depth * v/f;
 
-            //gazebo
-            /*
-            *iter_x = (float) depth;
-            *iter_y = (float) *iter_x * u/f;
-            *iter_z = (float) *iter_x * v/f;
-            * */
-            // end gazebo
-
             int new_i;
             if( depth > 0)
                 new_i = (i + (int) ( (0.03 *f/depth) +0.5) );
@@ -332,12 +326,6 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
 
             if( (new_i >= width) || (new_i < 0))
             {
-                /*
-                iter_rgb[2] = 0;
-                iter_rgb[1] = 0;
-                iter_rgb[0] = 0;
-                */
-
                 point.rgba[2] = 0;
                 point.rgba[1] = 0;
                 point.rgba[0] = 0;
