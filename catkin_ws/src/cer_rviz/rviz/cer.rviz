@@ -6,12 +6,10 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /RobotModel1
         - /InteractiveMarkers1
-        - /TF1
-        - /TF1/Frames1
-      Splitter Ratio: 0.749153
-    Tree Height: 625
+        - /LaserScan1
+      Splitter Ratio: 0.486091
+    Tree Height: 828
   - Class: rviz/Selection
     Name: Selection
   - Class: rviz/Tool Properties
@@ -30,7 +28,7 @@ Panels:
     Experimental: false
     Name: Time
     SyncMode: 0
-    SyncSource: ""
+    SyncSource: LaserScan
 Visualization Manager:
   Class: ""
   Displays:
@@ -62,16 +60,43 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        asus_xtion:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        base_laser:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_clavicle:
+        chest_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_forearm:
+        gaze:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        head_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_clavicle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_elbow_sphere_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_forearm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -80,17 +105,54 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_hand:
+        l_hand_paddle_distal_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_shoulder:
+        l_hand_paddle_proximal_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_upperarm:
+        l_hand_paddle_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        l_hand_root_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_hand_thumb_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_hand_thumb_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_hand_thumb_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        l_shoulder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_upperarm_FT_sensor_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        l_upperarm_FT_sensor_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_upperarm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -99,32 +161,36 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        l_wrist_tripod_base:
+        l_wrist_cup_eq_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_wrist_tripod_pin_dummy:
+        l_wrist_slider_eq_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        l_wrist_tripod_slider_dummy:
+        mobile_base_body_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        mobile_base_body:
+        mobile_base_l_tyre_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        mobile_base_l_tyre:
+        mobile_base_r_tyre_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        mobile_base_r_tyre:
+        multicamera_sensor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        neck_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -137,20 +203,25 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        oriented_xbk_yrg_zup_torso_tripod_platform:
+        oriented_xbk_yrg_zup_torso_platform:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        oriented_xfw_ylf_zup_torso_tripod_platform:
+        oriented_xfw_ylf_zup_torso_platform:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        r_clavicle:
+        r_clavicle_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_forearm:
+        r_elbow_sphere_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_forearm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -159,17 +230,54 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        r_hand:
+        r_hand_paddle_distal_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_shoulder:
+        r_hand_paddle_proximal_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_upperarm:
+        r_hand_paddle_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_hand_root_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_hand_thumb_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_hand_thumb_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_hand_thumb_tip:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_shoulder_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_upperarm_FT_sensor_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_upperarm_FT_sensor_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_upperarm_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -178,17 +286,12 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        r_wrist_tripod_base:
+        r_wrist_cup_eq_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        r_wrist_tripod_pin_dummy:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        r_wrist_tripod_slider_dummy:
+        r_wrist_slider_eq_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -197,22 +300,17 @@ Visualization Manager:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        torso_chest:
+        torso_pin_eq_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        torso_tripod_pin_dummy:
+        torso_platform_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        torso_tripod_platform:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        torso_tripod_slider_dummy:
+        torso_slider_eq_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -237,136 +335,82 @@ Visualization Manager:
       Marker Topic: /geomagic/marker__o
       Name: Marker
       Namespaces:
-        geomagic: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/TF
-      Enabled: true
+      Enabled: false
       Frame Timeout: 60
       Frames:
         All Enabled: false
-        base_link:
-          Value: false
-        geomagic:
-          Value: true
-        l_clavicle:
-          Value: false
-        l_forearm:
-          Value: false
-        l_gripper:
-          Value: true
-        l_hand:
-          Value: false
-        l_shoulder:
-          Value: false
-        l_upperarm:
-          Value: false
-        l_wrist:
-          Value: false
-        l_wrist_tripod_base:
-          Value: false
-        l_wrist_tripod_pin_dummy:
-          Value: false
-        l_wrist_tripod_slider_dummy:
-          Value: false
-        mobile_base_body:
-          Value: false
-        mobile_base_l_tyre:
-          Value: false
-        mobile_base_r_tyre:
-          Value: false
-        oriented_l_wrist_tripodbase:
-          Value: false
-        oriented_r_wrist_tripodbase:
-          Value: false
-        oriented_xbk_yrg_zup_torso_tripod_platform:
-          Value: false
-        oriented_xfw_ylf_zup_torso_tripod_platform:
-          Value: false
-        r_clavicle:
-          Value: false
-        r_forearm:
-          Value: false
-        r_gripper:
-          Value: true
-        r_hand:
-          Value: false
-        r_shoulder:
-          Value: false
-        r_upperarm:
-          Value: false
-        r_wrist:
-          Value: false
-        r_wrist_tripod_base:
-          Value: false
-        r_wrist_tripod_pin_dummy:
-          Value: false
-        r_wrist_tripod_slider_dummy:
-          Value: false
-        torso:
-          Value: false
-        torso_chest:
-          Value: true
-        torso_tripod_pin_dummy:
-          Value: false
-        torso_tripod_platform:
-          Value: false
-        torso_tripod_slider_dummy:
-          Value: false
       Marker Scale: 1.5
       Name: TF
       Show Arrows: false
       Show Axes: true
       Show Names: false
       Tree:
-        mobile_base_body:
-          base_link:
-            {}
-          mobile_base_l_tyre:
-            {}
-          mobile_base_r_tyre:
-            {}
-          torso_tripod_slider_dummy:
-            torso_tripod_pin_dummy:
-              torso_tripod_platform:
-                oriented_xbk_yrg_zup_torso_tripod_platform:
-                  {}
-                oriented_xfw_ylf_zup_torso_tripod_platform:
-                  {}
-                torso_chest:
-                  geomagic:
-                    {}
-                  l_clavicle:
-                    l_shoulder:
-                      l_upperarm:
-                        l_forearm:
-                          l_wrist_tripod_base:
-                            l_wrist_tripod_slider_dummy:
-                              l_wrist_tripod_pin_dummy:
-                                l_hand:
-                                  l_gripper:
-                                    {}
-                                  l_wrist:
-                                    {}
-                            oriented_l_wrist_tripodbase:
-                              {}
-                  r_clavicle:
-                    r_shoulder:
-                      r_upperarm:
-                        r_forearm:
-                          r_wrist_tripod_base:
-                            oriented_r_wrist_tripodbase:
-                              {}
-                            r_wrist_tripod_slider_dummy:
-                              r_wrist_tripod_pin_dummy:
-                                r_hand:
-                                  r_gripper:
-                                    {}
-                                  r_wrist:
-                                    {}
-                  torso:
-                    {}
+        {}
       Update Interval: 0
+      Value: false
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.02
+      Style: Flat Squares
+      Topic: /RGBD2PointCloud
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: Intensity
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 0
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: false
+      Size (Pixels): 3
+      Size (m): 0.01
+      Style: Flat Squares
+      Topic: /laser
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
@@ -392,30 +436,30 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.77381
+      Distance: 8.00468
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.06
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.0675143
-        Y: 0.195011
-        Z: 0.245038
+        X: 0.555672
+        Y: -0.245368
+        Z: 0.778381
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 0.220396
+      Pitch: 1.1098
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 6.15177
+      Yaw: 3.21177
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 843
+  Height: 1053
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd00000004000000000000013c0000030cfc0200000008fb0000001200530065006c0065006300740069006f006e00000000430000009b0000006001000005fb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c006100790073010000001b0000030c000000c801000005fb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c000002610000000100000112000002e4fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730000000043000002e4000000b401000005fb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004c00000004bfc0100000002fb0000000800540069006d00650000000000000004c00000027601000005fb0000000800540069006d00650100000000000004500000000000000000000003810000030c00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730000000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000016e000003d6fc0200000008fb0000001200530065006c0065006300740069006f006e00000000430000009b0000006900fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000021000003d6000000e800fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c000002610000000100000112000002e4fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a005600690065007700730000000043000002e4000000c700fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000004c00000004bfc0100000002fb0000000800540069006d00650000000000000004c0000002ac00fffffffb0000000800540069006d006501000000000000045000000000000000000000024b000003d600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730000000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -424,6 +468,6 @@ Window Geometry:
     collapsed: false
   Views:
     collapsed: false
-  Width: 1216
-  X: 17
-  Y: 0
+  Width: 959
+  X: 942
+  Y: -8
