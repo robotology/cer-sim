@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <sdf version='1.5'>
   <model name='SIM_CER_ROBOT'>
     <link name='mobile_base_body_link'>
@@ -2240,6 +2241,12 @@
     </plugin>
     <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer2/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+    </plugin>
+    <plugin name='mais_left_hand' filename='libgazebo_yarp_maissensor.so'>
+      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_left_hand_mais.ini</yarpConfigurationFile>
+    </plugin>   
+    <plugin name='mais_right_hand' filename='libgazebo_yarp_maissensor.so'>
+      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_hand_mais.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_all' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer2/conf/gazebo_cer_all.ini</yarpConfigurationFile>

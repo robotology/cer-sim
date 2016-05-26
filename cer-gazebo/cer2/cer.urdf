@@ -1,3 +1,4 @@
+<?xml version="1.0" ?>
 <robot name="SIM_CER_ROBOT">
   <link name="mobile_base_body_link">
     <inertial>
