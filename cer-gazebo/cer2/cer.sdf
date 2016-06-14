@@ -2197,9 +2197,7 @@
         </ode>
       </physics>
     </joint>
-    <plugin name='controlboard_torso_yaw' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_torso_yaw.ini</yarpConfigurationFile>
-    </plugin>
+
     <plugin name='controlboard_torso' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer2/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
     </plugin>

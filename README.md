@@ -43,8 +43,8 @@ catkin_make
 Add to .bashrc
 
 ```bash
-if [ -f <cer-sim>/catkin-ws/devel/setup.bash ]; then
-  . <cer-sim>/catkin-ws/devel/setup.bash
+if [ -f <cer-sim>/ ]; then
+  . <cer-sim>/catkin_ws/devel/setup.bash
 fi
 ```
 
