@@ -1,0 +1,34 @@
+controller_list:
+  - name: fake_right_arm_controller
+    joints:
+      - r_shoulder_pitch_joint
+      - r_shoulder_roll_joint
+      - r_shoulder_yaw_joint
+      - r_elbow_joint
+      - r_wrist_pronosupination_joint
+      - r_wrist_heave_eq_joint
+      - r_wrist_roll_eq_joint
+      - r_wrist_pitch_eq_joint
+  - name: fake_r_grip_controller
+    joints:
+      - r_wrist_pitch_eq_joint
+      - r_hand_paddle_proximal_joint
+      - r_hand_paddle_distal_joint
+      - r_hand_thumb_proximal_joint
+      - r_hand_thumb_distal_joint
+  - name: fake_left_arm_controller
+    joints:
+      - l_shoulder_pitch_joint
+      - l_shoulder_roll_joint
+      - l_shoulder_yaw_joint
+      - l_elbow_joint
+      - l_wrist_pronosupination_joint
+      - l_wrist_heave_eq_joint
+      - l_wrist_roll_eq_joint
+      - l_wrist_pitch_eq_joint
+  - name: fake_l_grip_controller
+    joints:
+      - l_hand_paddle_proximal_joint
+      - l_hand_paddle_distal_joint
+      - l_hand_thumb_proximal_joint
+      - l_hand_thumb_distal_joint

@@ -1,0 +1,15 @@
+controller_list:
+  - name: right_arm_controller
+    action_ns: follow_joint_trajectory
+#    type: robot_controllers/FollowJointTrajectoryController
+    type: FollowJointTrajectory
+    default: true
+    joints:
+     - r_elbow_joint 
+     - r_shoulder_pitch_joint 
+     - r_shoulder_roll_joint 
+     - r_shoulder_yaw_joint 
+     - r_wrist_heave_eq_joint 
+     - r_wrist_pitch_eq_joint 
+     - r_wrist_pronosupination_joint 
+     - r_wrist_roll_eq_joint

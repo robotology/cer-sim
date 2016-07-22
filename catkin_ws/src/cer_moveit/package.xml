@@ -1,0 +1,30 @@
+<package>
+
+  <name>cer_moveit</name>
+  <version>0.2.0</version>
+  <description>
+     An automatically generated package with all the configuration and launch files for using the SIM_CER_ROBOT with the MoveIt Motion Planning Framework
+  </description>
+  <!-- for robot specific customization -->
+  <author email="alberto.cardellino@iit.it"> Alberto Cardellino </author>
+  <maintainer email="alberto.cardellino@iit.it"> Alberto Cardellino </maintainer>
+
+  <!-- for default generated files -->
+  <author email="assistant@moveit.ros.org">MoveIt Setup Assistant</author>
+
+  <license>BSD</license>
+
+  <url type="website">http://moveit.ros.org/</url>
+  <url type="bugtracker">https://github.com/robotology/robotology-ros-common/issues</url>
+  <url type="repository">https://github.com/robotology/robotology-ros-common</url>
+
+  <run_depend>moveit_ros_move_group</run_depend>
+  <run_depend>moveit_planners_ompl</run_depend>
+  <run_depend>moveit_ros_visualization</run_depend>
+  <run_depend>joint_state_publisher</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+  <run_depend>xacro</run_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  
+</package>

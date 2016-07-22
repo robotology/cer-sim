@@ -1,0 +1,159 @@
+fetch_gazebo    simulation.launch
+<launch>
+
+    <arg name="robot" default="fetch"/>
+    <arg name="debug" default="false"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+
+    <!-- Start Gazebo with a blank world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="debug" value="$(arg debug)" />
+        <arg name="gui" value="$(arg gui)" />
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="headless" value="$(arg headless)"/>
+    </include>
+
+    <!-- Oh, you wanted a robot? -->
+    <include file="$(find fetch_gazebo)/launch/include/$(arg robot).launch.xml" />
+
+</launch>
+
+<!-- ################################################################################## -->
+
+/launch/include/fetch.launch.xml
+
+<launch>
+
+    <arg name="x" default="0.0" />
+    <arg name="y" default="0.0" />
+
+    <!-- Setup controllers -->
+    <rosparam file="$(find fetch_gazebo)/config/default_controllers.yaml" command="load" />
+
+    <!-- URDF and TF support -->
+    <param name="robot_description" command="$(find xacro)/xacro.py $(find fetch_gazebo)/robots/fetch.gazebo.xacro" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" >
+        <param name="publish_frequency" value="100.0"/>
+    </node>
+
+    <!-- Put a robot in gazebo, make it look pretty -->
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+          args="-urdf -x $(arg x) -y $(arg y) -z 0 -model fetch -param robot_description"/>
+    <node name="prepare_robot" pkg="fetch_gazebo" type="prepare_simulated_robot.py" />
+
+    <!-- Give this robot a serial number and version -->
+    <param name="robot/serial" value="ABCDEFGHIJKLMNOPQRSTUVWX" />
+    <param name="robot/version" value="0.0.1" />
+
+    <!-- Head Camera Pipeline -->
+    <include file="$(find fetch_gazebo)/launch/include/head_camera.launch.xml" />
+
+    <!-- Publish base_scan_raw if anything subscribes to it -->
+    <node name="publish_base_scan_raw" pkg="topic_tools" type="relay" args="base_scan base_scan_raw" >
+        <param name="lazy" type="bool" value="True"/>
+    </node>
+
+    <!-- Start a mux between application and teleop -->
+    <node pkg="topic_tools" type="mux" name="cmd_vel_mux" respawn="true" args="base_controller/command /cmd_vel /teleop/cmd_vel">
+        <remap from="mux" to="cmd_vel_mux" />
+    </node>
+
+</launch>
+
+<!-- ################################################################################## -->
+
+fetch/config/default_controllers.yaml
+
+arm_controller:
+follow_joint_trajectory:
+type: "robot_controllers/FollowJointTrajectoryController"
+joints:
+- shoulder_pan_joint
+- shoulder_lift_joint
+- upperarm_roll_joint
+- elbow_flex_joint
+- forearm_roll_joint
+- wrist_flex_joint
+- wrist_roll_joint
+gravity_compensation:
+type: "robot_controllers/GravityCompensation"
+root: "torso_lift_link"
+tip: "gripper_link"
+autostart: true
+
+arm_with_torso_controller:
+follow_joint_trajectory:
+type: "robot_controllers/FollowJointTrajectoryController"
+joints:
+- torso_lift_joint
+- shoulder_pan_joint
+- shoulder_lift_joint
+- upperarm_roll_joint
+- elbow_flex_joint
+- forearm_roll_joint
+- wrist_flex_joint
+- wrist_roll_joint
+
+torso_controller:
+follow_joint_trajectory:
+type: "robot_controllers/FollowJointTrajectoryController"
+joints:
+- torso_lift_joint
+
+....
+
+
+gazebo:
+default_controllers:
+- "arm_controller/follow_joint_trajectory"
+- "arm_controller/gravity_compensation"
+- "arm_with_torso_controller/follow_joint_trajectory"
+- "base_controller"
+- "head_controller/follow_joint_trajectory"
+- "head_controller/point_head"
+- "torso_controller/follow_joint_trajectory"
+- "gripper_controller/gripper_action"
+- "bellows_controller"
+l_wheel_joint:
+position:
+p: 0.0
+d: 0.0
+i: 0.0
+i_clamp: 0.0
+velocity:
+p: 8.85
+d: 0.0
+i: 0.5
+i_clamp: 6.0
+r_wheel_joint:
+position:
+p: 0.0
+d: 0.0
+i: 0.0
+i_clamp: 0.0
+velocity:
+p: 8.85
+d: 0.0
+i: 0.5
+i_clamp: 6.0
+torso_lift_joint:
+position:
+p: 1000.0
+d: 0.0
+i: 0.0
+i_clamp: 0.0
+velocity:
+p: 100000.0
+d: 0.0
+i: 0.0
+i_clamp: 0.0
+
+...
+
+<!-- ################################################################################## -->
+
+
+
+

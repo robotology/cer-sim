@@ -1,0 +1,8 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ""
+    relative_path: /usr/local/src/robot/robotModels/cer-sim/cer-gazebo/cer2/cer.urdf
+  SRDF:
+    relative_path: config/SIM_CER_ROBOT.srdf
+  CONFIG:
+    generated_timestamp: 1468483228
