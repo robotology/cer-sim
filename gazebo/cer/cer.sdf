@@ -1,10 +1,10 @@
-<?xml version="1.0" ?>
-<sdf version='1.5'>
+<?xml version=1.0 ?>
+<sdf version='1.6'>
   <model name='SIM_CER_ROBOT'>
     <link name='mobile_base_body_link'>
-      <pose>0 0 0 0 -0 0</pose>
+      <pose frame=''>0 0 0 0 -0 0</pose>
       <inertial>
-        <pose>0.003532 0 0.062803 0 -0 0</pose>
+        <pose frame=''>0.003532 0 0.062803 0 -0 0</pose>
         <mass>14</mass>
         <inertia>
           <ixx>0.342401</ixx>
@@ -16,11 +16,11 @@
         </inertia>
       </inertial>
       <collision name='mobile_base_body_link_collision'>
-        <pose>0 0 -0.16 0 -0 0</pose>
+        <pose frame=''>0 0 -0.16 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_mobilebase_body.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_mobilebase_body.dae</uri>
           </mesh>
         </geometry>
         <surface>
@@ -36,19 +36,25 @@
         </surface>
       </collision>
       <visual name='mobile_base_body_link_visual'>
-        <pose>0 0 -0.16 0 -0 0</pose>
+        <pose frame=''>0 0 -0.16 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_mobilebase_body.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_mobilebase_body.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
       </visual>
       <velocity_decay/>
       <sensor name='base_laser' type='ray'>
         <always_on>1</always_on>
         <update_rate>40</update_rate>
-        <pose>0.07 0 0.031 0 -0 0</pose>
+        <pose frame=''>0.07 0 0.031 0 -0 0</pose>
         <ray>
           <scan>
             <horizontal>
@@ -70,7 +76,7 @@
           </noise>
         </ray>
         <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-          <yarpConfigurationFile>model://cer2/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>package://cer/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
       <gravity>1</gravity>
@@ -78,9 +84,9 @@
       <self_collide>0</self_collide>
     </link>
     <link name='mobile_base_l_tyre_link'>
-      <pose>0 0.139 0 0 -0 0</pose>
+      <pose frame=''>0 0.139 0 0 -0 0</pose>
       <inertial>
-        <pose>0 0.034425 9e-06 0 -0 0</pose>
+        <pose frame=''>0 0.034425 9e-06 0 -0 0</pose>
         <mass>3</mass>
         <inertia>
           <ixx>0.0200196</ixx>
@@ -92,7 +98,7 @@
         </inertia>
       </inertial>
       <collision name='mobile_base_l_tyre_link_collision'>
-        <pose>0 0.03 0 1.5708 -0 0</pose>
+        <pose frame=''>0 0.03 0 1.5708 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.06</length>
@@ -101,11 +107,11 @@
         </geometry>
       </collision>
       <visual name='mobile_base_l_tyre_link_visual'>
-        <pose>0 -0.139 -0.16 0 -0 0</pose>
+        <pose frame=''>0 -0.139 -0.16 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_mobilebase_l_tyre.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_mobilebase_l_tyre.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -120,7 +126,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-          <damping>5</damping>
+          <damping>0.5</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -139,21 +145,21 @@
       </physics>
     </joint>
     <link name='mobile_base_r_tyre_link'>
-      <pose>0 -0.139 0 0 -0 0</pose>
+      <pose frame=''>0 -0.139 0 0 -0 0</pose>
       <inertial>
-        <pose>0 -0.034425 9e-06 0 -0 0</pose>
+        <pose frame=''>0 -0.034425 9e-06 0 -0 0</pose>
         <mass>3</mass>
         <inertia>
           <ixx>0.0200196</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyy>0.0376169</iyy>
-          <iyz>8.28105e-07</iyz>
+          <iyz>8.28101e-07</iyz>
           <izz>0.0200156</izz>
         </inertia>
       </inertial>
       <collision name='mobile_base_r_tyre_link_collision'>
-        <pose>0 -0.03 0 1.5708 -0 0</pose>
+        <pose frame=''>0 -0.03 0 1.5708 -0 0</pose>
         <geometry>
           <cylinder>
             <length>0.06</length>
@@ -162,11 +168,11 @@
         </geometry>
       </collision>
       <visual name='mobile_base_r_tyre_link_visual'>
-        <pose>0 0.139 -0.16 0 -0 0</pose>
+        <pose frame=''>0 0.139 -0.16 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_mobilebase_r_tyre.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_mobilebase_r_tyre.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -181,7 +187,7 @@
           <upper>1e+16</upper>
         </limit>
         <dynamics>
-          <damping>5</damping>
+          <damping>0.5</damping>
           <friction>0</friction>
           <spring_reference>0</spring_reference>
           <spring_stiffness>0</spring_stiffness>
@@ -200,34 +206,34 @@
       </physics>
     </joint>
     <link name='torso_slider_eq_link'>
-      <pose>0.044 0 0.071 0 -0 0</pose>
+      <pose frame=''>0.044 0 0.071 0 -0 0</pose>
       <inertial>
-        <pose>0.015175 2e-06 0.244533 0 -0 0</pose>
+        <pose frame=''>0.015175 3e-06 0.244533 0 -0 0</pose>
         <mass>7.5</mass>
         <inertia>
-          <ixx>0.0978787</ixx>
-          <ixy>-1.59417e-06</ixy>
-          <ixz>0.00625707</ixz>
-          <iyy>0.0969504</iyy>
-          <iyz>-1.74702e-06</iyz>
-          <izz>0.0746113</izz>
+          <ixx>0.0978792</ixx>
+          <ixy>-1.83466e-06</ixy>
+          <ixz>0.00625726</ixz>
+          <iyy>0.0969511</iyy>
+          <iyz>0</iyz>
+          <izz>0.0746114</izz>
         </inertia>
       </inertial>
       <collision name='torso_slider_eq_link_collision'>
-        <pose>-0.044 0 -0.231 0 -0 0</pose>
+        <pose frame=''>-0.044 0 -0.231 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_torso_slider_eq.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_torso_slider_eq.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='torso_slider_eq_link_visual'>
-        <pose>-0.044 0 -0.231 0 -0 0</pose>
+        <pose frame=''>-0.044 0 -0.231 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_torso_slider_eq.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_torso_slider_eq.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -263,9 +269,9 @@
       </physics>
     </joint>
     <link name='torso_pin_eq_link'>
-      <pose>0.044 0 0.47 -3.14159 -0 0</pose>
+      <pose frame=''>0.044 0 0.47 -3.14159 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1.5</mass>
         <inertia>
           <ixx>0.000379688</ixx>
@@ -277,20 +283,20 @@
         </inertia>
       </inertial>
       <collision name='torso_pin_eq_link_collision'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_torso_pin_eq.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_torso_pin_eq.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='torso_pin_eq_link_visual'>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_torso_pin_eq.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_torso_pin_eq.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -326,9 +332,9 @@
       </physics>
     </joint>
     <link name='torso_platform_link'>
-      <pose>0.044 0 0.47 0 -0 0</pose>
+      <pose frame=''>0.044 0 0.47 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>1.5</mass>
         <inertia>
           <ixx>0.00153125</ixx>
@@ -340,20 +346,20 @@
         </inertia>
       </inertial>
       <collision name='torso_platform_link_collision'>
-        <pose>-0.044 0 -0.63 0 -0 0</pose>
+        <pose frame=''>-0.044 0 -0.63 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_torso_platform.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_torso_platform.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='torso_platform_link_visual'>
-        <pose>-0.044 0 -0.63 0 -0 0</pose>
+        <pose frame=''>-0.044 0 -0.63 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_torso_platform.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_torso_platform.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -389,9 +395,9 @@
       </physics>
     </joint>
     <link name='chest_link'>
-      <pose>0.044 0 0.47 0 -0 0</pose>
+      <pose frame=''>0.044 0 0.47 0 -0 0</pose>
       <inertial>
-        <pose>-0.033031 0 0.220198 0 -0 0</pose>
+        <pose frame=''>-0.033031 0 0.220198 0 -0 0</pose>
         <mass>13</mass>
         <inertia>
           <ixx>0.275816</ixx>
@@ -403,20 +409,20 @@
         </inertia>
       </inertial>
       <collision name='chest_link_collision'>
-        <pose>-0.044 0 -0.63 0 -0 0</pose>
+        <pose frame=''>-0.044 0 -0.63 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_chest.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_chest.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='chest_link_visual'>
-        <pose>-0.044 0 -0.63 0 -0 0</pose>
+        <pose frame=''>-0.044 0 -0.63 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_chest.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_chest.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -452,9 +458,9 @@
       </physics>
     </joint>
     <link name='l_clavicle_link'>
-      <pose>-0.04 0.177 0.84 0 -0 0</pose>
+      <pose frame=''>-0.04 0.177 0.84 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
         <inertia>
           <ixx>0.000288</ixx>
@@ -466,20 +472,20 @@
         </inertia>
       </inertial>
       <collision name='l_clavicle_link_collision'>
-        <pose>0.04 -0.177 -1 0 -0 0</pose>
+        <pose frame=''>0.04 -0.177 -1 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_clavicle.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_clavicle.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_clavicle_link_visual'>
-        <pose>0.04 -0.177 -1 0 -0 0</pose>
+        <pose frame=''>0.04 -0.177 -1 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_clavicle.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_clavicle.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -515,9 +521,9 @@
       </physics>
     </joint>
     <link name='l_shoulder_link'>
-      <pose>-0.04 0.177 0.84 0 -0 0</pose>
+      <pose frame=''>-0.04 0.177 0.84 0 -0 0</pose>
       <inertial>
-        <pose>2e-06 0.042148 -0.06332 0 -0 0</pose>
+        <pose frame=''>2e-06 0.042148 -0.06332 0 -0 0</pose>
         <mass>0.5</mass>
         <inertia>
           <ixx>0.00076143</ixx>
@@ -529,20 +535,20 @@
         </inertia>
       </inertial>
       <collision name='l_shoulder_link_collision'>
-        <pose>0.04 -0.177 -1 0 -0 0</pose>
+        <pose frame=''>0.04 -0.177 -1 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_shoulder.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_shoulder.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_shoulder_link_visual'>
-        <pose>0.04 -0.177 -1 0 -0 0</pose>
+        <pose frame=''>0.04 -0.177 -1 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_shoulder.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_shoulder.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -578,9 +584,9 @@
       </physics>
     </joint>
     <link name='l_upperarm_FT_sensor_link'>
-      <pose>-0.04 0.211 0.73 0 -0 0</pose>
+      <pose frame=''>-0.04 0.211 0.73 0 -0 0</pose>
       <inertial>
-        <pose>-0.000784 -0.000123 -0.042763 0 -0 0</pose>
+        <pose frame=''>-0.000784 -0.000123 -0.042763 0 -0 0</pose>
         <mass>0.8</mass>
         <inertia>
           <ixx>0.0012924</ixx>
@@ -592,38 +598,38 @@
         </inertia>
       </inertial>
       <collision name='l_upperarm_FT_sensor_link_collision'>
-        <pose>0.04 -0.211 -0.89 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.89 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_upperarm_sensor.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_upperarm_sensor.dae</uri>
           </mesh>
         </geometry>
       </collision>
-      <collision name='l_upperarm_FT_sensor_link_collision_l_upperarm_FT_sensor_link_1'>
-        <pose>0.04 -0.211 -0.89 0 0 0</pose>
+      <collision name='l_upperarm_FT_sensor_link_fixed_joint_lump__l_upperarm_link_collision_1'>
+        <pose frame=''>0.04 -0.211 -0.89 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_upperarm.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_upperarm.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_upperarm_FT_sensor_link_visual'>
-        <pose>0.04 -0.211 -0.89 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.89 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_upperarm_sensor.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_upperarm_sensor.dae</uri>
           </mesh>
         </geometry>
       </visual>
-      <visual name='l_upperarm_FT_sensor_link_visual_l_upperarm_FT_sensor_link_1'>
-        <pose>0.04 -0.211 -0.89 0 0 0</pose>
+      <visual name='l_upperarm_FT_sensor_link_fixed_joint_lump__l_upperarm_link_visual_1'>
+        <pose frame=''>0.04 -0.211 -0.89 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_upperarm.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_upperarm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -659,9 +665,9 @@
       </physics>
     </joint>
     <link name='l_elbow_sphere_link'>
-      <pose>-0.04 0.211 0.589 0 0 0</pose>
+      <pose frame=''>-0.04 0.211 0.589 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
         <inertia>
           <ixx>0.000128</ixx>
@@ -673,20 +679,20 @@
         </inertia>
       </inertial>
       <collision name='l_elbow_sphere_link_collision'>
-        <pose>0.04 -0.211 -0.749 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.749 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_elbow_sphere.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_elbow_sphere.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_elbow_sphere_link_visual'>
-        <pose>0.04 -0.211 -0.749 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.749 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_elbow_sphere.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_elbow_sphere.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -722,34 +728,34 @@
       </physics>
     </joint>
     <link name='l_forearm_link'>
-      <pose>-0.04 0.211 0.518 0 0 0</pose>
+      <pose frame=''>-0.04 0.211 0.518 0 0 0</pose>
       <inertial>
-        <pose>-0.000512 -0.000175 -0.072511 0 -0 0</pose>
+        <pose frame=''>-0.000512 -0.000175 -0.072511 0 -0 0</pose>
         <mass>0.6</mass>
         <inertia>
           <ixx>0.00283352</ixx>
           <ixy>0</ixy>
           <ixz>3.15449e-05</ixz>
           <iyy>0.00282953</iyy>
-          <iyz>1.03791e-07</iyz>
+          <iyz>1.0379e-07</iyz>
           <izz>0.000436673</izz>
         </inertia>
       </inertial>
       <collision name='l_forearm_link_collision'>
-        <pose>0.04 -0.211 -0.678 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.678 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_forearm.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_forearm.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_forearm_link_visual'>
-        <pose>0.04 -0.211 -0.678 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.678 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_forearm.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_forearm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -785,34 +791,34 @@
       </physics>
     </joint>
     <link name='l_wrist_slider_eq_link'>
-      <pose>-0.04 0.211 0.589 0 0 0</pose>
+      <pose frame=''>-0.04 0.211 0.589 0 0 0</pose>
       <inertial>
-        <pose>0 -5.9e-05 -0.225761 0 -0 0</pose>
+        <pose frame=''>0 -5.9e-05 -0.225761 0 -0 0</pose>
         <mass>0.3</mass>
         <inertia>
           <ixx>0.000939997</ixx>
           <ixy>0</ixy>
           <ixz>0</ixz>
           <iyy>0.00094</iyy>
-          <iyz>4.18266e-09</iyz>
+          <iyz>4.18243e-09</iyz>
           <izz>0.000220942</izz>
         </inertia>
       </inertial>
       <collision name='l_wrist_slider_eq_link_collision'>
-        <pose>0.04 -0.211 -0.749 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.749 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_wrist_slider.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_wrist_slider.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_wrist_slider_eq_link_visual'>
-        <pose>0.04 -0.211 -0.749 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.749 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_wrist_slider.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_wrist_slider.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -848,34 +854,34 @@
       </physics>
     </joint>
     <link name='l_wrist_cup_eq_link'>
-      <pose>-0.085 0.211 0.298 0 0 0</pose>
+      <pose frame=''>-0.072 0.211 0.298 0 0 0</pose>
       <inertial>
-        <pose>0.044989 -5.9e-05 -0.018146 0 -0 0</pose>
+        <pose frame=''>0.031989 -5.9e-05 -0.018146 0 -0 0</pose>
         <mass>0.2</mass>
         <inertia>
           <ixx>0.000102239</ixx>
           <ixy>0</ixy>
-          <ixz>3.78926e-08</ixz>
+          <ixz>3.78925e-08</ixz>
           <iyy>0.000102239</iyy>
           <iyz>0</iyz>
           <izz>0.000163555</izz>
         </inertia>
       </inertial>
       <collision name='l_wrist_cup_eq_link_collision'>
-        <pose>0.085 -0.211 -0.458 0 -0 0</pose>
+        <pose frame=''>0.072 -0.211 -0.458 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_wrist_cup_eq.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_wrist_cup_eq.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_wrist_cup_eq_link_visual'>
-        <pose>0.085 -0.211 -0.458 0 -0 0</pose>
+        <pose frame=''>0.072 -0.211 -0.458 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_wrist_cup_eq.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_wrist_cup_eq.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -911,34 +917,34 @@
       </physics>
     </joint>
     <link name='l_hand_root_link'>
-      <pose>-0.04 0.211 0.298 0 0 0</pose>
+      <pose frame=''>-0.04 0.211 0.298 0 0 0</pose>
       <inertial>
-        <pose>0.00019 -0.013616 -0.062338 0 -0 0</pose>
+        <pose frame=''>0.000191 -0.013614 -0.06234 0 -0 0</pose>
         <mass>0.3</mass>
         <inertia>
-          <ixx>0.000294529</ixx>
-          <ixy>1.41261e-06</ixy>
-          <ixz>6.54622e-08</ixz>
-          <iyy>0.000297776</iyy>
-          <iyz>-2.11597e-05</iyz>
+          <ixx>0.000294522</ixx>
+          <ixy>1.41029e-06</ixy>
+          <ixz>6.92026e-08</ixz>
+          <iyy>0.000297775</iyy>
+          <iyz>-2.11461e-05</iyz>
           <izz>0.000189897</izz>
         </inertia>
       </inertial>
       <collision name='l_hand_root_link_collision'>
-        <pose>0.04 -0.211 -0.458 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.458 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_root.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_root.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_hand_root_link_visual'>
-        <pose>0.04 -0.211 -0.458 0 -0 0</pose>
+        <pose frame=''>0.04 -0.211 -0.458 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_root.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_root.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -974,34 +980,34 @@
       </physics>
     </joint>
     <link name='l_hand_paddle_proximal_link'>
-      <pose>-0.04 0.198143 0.185494 0 0 0</pose>
+      <pose frame=''>-0.04 0.198143 0.185494 0 0 0</pose>
       <inertial>
-        <pose>-9.7e-05 0.010869 -0.022261 0 -0 0</pose>
+        <pose frame=''>-9.7e-05 0.010867 -0.022259 0 -0 0</pose>
         <mass>0.05</mass>
         <inertia>
           <ixx>0.0001</ixx>
-          <ixy>-6.95619e-09</ixy>
-          <ixz>1.78971e-08</ixz>
+          <ixy>-6.9439e-09</ixy>
+          <ixz>1.7549e-08</ixz>
           <iyy>0.0001</iyy>
-          <iyz>1.8186e-06</iyz>
+          <iyz>1.81902e-06</iyz>
           <izz>0.0001</izz>
         </inertia>
       </inertial>
       <collision name='l_hand_paddle_proximal_link_collision'>
-        <pose>0.04 -0.198143 -0.345494 0 -0 0</pose>
+        <pose frame=''>0.04 -0.198143 -0.345494 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_paddle_proximal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_paddle_proximal.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_hand_paddle_proximal_link_visual'>
-        <pose>0.04 -0.198143 -0.345494 0 -0 0</pose>
+        <pose frame=''>0.04 -0.198143 -0.345494 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_paddle_proximal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_paddle_proximal.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1037,34 +1043,34 @@
       </physics>
     </joint>
     <link name='l_hand_paddle_distal_link'>
-      <pose>-0.04 0.214471 0.146748 0 0 0</pose>
+      <pose frame=''>-0.04 0.214471 0.146748 0 0 0</pose>
       <inertial>
-        <pose>0.001321 0.005592 -0.020601 0 -0 0</pose>
+        <pose frame=''>0.001321 0.005592 -0.020601 0 -0 0</pose>
         <mass>0.05</mass>
         <inertia>
           <ixx>0.0001</ixx>
-          <ixy>-1.94937e-07</ixy>
-          <ixz>9.01188e-07</ixz>
+          <ixy>-1.94983e-07</ixy>
+          <ixz>9.01259e-07</ixz>
           <iyy>0.0001</iyy>
-          <iyz>6.79824e-07</iyz>
+          <iyz>6.79853e-07</iyz>
           <izz>0.0001</izz>
         </inertia>
       </inertial>
       <collision name='l_hand_paddle_distal_link_collision'>
-        <pose>0.04 -0.214471 -0.306748 0 -0 0</pose>
+        <pose frame=''>0.04 -0.214471 -0.306748 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_paddle_distal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_paddle_distal.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_hand_paddle_distal_link_visual'>
-        <pose>0.04 -0.214471 -0.306748 0 -0 0</pose>
+        <pose frame=''>0.04 -0.214471 -0.306748 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_paddle_distal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_paddle_distal.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1100,34 +1106,34 @@
       </physics>
     </joint>
     <link name='l_hand_thumb_proximal_link'>
-      <pose>-0.04 0.171352 0.222282 0 0 0</pose>
+      <pose frame=''>-0.04 0.171352 0.222282 0 0 0</pose>
       <inertial>
-        <pose>0.002515 -0.017937 -0.00316 0 -0 0</pose>
+        <pose frame=''>0.002515 -0.017936 -0.003159 0 -0 0</pose>
         <mass>0.05</mass>
         <inertia>
           <ixx>0.0001</ixx>
-          <ixy>-1.73073e-09</ixy>
-          <ixz>0</ixz>
+          <ixy>-1.50858e-09</ixy>
+          <ixz>3.04948e-10</ixz>
           <iyy>0.0001</iyy>
-          <iyz>-2.63449e-06</iyz>
+          <iyz>-2.63475e-06</iyz>
           <izz>0.0001</izz>
         </inertia>
       </inertial>
       <collision name='l_hand_thumb_proximal_link_collision'>
-        <pose>0.04 -0.171352 -0.382282 0 -0 0</pose>
+        <pose frame=''>0.04 -0.171352 -0.382282 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_thumb_proximal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_thumb_proximal.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_hand_thumb_proximal_link_visual'>
-        <pose>0.04 -0.171352 -0.382282 0 -0 0</pose>
+        <pose frame=''>0.04 -0.171352 -0.382282 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_thumb_proximal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_thumb_proximal.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1163,34 +1169,34 @@
       </physics>
     </joint>
     <link name='l_hand_thumb_distal_link'>
-      <pose>-0.039 0.130827 0.211296 0 0 0</pose>
+      <pose frame=''>-0.039745 0.130827 0.211296 0 0 0</pose>
       <inertial>
-        <pose>0.001448 -0.014529 -0.005865 0 -0 0</pose>
+        <pose frame=''>0.002193 -0.014529 -0.005865 0 -0 0</pose>
         <mass>0.05</mass>
         <inertia>
           <ixx>0.0001</ixx>
-          <ixy>1.95775e-10</ixy>
-          <ixz>4.37768e-10</ixz>
+          <ixy>1.50893e-10</ixy>
+          <ixz>4.0488e-10</ixz>
           <iyy>0.0001</iyy>
-          <iyz>-9.14031e-07</iyz>
+          <iyz>-9.14021e-07</iyz>
           <izz>0.0001</izz>
         </inertia>
       </inertial>
       <collision name='l_hand_thumb_distal_link_collision'>
-        <pose>0.039 -0.130827 -0.371296 0 -0 0</pose>
+        <pose frame=''>0.039745 -0.130827 -0.371296 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_thumb_distal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_thumb_distal.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='l_hand_thumb_distal_link_visual'>
-        <pose>0.039 -0.130827 -0.371296 0 -0 0</pose>
+        <pose frame=''>0.039745 -0.130827 -0.371296 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_l_hand_thumb_distal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_l_hand_thumb_distal.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1226,34 +1232,34 @@
       </physics>
     </joint>
     <link name='neck_link'>
-      <pose>-0.05 -0 0.87 0 -0 0</pose>
+      <pose frame=''>-0.05 -0 0.87 0 -0 0</pose>
       <inertial>
-        <pose>-0.000322 0 0.07756 0 -0 0</pose>
+        <pose frame=''>-0.000322 0 0.07756 0 -0 0</pose>
         <mass>1.4</mass>
         <inertia>
           <ixx>0.00429793</ixx>
           <ixy>0</ixy>
           <ixz>-0.000592817</ixz>
           <iyy>0.00443784</iyy>
-          <iyz>-8.14492e-08</iyz>
+          <iyz>-6.85477e-08</iyz>
           <izz>0.000419904</izz>
         </inertia>
       </inertial>
       <collision name='neck_link_collision'>
-        <pose>0.05 0 -1.03 0 -0 0</pose>
+        <pose frame=''>0.05 0 -1.03 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_neck.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_neck.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='neck_link_visual'>
-        <pose>0.05 0 -1.03 0 -0 0</pose>
+        <pose frame=''>0.05 0 -1.03 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_neck.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_neck.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1289,35 +1295,27 @@
       </physics>
     </joint>
     <link name='head_link'>
-      <pose>-0.038321 -0 1.02838 0 -0 0</pose>
+      <pose frame=''>-0.038321 -0 1.02838 0 -0 0</pose>
       <inertial>
-        <pose>0.030148 -4e-06 -0.00035 0 -0 0</pose>
+        <pose frame=''>0.030149 -2e-06 -0.00035 0 -0 0</pose>
         <mass>2</mass>
         <inertia>
-          <ixx>0.0106535</ixx>
-          <ixy>0</ixy>
-          <ixz>0.00027411</ixz>
-          <iyy>0.00398487</iyy>
-          <iyz>1.77943e-07</iyz>
-          <izz>0.00944361</izz>
+          <ixx>0.0106536</ixx>
+          <ixy>-7.34817e-08</ixy>
+          <ixz>0.000274098</ixz>
+          <iyy>0.00398482</iyy>
+          <iyz>1.64063e-07</iyz>
+          <izz>0.00944369</izz>
         </inertia>
       </inertial>
       <collision name='head_link_collision'>
-        <pose>0.038321 0 -1.18838 0 -0 0</pose>
+        <pose frame=''>0.038321 0 -1.18838 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_head.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_head.dae</uri>
           </mesh>
         </geometry>
-        <surface>
-          <contact>
-            <ode/>
-          </contact>
-          <friction>
-            <ode/>
-          </friction>
-        </surface>
         <surface>
           <contact>
             <ode/>
@@ -1328,21 +1326,27 @@
         </surface>
       </collision>
       <visual name='head_link_visual'>
-        <pose>0.038321 0 -1.18838 0 -0 0</pose>
+        <pose frame=''>0.038321 0 -1.18838 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_head.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_head.dae</uri>
           </mesh>
         </geometry>
+        <material>
+          <script>
+            <uri>__default__</uri>
+            <name>__default__</name>
+          </script>
+        </material>
       </visual>
       <velocity_decay/>
       <sensor name='multicamera_sensor' type='multicamera'>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
-        <pose>0.051582 0 -0.06747 0 -0 0</pose>
+        <pose frame=''>0.052167 0 -0.06748 -1.5708 -0 -1.5708</pose>
         <camera name='left_camera'>
-          <pose>0 0.0325 0 0 -0 0</pose>
+          <pose frame=''>0 0.0325 0 0 -0 0</pose>
           <horizontal_fov>1.5708</horizontal_fov>
           <image>
             <width>640</width>
@@ -1354,7 +1358,7 @@
           </clip>
         </camera>
         <camera name='right_camera'>
-          <pose>0 -0.0325 0 0 -0 0</pose>
+          <pose frame=''>0 -0.0325 0 0 -0 0</pose>
           <horizontal_fov>1.5708</horizontal_fov>
           <image>
             <width>640</width>
@@ -1366,21 +1370,27 @@
           </clip>
         </camera>
         <plugin name='multicamera_plugin' filename='libgazebo_yarp_multicamera.so'>
-          <yarpConfigurationFile>model://cer2/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>package://cer/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
-      <gravity>1</gravity>
       <velocity_decay/>
-      <self_collide>0</self_collide>
-      <sensor name='asus_xtion' type='depth'>
+      <sensor name='asus_xtion_depth' type='depth'>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
-        <pose>0.06988 0 0.04403 0 -0 0</pose>
+        <pose frame=''>0.059881 0.044487 0.04402 -1.5708 -0 -1.5708</pose>
         <camera name='__default__'>
           <horizontal_fov>1.02259</horizontal_fov>
+          <distortion>
+            <k1>0</k1>
+            <k2>0</k2>
+            <k3>0</k3>
+            <p1>0</p1>
+            <p2>0</p2>
+            <center>319.5 239.5</center>
+          </distortion>
           <image>
-            <width>320</width>
-            <height>240</height>
+            <width>640</width>
+            <height>480</height>
             <format>R8G8B8</format>
           </image>
           <clip>
@@ -1389,7 +1399,38 @@
           </clip>
         </camera>
         <plugin name='depth_camera_plugin' filename='libgazebo_yarp_depthCamera.so'>
-          <yarpConfigurationFile>model://cer2/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>package://cer/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
+        </plugin>
+      </sensor>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <self_collide>0</self_collide>
+      <sensor name='asus_xtion_rgb' type='camera'>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <pose frame=''>0.059881 0.018487 0.04402 -1.5708 -0 -1.5708</pose>
+        <camera name='__default__'>
+          <horizontal_fov>1.02259</horizontal_fov>
+          <distortion>
+            <k1>0</k1>
+            <k2>0</k2>
+            <k3>0</k3>
+            <p1>0</p1>
+            <p2>0</p2>
+            <center>319.5 239.5</center>
+          </distortion>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>3000</far>
+          </clip>
+        </camera>
+        <plugin name='xtion_camera_rgb_plugin' filename='libgazebo_yarp_camera.so'>
+          <yarpConfigurationFile>package://cer/conf/gazebo_cer_xtion_camera_rgb.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
     </link>
@@ -1424,9 +1465,9 @@
       </physics>
     </joint>
     <link name='r_clavicle_link'>
-      <pose>-0.04 -0.177 0.84 0 -0 0</pose>
+      <pose frame=''>-0.04 -0.177 0.84 0 -0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
         <inertia>
           <ixx>0.000288</ixx>
@@ -1438,20 +1479,20 @@
         </inertia>
       </inertial>
       <collision name='r_clavicle_link_collision'>
-        <pose>0.04 0.177 -1 0 -0 0</pose>
+        <pose frame=''>0.04 0.177 -1 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_clavicle.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_clavicle.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_clavicle_link_visual'>
-        <pose>0.04 0.177 -1 0 -0 0</pose>
+        <pose frame=''>0.04 0.177 -1 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_clavicle.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_clavicle.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1487,9 +1528,9 @@
       </physics>
     </joint>
     <link name='r_shoulder_link'>
-      <pose>-0.04 -0.177 0.84 0 -0 0</pose>
+      <pose frame=''>-0.04 -0.177 0.84 0 -0 0</pose>
       <inertial>
-        <pose>2e-06 -0.042148 -0.06332 0 -0 0</pose>
+        <pose frame=''>2e-06 -0.042148 -0.06332 0 -0 0</pose>
         <mass>0.5</mass>
         <inertia>
           <ixx>0.00076143</ixx>
@@ -1501,20 +1542,20 @@
         </inertia>
       </inertial>
       <collision name='r_shoulder_link_collision'>
-        <pose>0.04 0.177 -1 0 -0 0</pose>
+        <pose frame=''>0.04 0.177 -1 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_shoulder.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_shoulder.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_shoulder_link_visual'>
-        <pose>0.04 0.177 -1 0 -0 0</pose>
+        <pose frame=''>0.04 0.177 -1 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_shoulder.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_shoulder.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1550,9 +1591,9 @@
       </physics>
     </joint>
     <link name='r_upperarm_FT_sensor_link'>
-      <pose>-0.04 -0.211 0.73 0 -0 0</pose>
+      <pose frame=''>-0.04 -0.211 0.73 0 -0 0</pose>
       <inertial>
-        <pose>-0.000784 0.000123 -0.042763 0 -0 0</pose>
+        <pose frame=''>-0.000784 0.000123 -0.042763 0 -0 0</pose>
         <mass>0.8</mass>
         <inertia>
           <ixx>0.0012924</ixx>
@@ -1564,38 +1605,38 @@
         </inertia>
       </inertial>
       <collision name='r_upperarm_FT_sensor_link_collision'>
-        <pose>0.04 0.211 -0.89 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.89 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_upperarm_sensor.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_upperarm_sensor.dae</uri>
           </mesh>
         </geometry>
       </collision>
-      <collision name='r_upperarm_FT_sensor_link_collision_r_upperarm_FT_sensor_link_1'>
-        <pose>0.04 0.211 -0.89 0 0 0</pose>
+      <collision name='r_upperarm_FT_sensor_link_fixed_joint_lump__r_upperarm_link_collision_1'>
+        <pose frame=''>0.04 0.211 -0.89 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_upperarm.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_upperarm.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_upperarm_FT_sensor_link_visual'>
-        <pose>0.04 0.211 -0.89 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.89 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_upperarm_sensor.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_upperarm_sensor.dae</uri>
           </mesh>
         </geometry>
       </visual>
-      <visual name='r_upperarm_FT_sensor_link_visual_r_upperarm_FT_sensor_link_1'>
-        <pose>0.04 0.211 -0.89 0 0 0</pose>
+      <visual name='r_upperarm_FT_sensor_link_fixed_joint_lump__r_upperarm_link_visual_1'>
+        <pose frame=''>0.04 0.211 -0.89 0 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_upperarm.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_upperarm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1631,9 +1672,9 @@
       </physics>
     </joint>
     <link name='r_elbow_sphere_link'>
-      <pose>-0.04 -0.211 0.589 0 0 0</pose>
+      <pose frame=''>-0.04 -0.211 0.589 0 0 0</pose>
       <inertial>
-        <pose>0 0 0 0 -0 0</pose>
+        <pose frame=''>0 0 0 0 -0 0</pose>
         <mass>0.2</mass>
         <inertia>
           <ixx>0.000128</ixx>
@@ -1645,20 +1686,20 @@
         </inertia>
       </inertial>
       <collision name='r_elbow_sphere_link_collision'>
-        <pose>0.04 0.211 -0.749 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.749 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_elbow_sphere.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_elbow_sphere.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_elbow_sphere_link_visual'>
-        <pose>0.04 0.211 -0.749 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.749 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_elbow_sphere.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_elbow_sphere.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1694,9 +1735,9 @@
       </physics>
     </joint>
     <link name='r_forearm_link'>
-      <pose>-0.04 -0.211 0.518 0 0 0</pose>
+      <pose frame=''>-0.04 -0.211 0.518 0 0 0</pose>
       <inertial>
-        <pose>-0.000512 0.000175 -0.072511 0 -0 0</pose>
+        <pose frame=''>-0.000512 0.000175 -0.072511 0 -0 0</pose>
         <mass>0.6</mass>
         <inertia>
           <ixx>0.00283352</ixx>
@@ -1708,20 +1749,20 @@
         </inertia>
       </inertial>
       <collision name='r_forearm_link_collision'>
-        <pose>0.04 0.211 -0.678 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.678 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_forearm.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_forearm.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_forearm_link_visual'>
-        <pose>0.04 0.211 -0.678 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.678 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_forearm.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_forearm.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1757,9 +1798,9 @@
       </physics>
     </joint>
     <link name='r_wrist_slider_eq_link'>
-      <pose>-0.04 -0.211 0.589 0 0 0</pose>
+      <pose frame=''>-0.04 -0.211 0.589 0 0 0</pose>
       <inertial>
-        <pose>0 5.9e-05 -0.225759 0 -0 0</pose>
+        <pose frame=''>0 5.9e-05 -0.225759 0 -0 0</pose>
         <mass>0.3</mass>
         <inertia>
           <ixx>0.00094001</ixx>
@@ -1771,20 +1812,20 @@
         </inertia>
       </inertial>
       <collision name='r_wrist_slider_eq_link_collision'>
-        <pose>0.04 0.211 -0.749 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.749 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_wrist_slider.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_wrist_slider.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_wrist_slider_eq_link_visual'>
-        <pose>0.04 0.211 -0.749 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.749 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_wrist_slider.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_wrist_slider.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1820,34 +1861,34 @@
       </physics>
     </joint>
     <link name='r_wrist_cup_eq_link'>
-      <pose>-0.085 -0.211 0.298 0 -0 1.5708</pose>
+      <pose frame=''>-0.072 -0.211 0.298 0 -0 1.5708</pose>
       <inertial>
-        <pose>-1.1e-05 -0.044941 -0.018146 0 -0 0</pose>
+        <pose frame=''>-1.1e-05 -0.031941 -0.018146 0 -0 0</pose>
         <mass>0.2</mass>
         <inertia>
           <ixx>0.000102239</ixx>
           <ixy>0</ixy>
-          <ixz>3.78926e-08</ixz>
+          <ixz>3.78925e-08</ixz>
           <iyy>0.000102239</iyy>
           <iyz>0</iyz>
           <izz>0.000163555</izz>
         </inertia>
       </inertial>
       <collision name='r_wrist_cup_eq_link_collision'>
-        <pose>0.04 0.166 -0.458 0 -0 0</pose>
+        <pose frame=''>0.04 0.179 -0.458 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_wrist_cup_eq.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_wrist_cup_eq.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_wrist_cup_eq_link_visual'>
-        <pose>0.04 0.166 -0.458 0 -0 0</pose>
+        <pose frame=''>0.04 0.179 -0.458 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_wrist_cup_eq.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_wrist_cup_eq.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1883,34 +1924,34 @@
       </physics>
     </joint>
     <link name='r_hand_root_link'>
-      <pose>-0.04 -0.211 0.298 0 0 0</pose>
+      <pose frame=''>-0.04 -0.211 0.298 0 0 0</pose>
       <inertial>
-        <pose>0.00019 0.013616 -0.062338 0 -0 0</pose>
+        <pose frame=''>0.000191 0.013614 -0.06234 0 -0 0</pose>
         <mass>0.3</mass>
         <inertia>
-          <ixx>0.000294529</ixx>
-          <ixy>-1.41275e-06</ixy>
-          <ixz>6.52513e-08</ixz>
-          <iyy>0.000297776</iyy>
-          <iyz>2.11597e-05</iyz>
+          <ixx>0.000294522</ixx>
+          <ixy>-1.41036e-06</ixy>
+          <ixz>6.91732e-08</ixz>
+          <iyy>0.000297774</iyy>
+          <iyz>2.11461e-05</iyz>
           <izz>0.000189897</izz>
         </inertia>
       </inertial>
       <collision name='r_hand_root_link_collision'>
-        <pose>0.04 0.211 -0.458 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.458 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_root.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_root.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_hand_root_link_visual'>
-        <pose>0.04 0.211 -0.458 0 -0 0</pose>
+        <pose frame=''>0.04 0.211 -0.458 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_root.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_root.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1946,34 +1987,34 @@
       </physics>
     </joint>
     <link name='r_hand_paddle_proximal_link'>
-      <pose>-0.04 -0.198143 0.185494 0 0 0</pose>
+      <pose frame=''>-0.04 -0.198143 0.185494 0 0 0</pose>
       <inertial>
-        <pose>-9.7e-05 -0.010868 -0.022261 0 -0 0</pose>
+        <pose frame=''>-9.7e-05 -0.010867 -0.022258 0 -0 0</pose>
         <mass>0.05</mass>
         <inertia>
           <ixx>0.0001</ixx>
-          <ixy>6.95539e-09</ixy>
-          <ixz>1.79134e-08</ixz>
+          <ixy>6.93652e-09</ixy>
+          <ixz>1.75564e-08</ixz>
           <iyy>0.0001</iyy>
-          <iyz>-1.81857e-06</iyz>
+          <iyz>-1.81901e-06</iyz>
           <izz>0.0001</izz>
         </inertia>
       </inertial>
       <collision name='r_hand_paddle_proximal_link_collision'>
-        <pose>0.04 0.198143 -0.345494 0 -0 0</pose>
+        <pose frame=''>0.04 0.198143 -0.345494 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_paddle_proximal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_paddle_proximal.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_hand_paddle_proximal_link_visual'>
-        <pose>0.04 0.198143 -0.345494 0 -0 0</pose>
+        <pose frame=''>0.04 0.198143 -0.345494 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_paddle_proximal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_paddle_proximal.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -2009,34 +2050,34 @@
       </physics>
     </joint>
     <link name='r_hand_paddle_distal_link'>
-      <pose>-0.04 -0.214471 0.146748 0 0 0</pose>
+      <pose frame=''>-0.04 -0.214471 0.146748 0 0 0</pose>
       <inertial>
-        <pose>0.001321 -0.005592 -0.020601 0 -0 0</pose>
+        <pose frame=''>0.001321 -0.005592 -0.020601 0 -0 0</pose>
         <mass>0.05</mass>
         <inertia>
           <ixx>0.0001</ixx>
-          <ixy>1.94937e-07</ixy>
-          <ixz>9.01188e-07</ixz>
+          <ixy>1.94983e-07</ixy>
+          <ixz>9.0126e-07</ixz>
           <iyy>0.0001</iyy>
-          <iyz>-6.79824e-07</iyz>
+          <iyz>-6.79853e-07</iyz>
           <izz>0.0001</izz>
         </inertia>
       </inertial>
       <collision name='r_hand_paddle_distal_link_collision'>
-        <pose>0.04 0.214471 -0.306748 0 -0 0</pose>
+        <pose frame=''>0.04 0.214471 -0.306748 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_paddle_distal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_paddle_distal.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_hand_paddle_distal_link_visual'>
-        <pose>0.04 0.214471 -0.306748 0 -0 0</pose>
+        <pose frame=''>0.04 0.214471 -0.306748 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_paddle_distal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_paddle_distal.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -2072,34 +2113,34 @@
       </physics>
     </joint>
     <link name='r_hand_thumb_proximal_link'>
-      <pose>-0.04 -0.171352 0.222282 0 0 0</pose>
+      <pose frame=''>-0.04 -0.171352 0.222282 0 0 0</pose>
       <inertial>
-        <pose>0.002515 0.017937 -0.003159 0 -0 0</pose>
+        <pose frame=''>0.002515 0.017936 -0.003159 0 -0 0</pose>
         <mass>0.05</mass>
         <inertia>
           <ixx>0.0001</ixx>
-          <ixy>1.66632e-09</ixy>
-          <ixz>0</ixz>
+          <ixy>1.49367e-09</ixy>
+          <ixz>3.12525e-10</ixz>
           <iyy>0.0001</iyy>
-          <iyz>2.63491e-06</iyz>
+          <iyz>2.63475e-06</iyz>
           <izz>0.0001</izz>
         </inertia>
       </inertial>
       <collision name='r_hand_thumb_proximal_link_collision'>
-        <pose>0.04 0.171352 -0.382282 0 -0 0</pose>
+        <pose frame=''>0.04 0.171352 -0.382282 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_thumb_proximal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_thumb_proximal.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_hand_thumb_proximal_link_visual'>
-        <pose>0.04 0.171352 -0.382282 0 -0 0</pose>
+        <pose frame=''>0.04 0.171352 -0.382282 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_thumb_proximal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_thumb_proximal.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -2135,34 +2176,34 @@
       </physics>
     </joint>
     <link name='r_hand_thumb_distal_link'>
-      <pose>-0.04 -0.130827 0.211296 0 0 0</pose>
+      <pose frame=''>-0.04 -0.130827 0.211296 0 0 0</pose>
       <inertial>
-        <pose>0.002448 0.014529 -0.005865 0 -0 0</pose>
+        <pose frame=''>0.002448 0.014529 -0.005865 0 -0 0</pose>
         <mass>0.05</mass>
         <inertia>
-          <ixx>3.85164e-06</ixx>
-          <ixy>-1.95782e-10</ixy>
-          <ixz>4.37771e-10</ixz>
+          <ixx>3.85163e-06</ixx>
+          <ixy>-1.50194e-10</ixy>
+          <ixz>4.04682e-10</ixz>
           <iyy>7.40388e-06</iyy>
-          <iyz>9.14031e-07</iyz>
-          <izz>8.52419e-06</izz>
+          <iyz>9.14021e-07</iyz>
+          <izz>8.52416e-06</izz>
         </inertia>
       </inertial>
       <collision name='r_hand_thumb_distal_link_collision'>
-        <pose>0.04 0.130827 -0.371296 0 -0 0</pose>
+        <pose frame=''>0.04 0.130827 -0.371296 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_thumb_distal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_thumb_distal.dae</uri>
           </mesh>
         </geometry>
       </collision>
       <visual name='r_hand_thumb_distal_link_visual'>
-        <pose>0.04 0.130827 -0.371296 0 -0 0</pose>
+        <pose frame=''>0.04 0.130827 -0.371296 0 -0 0</pose>
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer2/meshes/dae/sim_cer_r_hand_thumb_distal.dae</uri>
+            <uri>model://cer/meshes/dae/sim_cer_r_hand_thumb_distal.dae</uri>
           </mesh>
         </geometry>
       </visual>
@@ -2197,62 +2238,61 @@
         </ode>
       </physics>
     </joint>
-
     <plugin name='controlboard_torso' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_torso_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_upper_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_left_upper_arm.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_upper_arm.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_wrist' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_left_wrist.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_wrist.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_wrist_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_upper_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_upper_arm.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_upper_arm.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_wrist' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_wrist.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_wrist.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_wrist_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
-    </plugin>
-    <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_head.ini</yarpConfigurationFile>
-    </plugin>
-    <plugin name='controlboard_left_hand' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_left_hand.ini</yarpConfigurationFile>
-    </plugin>
-    <plugin name='controlboard_right_hand' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_hand.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer2/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_left_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer2/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+    <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_head.ini</yarpConfigurationFile>
+    </plugin>
+    <plugin name='controlboard_left_hand' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_hand.ini</yarpConfigurationFile>
+    </plugin>
+    <plugin name='controlboard_right_hand' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_hand.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='mais_left_hand' filename='libgazebo_yarp_maissensor.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_left_hand_mais.ini</yarpConfigurationFile>
-    </plugin>   
+      <yarpConfigurationFile>package://cer2/conf/gazebo_cer_left_hand_mais.ini</yarpConfigurationFile>
+    </plugin>
     <plugin name='mais_right_hand' filename='libgazebo_yarp_maissensor.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_right_hand_mais.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer2/conf/gazebo_cer_right_hand_mais.ini</yarpConfigurationFile>
+    </plugin>
+    <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_all' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer2/conf/gazebo_cer_all.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/gazebo_cer_all.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
-      <yarpConfigurationFile>model://cer2/conf/worldInterface.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>package://cer/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
     <static>0</static>
-    <pose>0 0 0.16 0 -0 0</pose>
+    <pose frame=''>0 0 0.16 0 -0 0</pose>
   </model>
 </sdf>

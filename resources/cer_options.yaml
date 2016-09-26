@@ -453,8 +453,19 @@ XMLBlobs:
     </gazebo>
   - |
     <gazebo reference="mobile_base_body_link">
-      <mu1>0.0</mu1>
-      <mu2>0.0</mu2>
+        <collision>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.0</mu>
+                <mu2>0.0</mu2>
+              </ode>
+            </friction>
+          </surface>
+        </collision>
     </gazebo>
   - |
     <gazebo>
