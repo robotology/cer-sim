@@ -19,6 +19,8 @@ RESOURCES_CONFIGURATION_DIRECTORY = os.path.join(RESOURCES_DIRECTORY, 'conf')
 # Gazebo parameters
 GAZEBO_DIRECTORY = os.path.join(workingDirectory, 'gazebo', 'cer')
 SDF_FILENAME = 'cer.sdf'
+GAZEBO_CONFIGURATION_FILENAME = 'model.config'
+GAZEBO_CONFIGURATION_FILE_PATH = os.path.join(RESOURCES_DIRECTORY, GAZEBO_CONFIGURATION_FILENAME)
 
 # RViz parameters
 RVIZ_DIRECTORY = os.path.join(workingDirectory, 'catkin_ws', 'src', 'cer_rviz', 'urdf') 
@@ -118,6 +120,7 @@ if os.path.exists(GAZEBO_DIRECTORY):
 shutil.copytree(RESOURCES_MESH_DIRECTORY, gazebo_mesh_directory)
 os.mkdir(gazebo_configuration_directory)
 copyMultipleFiles(RESOURCES_CONFIGURATION_DIRECTORY, gazebo_configuration_directory)
+shutil.copy(GAZEBO_CONFIGURATION_FILE_PATH, GAZEBO_DIRECTORY)
 sdf_file = open(gazebo_sdf_filepath,"w")
 sdf_file.write(sdf)
 sdf_file.close()
