@@ -7048,7 +7048,7 @@ solid SIM_CER_MOBILEBASE_BODY
       vertex 4.061845e+01 -4.045645e+01 1.860000e+02
     endloop
   endfacet
-  facet normal 5.876309e-01 8.091291e-01 -4.128647e-15
+  facet normal 5.876309e-01 8.091291e-01 0.000000e+00
     outer loop
       vertex 4.061845e+01 -4.045645e+01 1.860000e+02
       vertex 1.461428e+02 -1.170937e+02 1.910103e+02
@@ -7167,14 +7167,14 @@ solid SIM_CER_MOBILEBASE_BODY
       vertex 1.434808e+02 9.964881e+01 1.860000e+02
     endloop
   endfacet
-  facet normal 5.876309e-01 -8.091291e-01 -3.084623e-14
+  facet normal 5.876309e-01 -8.091291e-01 -1.621812e-14
     outer loop
       vertex 1.447206e+02 1.160608e+02 1.960000e+02
       vertex 1.473445e+02 1.179663e+02 1.860000e+02
       vertex 1.461428e+02 1.170937e+02 1.910103e+02
     endloop
   endfacet
-  facet normal 5.876309e-01 -8.091291e-01 1.413801e-15
+  facet normal 5.876309e-01 -8.091291e-01 2.120702e-15
     outer loop
       vertex 4.061845e+01 4.045645e+01 1.960000e+02
       vertex 1.473445e+02 1.179663e+02 1.860000e+02

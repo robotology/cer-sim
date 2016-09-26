@@ -1,0 +1,72 @@
+
+*************** to generate URDF *****************
+simmechanics_to_urdf SIM_CER_ROBOT.xml --yaml cer_options.yaml --csv-joint cer_joint_parameters.csv --output xml --outputfile cer.urdf
+
+** to visualize **
+urdf_to_graphiz my_robot.urdf
+
+*************** to generate DH *****************
+urdf2dh cer.urdf torso_tripod_root oriented_r_wrist_tripodbase r_wrist_tripod_base_chain_x_back.ini
+urdf2dh cer.urdf torso_tripod_root oriented_l_wrist_tripodbase l_wrist_tripod_base_chain_x_back.ini
+
+urdf2dh cer.urdf torso_tripod_root head_leopard_right r_camera_chain.ini
+urdf2dh cer.urdf torso_tripod_root head_leopard_left l_camera_chain.ini
+urdf2dh cer.urdf torso_tripod_root head_leopard_cyclopic cyclopic_camera_chain.ini
+urdf2dh cer.urdf torso_tripod_root depth xtion_depth_chain.ini
+urdf2dh cer.urdf torso_tripod_root depth_rgb xtion_rgb_chain.ini
+urdf2dh cer.urdf torso_tripod_root depth_center xtion_center_chain.ini
+urdf2dh cer.urdf torso_tripod_root gaze gaze_chain.ini
+
+deprecated: urdf2dh cer.urdf oriented_xfw_ylf_zup_torso_platform oriented_r_wrist_tripodbase r_wrist_tripod_base_chain_x_forw.ini
+deprecated: urdf2dh cer.urdf oriented_xfw_ylf_zup_torso_platform oriented_l_wrist_tripodbase l_wrist_tripod_base_chain_x_forw.ini
+
+*************** to generate SDF *****************
+gz sdf -p cer.urdf >> cer.sdf
+
+add:
+- pose
+- remove doubled section about friction
+
+
+  - linkName: mobile_base_body_link
+    geometricShape:
+      shape: sphere
+      radius: 0.0345
+      origin: "0.170 0.0 -0.125 0.0 0.0 0.0"
+    geometricShape:
+      shape: sphere
+      radius: 0.0345
+      origin: "0.155 0.0685 -0.125 0.0 0.0 0.0"
+    geometricShape:
+      shape: sphere
+      radius: 0.0345
+      origin: "0.155 -0.0685 -0.125 0.0 0.0 0.0"
+
+
+<collision>
+               <origin xyz="0 0 0.128" rpy="0 0 0" />
+               <geometry>
+                    <box size="0.0905 0.136 0.156" />
+                    </geometry>
+               <contact_coefficients mu="1" kp="1.0" kd="1.0"/>      
+</collision>    
+
+
+
+
+Actually, you should never edit an installed package, instead you should install a forked version of package.
+
+If you need to edit the code frequently, you had better not install the package via pip install something and edit the code in '.../site_packages/...'
+
+Instead you should put the source code under a development directory, and install it with
+
+python setup.py develop
+# or
+pip install -e path/to/SomePackage
+# Or use a vcs at the first place
+$ pip install -e git+https://github.com/lakshmivyas/hyde.git#egg=hyde
+
+Put your changes in a version control system, and tell pip to install it explicitly.
+
+Reference: Edit mode
+

@@ -2029,9 +2029,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -2.581654e+01 -1.271172e+02 3.780755e+02
     endloop
   endfacet
-  facet normal 1.731252e-01 3.920794e-01 9.034940e-01
+  facet normal 1.732545e-01 3.949063e-01 9.022371e-01
     outer loop
-      vertex -2.247548e+01 -1.116674e+02 3.708285e+02
+      vertex -2.283097e+01 -1.106476e+02 3.703914e+02
       vertex -2.301970e+01 -1.273620e+02 3.777436e+02
       vertex -2.006827e+01 -1.276859e+02 3.773186e+02
     endloop
@@ -2043,9 +2043,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -2.301970e+01 -1.273620e+02 3.777436e+02
     endloop
   endfacet
-  facet normal 2.096104e-02 4.025039e-01 9.151783e-01
+  facet normal 1.651214e-02 4.024240e-01 9.153045e-01
     outer loop
-      vertex -2.247548e+01 -1.116674e+02 3.708285e+02
+      vertex -2.283097e+01 -1.106476e+02 3.703914e+02
       vertex -2.357779e+01 -1.090146e+02 3.696870e+02
       vertex -2.301970e+01 -1.273620e+02 3.777436e+02
     endloop
@@ -2064,10 +2064,17 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.992804e+01 -1.277033e+02 3.772966e+02
     endloop
   endfacet
-  facet normal -1.631279e-01 3.493267e-01 9.226918e-01
+  facet normal -1.215638e-01 3.568522e-01 9.262174e-01
+    outer loop
+      vertex -2.213870e+01 -1.128261e+02 3.713217e+02
+      vertex -2.283097e+01 -1.106476e+02 3.703914e+02
+      vertex -2.006827e+01 -1.276859e+02 3.773186e+02
+    endloop
+  endfacet
+  facet normal -1.790858e-01 3.466301e-01 9.207475e-01
     outer loop
       vertex -2.152807e+01 -1.155475e+02 3.724649e+02
-      vertex -2.247548e+01 -1.116674e+02 3.708285e+02
+      vertex -2.213870e+01 -1.128261e+02 3.713217e+02
       vertex -2.006827e+01 -1.276859e+02 3.773186e+02
     endloop
   endfacet
@@ -2295,16 +2302,16 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.803000e+01 -1.278346e+02 3.765124e+02
     endloop
   endfacet
-  facet normal 4.262914e-01 3.620900e-01 8.289551e-01
+  facet normal 4.263380e-01 3.617384e-01 8.290846e-01
     outer loop
-      vertex -1.805366e+01 -1.241840e+02 3.748364e+02
+      vertex -1.802036e+01 -1.245099e+02 3.749632e+02
       vertex -1.979232e+01 -1.277200e+02 3.772750e+02
       vertex -1.772507e+01 -1.278215e+02 3.762562e+02
     endloop
   endfacet
-  facet normal 4.181008e-01 3.673859e-01 8.307944e-01
+  facet normal 4.182578e-01 3.673762e-01 8.307197e-01
     outer loop
-      vertex -1.805366e+01 -1.241840e+02 3.748364e+02
+      vertex -1.802036e+01 -1.245099e+02 3.749632e+02
       vertex -2.024489e+01 -1.239457e+02 3.758337e+02
       vertex -1.979232e+01 -1.277200e+02 3.772750e+02
     endloop
@@ -2316,9 +2323,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.658803e+01 -1.276233e+02 3.747240e+02
     endloop
   endfacet
-  facet normal 7.938779e-01 2.820075e-01 5.387296e-01
+  facet normal 7.941419e-01 2.811815e-01 5.387723e-01
     outer loop
-      vertex -1.805366e+01 -1.241840e+02 3.748364e+02
+      vertex -1.802036e+01 -1.245099e+02 3.749632e+02
       vertex -1.772507e+01 -1.278215e+02 3.762562e+02
       vertex -1.622142e+01 -1.274650e+02 3.738538e+02
     endloop
@@ -2330,30 +2337,30 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.606358e+01 -1.273640e+02 3.733366e+02
     endloop
   endfacet
-  facet normal 9.615150e-01 1.653507e-01 2.194268e-01
+  facet normal 9.616681e-01 1.646111e-01 2.193120e-01
     outer loop
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
+      vertex -1.646651e+01 -1.242875e+02 3.725436e+02
       vertex -1.622142e+01 -1.274650e+02 3.738538e+02
       vertex -1.578893e+01 -1.270303e+02 3.716311e+02
     endloop
   endfacet
-  facet normal 7.948572e-01 2.831706e-01 5.366716e-01
+  facet normal 7.951161e-01 2.825930e-01 5.365926e-01
     outer loop
-      vertex -1.805366e+01 -1.241840e+02 3.748364e+02
+      vertex -1.802036e+01 -1.245099e+02 3.749632e+02
       vertex -1.622142e+01 -1.274650e+02 3.738538e+02
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
+      vertex -1.646651e+01 -1.242875e+02 3.725436e+02
     endloop
   endfacet
-  facet normal 9.757778e-01 2.057389e-01 7.435877e-02
+  facet normal 9.736004e-01 2.152920e-01 7.583943e-02
     outer loop
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
+      vertex -1.646651e+01 -1.242875e+02 3.725436e+02
       vertex -1.578893e+01 -1.270303e+02 3.716311e+02
       vertex -1.577135e+01 -1.269606e+02 3.712077e+02
     endloop
   endfacet
-  facet normal 9.743099e-01 2.231679e-01 3.027103e-02
+  facet normal 9.711110e-01 2.364429e-01 3.222193e-02
     outer loop
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
+      vertex -1.646651e+01 -1.242875e+02 3.725436e+02
       vertex -1.577135e+01 -1.269606e+02 3.712077e+02
       vertex -1.577232e+01 -1.269026e+02 3.708110e+02
     endloop
@@ -2372,9 +2379,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.579761e+01 -1.267751e+02 3.696872e+02
     endloop
   endfacet
-  facet normal 9.746865e-01 1.483721e-01 1.672482e-01
+  facet normal 9.747781e-01 1.482080e-01 1.668591e-01
     outer loop
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
+      vertex -1.646651e+01 -1.242875e+02 3.725436e+02
       vertex -1.577232e+01 -1.269026e+02 3.708110e+02
       vertex -1.597989e+01 -1.241995e+02 3.696226e+02
     endloop
@@ -2659,143 +2666,157 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -3.754904e+01 -1.042828e+02 3.677261e+02
     endloop
   endfacet
-  facet normal 3.372544e-02 6.621234e-01 7.486356e-01
+  facet normal 3.385217e-02 6.632479e-01 7.476338e-01
     outer loop
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
       vertex -3.446189e+01 -1.043576e+02 3.677495e+02
       vertex -3.197853e+01 -1.045699e+02 3.678254e+02
     endloop
   endfacet
-  facet normal 8.243565e-03 6.638195e-01 7.478474e-01
+  facet normal 7.299837e-03 6.631853e-01 7.484196e-01
     outer loop
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
       vertex -3.754906e+01 -1.017895e+02 3.655040e+02
       vertex -3.446189e+01 -1.043576e+02 3.677495e+02
     endloop
   endfacet
-  facet normal 5.755989e-02 6.537084e-01 7.545543e-01
+  facet normal 5.796265e-02 6.556509e-01 7.528361e-01
     outer loop
-      vertex -3.081591e+01 -1.021958e+02 3.656799e+02
+      vertex -3.144527e+01 -1.021117e+02 3.656435e+02
       vertex -3.197853e+01 -1.045699e+02 3.678254e+02
       vertex -3.001474e+01 -1.048754e+02 3.679403e+02
     endloop
   endfacet
-  facet normal 3.217484e-02 6.614168e-01 7.493281e-01
+  facet normal 2.793456e-02 6.601741e-01 7.505930e-01
     outer loop
-      vertex -3.081591e+01 -1.021958e+02 3.656799e+02
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
+      vertex -3.144527e+01 -1.021117e+02 3.656435e+02
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
       vertex -3.197853e+01 -1.045699e+02 3.678254e+02
     endloop
   endfacet
-  facet normal 8.950854e-02 6.417471e-01 7.616750e-01
+  facet normal 8.935365e-02 6.413067e-01 7.620640e-01
     outer loop
-      vertex -2.721162e+01 -1.029961e+02 3.660275e+02
+      vertex -2.823270e+01 -1.026969e+02 3.658981e+02
       vertex -3.001474e+01 -1.048754e+02 3.679403e+02
       vertex -2.783801e+01 -1.054439e+02 3.681634e+02
     endloop
   endfacet
-  facet normal 7.314249e-02 6.557380e-01 7.514372e-01
+  facet normal 5.992377e-02 6.561656e-01 7.522339e-01
     outer loop
-      vertex -2.721162e+01 -1.029961e+02 3.660275e+02
-      vertex -3.081591e+01 -1.021958e+02 3.656799e+02
+      vertex -2.823270e+01 -1.026969e+02 3.658981e+02
+      vertex -3.144527e+01 -1.021117e+02 3.656435e+02
       vertex -3.001474e+01 -1.048754e+02 3.679403e+02
     endloop
   endfacet
-  facet normal 1.443830e-01 6.293657e-01 7.635787e-01
+  facet normal 1.523380e-01 6.417518e-01 7.516300e-01
     outer loop
-      vertex -2.721162e+01 -1.029961e+02 3.660275e+02
+      vertex -2.823270e+01 -1.026969e+02 3.658981e+02
       vertex -2.783801e+01 -1.054439e+02 3.681634e+02
       vertex -2.618190e+01 -1.062047e+02 3.684774e+02
     endloop
   endfacet
-  facet normal 2.064198e-01 5.901308e-01 7.804720e-01
+  facet normal 2.074853e-01 5.910409e-01 7.795002e-01
     outer loop
-      vertex -2.323672e+01 -1.053512e+02 3.670531e+02
+      vertex -2.465406e+01 -1.042031e+02 3.665530e+02
       vertex -2.618190e+01 -1.062047e+02 3.684774e+02
       vertex -2.479102e+01 -1.073229e+02 3.689550e+02
     endloop
   endfacet
-  facet normal 1.806989e-01 6.328572e-01 7.528875e-01
+  facet normal 1.277926e-01 6.349567e-01 7.619049e-01
     outer loop
-      vertex -2.323672e+01 -1.053512e+02 3.670531e+02
-      vertex -2.721162e+01 -1.029961e+02 3.660275e+02
+      vertex -2.465406e+01 -1.042031e+02 3.665530e+02
+      vertex -2.823270e+01 -1.026969e+02 3.658981e+02
       vertex -2.618190e+01 -1.062047e+02 3.684774e+02
     endloop
   endfacet
-  facet normal 2.797257e-01 5.431472e-01 7.916721e-01
+  facet normal 2.726502e-01 5.400515e-01 7.962451e-01
     outer loop
-      vertex -2.323672e+01 -1.053512e+02 3.670531e+02
+      vertex -2.159409e+01 -1.075057e+02 3.679843e+02
       vertex -2.479102e+01 -1.073229e+02 3.689550e+02
       vertex -2.357779e+01 -1.090146e+02 3.696870e+02
     endloop
   endfacet
-  facet normal 3.163194e-01 4.828153e-01 8.165975e-01
+  facet normal 2.667758e-01 5.805624e-01 7.692711e-01
     outer loop
-      vertex -2.069608e+01 -1.093729e+02 3.687825e+02
-      vertex -2.357779e+01 -1.090146e+02 3.696870e+02
-      vertex -2.247548e+01 -1.116674e+02 3.708285e+02
+      vertex -2.159409e+01 -1.075057e+02 3.679843e+02
+      vertex -2.465406e+01 -1.042031e+02 3.665530e+02
+      vertex -2.479102e+01 -1.073229e+02 3.689550e+02
     endloop
   endfacet
-  facet normal 3.128209e-01 5.350861e-01 7.847458e-01
+  facet normal 3.181629e-01 4.944670e-01 8.088725e-01
     outer loop
-      vertex -2.069608e+01 -1.093729e+02 3.687825e+02
-      vertex -2.323672e+01 -1.053512e+02 3.670531e+02
+      vertex -2.159409e+01 -1.075057e+02 3.679843e+02
       vertex -2.357779e+01 -1.090146e+02 3.696870e+02
+      vertex -2.283097e+01 -1.106476e+02 3.703914e+02
     endloop
   endfacet
-  facet normal 3.537773e-01 4.355009e-01 8.277564e-01
+  facet normal 3.404553e-01 4.586556e-01 8.208077e-01
     outer loop
-      vertex -1.955137e+01 -1.132973e+02 3.704362e+02
-      vertex -2.247548e+01 -1.116674e+02 3.708285e+02
+      vertex -2.007669e+01 -1.111899e+02 3.695521e+02
+      vertex -2.283097e+01 -1.106476e+02 3.703914e+02
+      vertex -2.213870e+01 -1.128261e+02 3.713217e+02
+    endloop
+  endfacet
+  facet normal 3.409054e-01 4.834941e-01 8.062363e-01
+    outer loop
+      vertex -2.007669e+01 -1.111899e+02 3.695521e+02
+      vertex -2.159409e+01 -1.075057e+02 3.679843e+02
+      vertex -2.283097e+01 -1.106476e+02 3.703914e+02
+    endloop
+  endfacet
+  facet normal 3.678773e-01 4.291130e-01 8.249414e-01
+    outer loop
+      vertex -1.928398e+01 -1.146670e+02 3.710062e+02
+      vertex -2.213870e+01 -1.128261e+02 3.713217e+02
       vertex -2.152807e+01 -1.155475e+02 3.724649e+02
     endloop
   endfacet
-  facet normal 3.602057e-01 4.495198e-01 8.174251e-01
+  facet normal 3.677573e-01 4.288986e-01 8.251064e-01
     outer loop
-      vertex -1.955137e+01 -1.132973e+02 3.704362e+02
-      vertex -2.069608e+01 -1.093729e+02 3.687825e+02
-      vertex -2.247548e+01 -1.116674e+02 3.708285e+02
+      vertex -1.928398e+01 -1.146670e+02 3.710062e+02
+      vertex -2.007669e+01 -1.111899e+02 3.695521e+02
+      vertex -2.213870e+01 -1.128261e+02 3.713217e+02
     endloop
   endfacet
-  facet normal 3.843221e-01 4.081800e-01 8.280614e-01
+  facet normal 3.903396e-01 4.080879e-01 8.252874e-01
     outer loop
-      vertex -1.891318e+01 -1.170084e+02 3.719715e+02
+      vertex -1.877815e+01 -1.179928e+02 3.723735e+02
       vertex -2.152807e+01 -1.155475e+02 3.724649e+02
       vertex -2.110821e+01 -1.179524e+02 3.734555e+02
     endloop
   endfacet
-  facet normal 3.844855e-01 4.085616e-01 8.277973e-01
+  facet normal 3.837690e-01 4.004445e-01 8.320851e-01
     outer loop
-      vertex -1.891318e+01 -1.170084e+02 3.719715e+02
-      vertex -1.955137e+01 -1.132973e+02 3.704362e+02
+      vertex -1.877815e+01 -1.179928e+02 3.723735e+02
+      vertex -1.928398e+01 -1.146670e+02 3.710062e+02
       vertex -2.152807e+01 -1.155475e+02 3.724649e+02
     endloop
   endfacet
-  facet normal 4.023353e-01 3.939380e-01 8.264014e-01
+  facet normal 3.926928e-01 3.942655e-01 8.308713e-01
     outer loop
-      vertex -1.845064e+01 -1.206006e+02 3.734241e+02
+      vertex -1.877815e+01 -1.179928e+02 3.723735e+02
       vertex -2.110821e+01 -1.179524e+02 3.734555e+02
       vertex -2.068560e+01 -1.207222e+02 3.745701e+02
     endloop
   endfacet
-  facet normal 3.960955e-01 3.876052e-01 8.323885e-01
+  facet normal 4.060158e-01 3.811052e-01 8.306082e-01
     outer loop
-      vertex -1.845064e+01 -1.206006e+02 3.734241e+02
-      vertex -1.891318e+01 -1.170084e+02 3.719715e+02
-      vertex -2.110821e+01 -1.179524e+02 3.734555e+02
-    endloop
-  endfacet
-  facet normal 4.053488e-01 3.811361e-01 8.309198e-01
-    outer loop
-      vertex -1.845064e+01 -1.206006e+02 3.734241e+02
+      vertex -1.837423e+01 -1.212517e+02 3.736832e+02
       vertex -2.068560e+01 -1.207222e+02 3.745701e+02
       vertex -2.024489e+01 -1.239457e+02 3.758337e+02
     endloop
   endfacet
-  facet normal 4.176832e-01 3.728314e-01 8.285756e-01
+  facet normal 4.061287e-01 3.836690e-01 8.293718e-01
     outer loop
-      vertex -1.805366e+01 -1.241840e+02 3.748364e+02
-      vertex -1.845064e+01 -1.206006e+02 3.734241e+02
+      vertex -1.837423e+01 -1.212517e+02 3.736832e+02
+      vertex -1.877815e+01 -1.179928e+02 3.723735e+02
+      vertex -2.068560e+01 -1.207222e+02 3.745701e+02
+    endloop
+  endfacet
+  facet normal 4.185051e-01 3.710997e-01 8.289382e-01
+    outer loop
+      vertex -1.802036e+01 -1.245099e+02 3.749632e+02
+      vertex -1.837423e+01 -1.212517e+02 3.736832e+02
       vertex -2.024489e+01 -1.239457e+02 3.758337e+02
     endloop
   endfacet
@@ -3254,16 +3275,16 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -4.047879e+01 -1.008792e+02 3.591312e+02
     endloop
   endfacet
-  facet normal 1.802389e-02 9.952911e-01 -9.524031e-02
+  facet normal 1.804164e-02 9.950236e-01 -9.799281e-02
     outer loop
-      vertex -3.424023e+01 -1.005778e+02 3.623334e+02
+      vertex -3.454674e+01 -1.005639e+02 3.623270e+02
       vertex -3.472377e+01 -1.008757e+02 3.591286e+02
       vertex -3.754975e+01 -1.008267e+02 3.591057e+02
     endloop
   endfacet
-  facet normal 2.252682e-02 9.947509e-01 -9.981564e-02
+  facet normal 2.002158e-02 9.948040e-01 -9.982063e-02
     outer loop
-      vertex -3.424023e+01 -1.005778e+02 3.623334e+02
+      vertex -3.454674e+01 -1.005639e+02 3.623270e+02
       vertex -3.754975e+01 -1.008267e+02 3.591057e+02
       vertex -3.754932e+01 -1.005060e+02 3.623026e+02
     endloop
@@ -3415,9 +3436,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.597989e+01 -1.241995e+02 3.696226e+02
     endloop
   endfacet
-  facet normal 9.732190e-01 1.589016e-01 1.661179e-01
+  facet normal 9.733583e-01 1.586537e-01 1.655371e-01
     outer loop
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
+      vertex -1.675388e+01 -1.211289e+02 3.712307e+02
       vertex -1.597989e+01 -1.241995e+02 3.696226e+02
       vertex -1.619865e+01 -1.216816e+02 3.684957e+02
     endloop
@@ -3436,6 +3457,13 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.597989e+01 -1.241995e+02 3.696226e+02
     endloop
   endfacet
+  facet normal 9.732465e-01 1.579136e-01 1.668966e-01
+    outer loop
+      vertex -1.675388e+01 -1.211289e+02 3.712307e+02
+      vertex -1.646651e+01 -1.242875e+02 3.725436e+02
+      vertex -1.597989e+01 -1.241995e+02 3.696226e+02
+    endloop
+  endfacet
   facet normal 9.959321e-01 8.738855e-02 -2.196374e-02
     outer loop
       vertex -1.639658e+01 -1.200937e+02 3.658385e+02
@@ -3443,9 +3471,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.619865e+01 -1.216816e+02 3.684957e+02
     endloop
   endfacet
-  facet normal 9.722096e-01 1.688236e-01 1.621948e-01
+  facet normal 9.719848e-01 1.692234e-01 1.631223e-01
     outer loop
-      vertex -1.681628e+01 -1.204971e+02 3.709649e+02
+      vertex -1.675388e+01 -1.211289e+02 3.712307e+02
       vertex -1.619865e+01 -1.216816e+02 3.684957e+02
       vertex -1.642793e+01 -1.193366e+02 3.674292e+02
     endloop
@@ -3457,13 +3485,6 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.619865e+01 -1.216816e+02 3.684957e+02
     endloop
   endfacet
-  facet normal 9.729634e-01 1.598830e-01 1.666723e-01
-    outer loop
-      vertex -1.681628e+01 -1.204971e+02 3.709649e+02
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
-      vertex -1.619865e+01 -1.216816e+02 3.684957e+02
-    endloop
-  endfacet
   facet normal 9.943950e-01 1.017106e-01 -2.886997e-02
     outer loop
       vertex -1.669560e+01 -1.174259e+02 3.649413e+02
@@ -3471,9 +3492,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.642793e+01 -1.193366e+02 3.674292e+02
     endloop
   endfacet
-  facet normal 9.702171e-01 1.840749e-01 1.574652e-01
+  facet normal 9.702388e-01 1.840367e-01 1.573761e-01
     outer loop
-      vertex -1.720593e+01 -1.169770e+02 3.694645e+02
+      vertex -1.708824e+01 -1.179540e+02 3.698833e+02
       vertex -1.642793e+01 -1.193366e+02 3.674292e+02
       vertex -1.668782e+01 -1.170875e+02 3.664013e+02
     endloop
@@ -3485,25 +3506,25 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.642793e+01 -1.193366e+02 3.674292e+02
     endloop
   endfacet
-  facet normal 9.701800e-01 1.776707e-01 1.648756e-01
+  facet normal 9.712709e-01 1.720626e-01 1.643997e-01
     outer loop
-      vertex -1.720593e+01 -1.169770e+02 3.694645e+02
-      vertex -1.681628e+01 -1.204971e+02 3.709649e+02
+      vertex -1.708824e+01 -1.179540e+02 3.698833e+02
+      vertex -1.675388e+01 -1.211289e+02 3.712307e+02
       vertex -1.642793e+01 -1.193366e+02 3.674292e+02
     endloop
   endfacet
-  facet normal 9.863753e-01 1.640993e-01 -1.162435e-02
+  facet normal 9.908113e-01 1.274420e-01 -4.529299e-02
     outer loop
       vertex -1.705413e+01 -1.150465e+02 3.641309e+02
-      vertex -1.733994e+01 -1.132896e+02 3.646802e+02
+      vertex -1.698936e+01 -1.150691e+02 3.654841e+02
       vertex -1.668782e+01 -1.170875e+02 3.664013e+02
     endloop
   endfacet
-  facet normal 9.637317e-01 2.281909e-01 1.383838e-01
+  facet normal 9.656024e-01 2.124152e-01 1.499723e-01
     outer loop
-      vertex -1.781710e+01 -1.131883e+02 3.678363e+02
+      vertex -1.755103e+01 -1.146078e+02 3.684470e+02
       vertex -1.668782e+01 -1.170875e+02 3.664013e+02
-      vertex -1.733994e+01 -1.132896e+02 3.646802e+02
+      vertex -1.698936e+01 -1.150691e+02 3.654841e+02
     endloop
   endfacet
   facet normal 9.899393e-01 1.365881e-01 -3.693039e-02
@@ -3513,11 +3534,25 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.668782e+01 -1.170875e+02 3.664013e+02
     endloop
   endfacet
-  facet normal 9.627112e-01 2.218415e-01 1.548339e-01
+  facet normal 9.657761e-01 2.029148e-01 1.615612e-01
     outer loop
-      vertex -1.781710e+01 -1.131883e+02 3.678363e+02
-      vertex -1.720593e+01 -1.169770e+02 3.694645e+02
+      vertex -1.755103e+01 -1.146078e+02 3.684470e+02
+      vertex -1.708824e+01 -1.179540e+02 3.698833e+02
       vertex -1.668782e+01 -1.170875e+02 3.664013e+02
+    endloop
+  endfacet
+  facet normal 9.837795e-01 1.738563e-01 -4.418038e-02
+    outer loop
+      vertex -1.705413e+01 -1.150465e+02 3.641309e+02
+      vertex -1.733994e+01 -1.132896e+02 3.646802e+02
+      vertex -1.698936e+01 -1.150691e+02 3.654841e+02
+    endloop
+  endfacet
+  facet normal 9.570499e-01 2.527254e-01 1.420753e-01
+    outer loop
+      vertex -1.755103e+01 -1.146078e+02 3.684470e+02
+      vertex -1.698936e+01 -1.150691e+02 3.654841e+02
+      vertex -1.733994e+01 -1.132896e+02 3.646802e+02
     endloop
   endfacet
   facet normal 9.481776e-01 3.165577e-01 2.739635e-02
@@ -3527,9 +3562,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.733994e+01 -1.132896e+02 3.646802e+02
     endloop
   endfacet
-  facet normal 9.340016e-01 3.435318e-01 9.811675e-02
+  facet normal 9.378626e-01 3.373228e-01 8.140752e-02
     outer loop
-      vertex -1.908946e+01 -1.089079e+02 3.659931e+02
+      vertex -1.837623e+01 -1.109361e+02 3.668667e+02
       vertex -1.733994e+01 -1.132896e+02 3.646802e+02
       vertex -1.865445e+01 -1.091943e+02 3.628547e+02
     endloop
@@ -3541,10 +3576,10 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.733994e+01 -1.132896e+02 3.646802e+02
     endloop
   endfacet
-  facet normal 9.336138e-01 3.336905e-01 1.304450e-01
+  facet normal 9.487349e-01 2.779721e-01 1.504447e-01
     outer loop
-      vertex -1.908946e+01 -1.089079e+02 3.659931e+02
-      vertex -1.781710e+01 -1.131883e+02 3.678363e+02
+      vertex -1.837623e+01 -1.109361e+02 3.668667e+02
+      vertex -1.755103e+01 -1.146078e+02 3.684470e+02
       vertex -1.733994e+01 -1.132896e+02 3.646802e+02
     endloop
   endfacet
@@ -3555,9 +3590,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.865445e+01 -1.091943e+02 3.628547e+02
     endloop
   endfacet
-  facet normal 8.499202e-01 5.222196e-01 7.015887e-02
+  facet normal 8.590470e-01 5.108659e-01 3.246967e-02
     outer loop
-      vertex -1.908946e+01 -1.089079e+02 3.659931e+02
+      vertex -2.020134e+01 -1.067329e+02 3.650542e+02
       vertex -1.865445e+01 -1.091943e+02 3.628547e+02
       vertex -2.024311e+01 -1.064458e+02 3.616420e+02
     endloop
@@ -3569,6 +3604,13 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -1.865445e+01 -1.091943e+02 3.628547e+02
     endloop
   endfacet
+  facet normal 8.877226e-01 4.415977e-01 1.301541e-01
+    outer loop
+      vertex -2.020134e+01 -1.067329e+02 3.650542e+02
+      vertex -1.837623e+01 -1.109361e+02 3.668667e+02
+      vertex -1.865445e+01 -1.091943e+02 3.628547e+02
+    endloop
+  endfacet
   facet normal 5.716136e-01 7.700871e-01 2.832378e-01
     outer loop
       vertex -2.247238e+01 -1.042823e+02 3.602587e+02
@@ -3576,9 +3618,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -2.024311e+01 -1.064458e+02 3.616420e+02
     endloop
   endfacet
-  facet normal 6.819257e-01 7.251570e-01 -9.552357e-02
+  facet normal 6.706631e-01 7.410958e-01 -3.143245e-02
     outer loop
-      vertex -2.231948e+01 -1.041897e+02 3.639464e+02
+      vertex -2.407239e+01 -1.029067e+02 3.633801e+02
       vertex -2.024311e+01 -1.064458e+02 3.616420e+02
       vertex -2.387757e+01 -1.032179e+02 3.602006e+02
     endloop
@@ -3590,10 +3632,10 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -2.024311e+01 -1.064458e+02 3.616420e+02
     endloop
   endfacet
-  facet normal 7.915464e-01 5.975029e-01 1.282369e-01
+  facet normal 6.904904e-01 7.214519e-01 5.225165e-02
     outer loop
-      vertex -2.231948e+01 -1.041897e+02 3.639464e+02
-      vertex -1.908946e+01 -1.089079e+02 3.659931e+02
+      vertex -2.407239e+01 -1.029067e+02 3.633801e+02
+      vertex -2.020134e+01 -1.067329e+02 3.650542e+02
       vertex -2.024311e+01 -1.064458e+02 3.616420e+02
     endloop
   endfacet
@@ -3604,9 +3646,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -2.387757e+01 -1.032179e+02 3.602006e+02
     endloop
   endfacet
-  facet normal 4.004986e-01 9.135871e-01 7.042396e-02
+  facet normal 4.235622e-01 9.037093e-01 -6.248699e-02
     outer loop
-      vertex -2.231948e+01 -1.041897e+02 3.639464e+02
+      vertex -2.407239e+01 -1.029067e+02 3.633801e+02
       vertex -2.387757e+01 -1.032179e+02 3.602006e+02
       vertex -2.600953e+01 -1.022492e+02 3.597587e+02
     endloop
@@ -3625,9 +3667,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -2.600953e+01 -1.022492e+02 3.597587e+02
     endloop
   endfacet
-  facet normal 2.703746e-01 9.576186e-01 -9.931855e-02
+  facet normal 2.703167e-01 9.577032e-01 -9.865793e-02
     outer loop
-      vertex -2.698762e+01 -1.016552e+02 3.628236e+02
+      vertex -2.808242e+01 -1.013619e+02 3.626928e+02
       vertex -2.600953e+01 -1.022492e+02 3.597587e+02
       vertex -2.871611e+01 -1.015193e+02 3.594280e+02
     endloop
@@ -3639,32 +3681,25 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -2.600953e+01 -1.022492e+02 3.597587e+02
     endloop
   endfacet
-  facet normal 4.801825e-01 8.770088e-01 -1.673960e-02
+  facet normal 3.631293e-01 9.313997e-01 -2.513289e-02
     outer loop
-      vertex -2.698762e+01 -1.016552e+02 3.628236e+02
-      vertex -2.231948e+01 -1.041897e+02 3.639464e+02
+      vertex -2.808242e+01 -1.013619e+02 3.626928e+02
+      vertex -2.407239e+01 -1.029067e+02 3.633801e+02
       vertex -2.600953e+01 -1.022492e+02 3.597587e+02
     endloop
   endfacet
-  facet normal 1.477136e-01 9.619987e-01 -2.296501e-01
-    outer loop
-      vertex -3.190314e+01 -1.011238e+02 3.590351e+02
-      vertex -3.229733e+01 -1.010244e+02 3.591980e+02
-      vertex -2.871611e+01 -1.015193e+02 3.594280e+02
-    endloop
-  endfacet
-  facet normal 1.430283e-01 9.835478e-01 -1.103480e-01
-    outer loop
-      vertex -3.077455e+01 -1.008787e+02 3.624701e+02
-      vertex -2.871611e+01 -1.015193e+02 3.594280e+02
-      vertex -3.229733e+01 -1.010244e+02 3.591980e+02
-    endloop
-  endfacet
-  facet normal 1.338111e-01 9.867283e-01 -9.198842e-02
+  facet normal 1.816904e-01 9.446022e-01 -2.733411e-01
     outer loop
       vertex -2.968077e+01 -1.014145e+02 3.591490e+02
-      vertex -3.190314e+01 -1.011238e+02 3.590351e+02
+      vertex -3.029975e+01 -1.012516e+02 3.593005e+02
       vertex -2.871611e+01 -1.015193e+02 3.594280e+02
+    endloop
+  endfacet
+  facet normal 1.724656e-01 9.816942e-01 -8.082212e-02
+    outer loop
+      vertex -2.808242e+01 -1.013619e+02 3.626928e+02
+      vertex -2.871611e+01 -1.015193e+02 3.594280e+02
+      vertex -3.029975e+01 -1.012516e+02 3.593005e+02
     endloop
   endfacet
   facet normal 2.133027e-01 8.899182e-01 -4.031718e-01
@@ -3674,11 +3709,32 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -2.871611e+01 -1.015193e+02 3.594280e+02
     endloop
   endfacet
-  facet normal 2.063362e-01 9.762544e-01 -6.597450e-02
+  facet normal 1.227560e-01 9.511102e-01 -2.834084e-01
     outer loop
-      vertex -3.077455e+01 -1.008787e+02 3.624701e+02
-      vertex -2.698762e+01 -1.016552e+02 3.628236e+02
-      vertex -2.871611e+01 -1.015193e+02 3.594280e+02
+      vertex -3.190314e+01 -1.011238e+02 3.590351e+02
+      vertex -3.229733e+01 -1.010244e+02 3.591980e+02
+      vertex -3.029975e+01 -1.012516e+02 3.593005e+02
+    endloop
+  endfacet
+  facet normal 1.175548e-01 9.879704e-01 -1.004755e-01
+    outer loop
+      vertex -3.141997e+01 -1.007996e+02 3.624344e+02
+      vertex -3.029975e+01 -1.012516e+02 3.593005e+02
+      vertex -3.229733e+01 -1.010244e+02 3.591980e+02
+    endloop
+  endfacet
+  facet normal 1.389944e-01 9.040728e-01 -4.041447e-01
+    outer loop
+      vertex -2.968077e+01 -1.014145e+02 3.591490e+02
+      vertex -3.190314e+01 -1.011238e+02 3.590351e+02
+      vertex -3.029975e+01 -1.012516e+02 3.593005e+02
+    endloop
+  endfacet
+  facet normal 1.716285e-01 9.818863e-01 -8.026870e-02
+    outer loop
+      vertex -3.141997e+01 -1.007996e+02 3.624344e+02
+      vertex -2.808242e+01 -1.013619e+02 3.626928e+02
+      vertex -3.029975e+01 -1.012516e+02 3.593005e+02
     endloop
   endfacet
   facet normal 6.698877e-02 9.470535e-01 -3.140099e-01
@@ -3688,9 +3744,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -3.229733e+01 -1.010244e+02 3.591980e+02
     endloop
   endfacet
-  facet normal 6.372948e-02 9.927512e-01 -1.019003e-01
+  facet normal 6.369420e-02 9.929150e-01 -1.003142e-01
     outer loop
-      vertex -3.424023e+01 -1.005778e+02 3.623334e+02
+      vertex -3.454674e+01 -1.005639e+02 3.623270e+02
       vertex -3.229733e+01 -1.010244e+02 3.591980e+02
       vertex -3.472377e+01 -1.008757e+02 3.591286e+02
     endloop
@@ -3702,10 +3758,10 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -3.229733e+01 -1.010244e+02 3.591980e+02
     endloop
   endfacet
-  facet normal 8.953525e-02 9.922775e-01 -8.584220e-02
+  facet normal 7.793072e-02 9.928813e-01 -9.007493e-02
     outer loop
-      vertex -3.424023e+01 -1.005778e+02 3.623334e+02
-      vertex -3.077455e+01 -1.008787e+02 3.624701e+02
+      vertex -3.454674e+01 -1.005639e+02 3.623270e+02
+      vertex -3.141997e+01 -1.007996e+02 3.624344e+02
       vertex -3.229733e+01 -1.010244e+02 3.591980e+02
     endloop
   endfacet
@@ -4010,9 +4066,9 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -3.754906e+01 -1.017895e+02 3.655040e+02
     endloop
   endfacet
-  facet normal 1.393047e-02 8.165697e-01 5.770788e-01
+  facet normal 1.244982e-02 8.165856e-01 5.770901e-01
     outer loop
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
       vertex -3.754906e+01 -1.017420e+02 3.654368e+02
       vertex -3.754906e+01 -1.017895e+02 3.655040e+02
     endloop
@@ -4024,17 +4080,17 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -4.085928e+01 -1.005772e+02 3.623343e+02
     endloop
   endfacet
-  facet normal 2.615889e-01 9.557035e-01 1.349154e-01
+  facet normal 2.818517e-01 9.500386e-01 1.341133e-01
     outer loop
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
       vertex -3.754932e+01 -1.005060e+02 3.623026e+02
       vertex -3.754932e+01 -1.005136e+02 3.623564e+02
     endloop
   endfacet
-  facet normal 1.664005e-02 9.272272e-01 3.741295e-01
+  facet normal 1.486116e-02 9.273871e-01 3.738078e-01
     outer loop
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
-      vertex -3.424023e+01 -1.005778e+02 3.623334e+02
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
+      vertex -3.454674e+01 -1.005639e+02 3.623270e+02
       vertex -3.754932e+01 -1.005060e+02 3.623026e+02
     endloop
   endfacet
@@ -4045,123 +4101,137 @@ solid SIM_CER_R_HAND_THUMB_DISTAL
       vertex -4.085928e+01 -1.005772e+02 3.623343e+02
     endloop
   endfacet
-  facet normal 2.478998e-02 9.285740e-01 3.703186e-01
+  facet normal 2.340523e-02 9.286049e-01 3.703310e-01
     outer loop
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
       vertex -3.754932e+01 -1.005136e+02 3.623564e+02
       vertex -3.754906e+01 -1.017420e+02 3.654368e+02
     endloop
   endfacet
-  facet normal 7.893718e-01 2.972806e-01 5.371372e-01
+  facet normal 7.903275e-01 2.950813e-01 5.369446e-01
     outer loop
-      vertex -1.845064e+01 -1.206006e+02 3.734241e+02
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
-      vertex -1.681628e+01 -1.204971e+02 3.709649e+02
+      vertex -1.837423e+01 -1.212517e+02 3.736832e+02
+      vertex -1.646651e+01 -1.242875e+02 3.725436e+02
+      vertex -1.675388e+01 -1.211289e+02 3.712307e+02
     endloop
   endfacet
-  facet normal 7.903214e-01 2.984454e-01 5.350910e-01
+  facet normal 7.910685e-01 2.961859e-01 5.352425e-01
     outer loop
-      vertex -1.805366e+01 -1.241840e+02 3.748364e+02
-      vertex -1.649349e+01 -1.239714e+02 3.724135e+02
-      vertex -1.845064e+01 -1.206006e+02 3.734241e+02
+      vertex -1.802036e+01 -1.245099e+02 3.749632e+02
+      vertex -1.646651e+01 -1.242875e+02 3.725436e+02
+      vertex -1.837423e+01 -1.212517e+02 3.736832e+02
     endloop
   endfacet
-  facet normal 7.824960e-01 3.154426e-01 5.368389e-01
+  facet normal 7.842870e-01 3.105391e-01 5.370841e-01
     outer loop
-      vertex -1.891318e+01 -1.170084e+02 3.719715e+02
-      vertex -1.681628e+01 -1.204971e+02 3.709649e+02
-      vertex -1.720593e+01 -1.169770e+02 3.694645e+02
+      vertex -1.877815e+01 -1.179928e+02 3.723735e+02
+      vertex -1.675388e+01 -1.211289e+02 3.712307e+02
+      vertex -1.708824e+01 -1.179540e+02 3.698833e+02
     endloop
   endfacet
-  facet normal 7.837022e-01 3.169300e-01 5.341968e-01
+  facet normal 7.853804e-01 3.121747e-01 5.345322e-01
     outer loop
-      vertex -1.845064e+01 -1.206006e+02 3.734241e+02
-      vertex -1.681628e+01 -1.204971e+02 3.709649e+02
-      vertex -1.891318e+01 -1.170084e+02 3.719715e+02
+      vertex -1.837423e+01 -1.212517e+02 3.736832e+02
+      vertex -1.675388e+01 -1.211289e+02 3.712307e+02
+      vertex -1.877815e+01 -1.179928e+02 3.723735e+02
     endloop
   endfacet
-  facet normal 7.717635e-01 3.520794e-01 5.295481e-01
+  facet normal 7.761686e-01 3.362812e-01 5.333642e-01
     outer loop
-      vertex -1.955137e+01 -1.132973e+02 3.704362e+02
-      vertex -1.720593e+01 -1.169770e+02 3.694645e+02
-      vertex -1.781710e+01 -1.131883e+02 3.678363e+02
+      vertex -1.928398e+01 -1.146670e+02 3.710062e+02
+      vertex -1.708824e+01 -1.179540e+02 3.698833e+02
+      vertex -1.755103e+01 -1.146078e+02 3.684470e+02
     endloop
   endfacet
-  facet normal 7.716153e-01 3.518957e-01 5.298860e-01
+  facet normal 7.766168e-01 3.369476e-01 5.322900e-01
     outer loop
-      vertex -1.891318e+01 -1.170084e+02 3.719715e+02
-      vertex -1.720593e+01 -1.169770e+02 3.694645e+02
-      vertex -1.955137e+01 -1.132973e+02 3.704362e+02
+      vertex -1.877815e+01 -1.179928e+02 3.723735e+02
+      vertex -1.708824e+01 -1.179540e+02 3.698833e+02
+      vertex -1.928398e+01 -1.146670e+02 3.710062e+02
     endloop
   endfacet
-  facet normal 7.455260e-01 4.379433e-01 5.023909e-01
+  facet normal 7.593745e-01 3.936375e-01 5.180732e-01
     outer loop
-      vertex -2.069608e+01 -1.093729e+02 3.687825e+02
-      vertex -1.781710e+01 -1.131883e+02 3.678363e+02
-      vertex -1.908946e+01 -1.089079e+02 3.659931e+02
+      vertex -2.007669e+01 -1.111899e+02 3.695521e+02
+      vertex -1.755103e+01 -1.146078e+02 3.684470e+02
+      vertex -1.837623e+01 -1.109361e+02 3.668667e+02
     endloop
   endfacet
-  facet normal 7.416371e-01 4.324220e-01 5.128213e-01
+  facet normal 7.578227e-01 3.911531e-01 5.222107e-01
     outer loop
-      vertex -1.955137e+01 -1.132973e+02 3.704362e+02
-      vertex -1.781710e+01 -1.131883e+02 3.678363e+02
-      vertex -2.069608e+01 -1.093729e+02 3.687825e+02
+      vertex -1.928398e+01 -1.146670e+02 3.710062e+02
+      vertex -1.755103e+01 -1.146078e+02 3.684470e+02
+      vertex -2.007669e+01 -1.111899e+02 3.695521e+02
     endloop
   endfacet
-  facet normal 6.490709e-01 6.295738e-01 4.270173e-01
+  facet normal 7.137196e-01 5.147554e-01 4.750065e-01
     outer loop
-      vertex -2.323672e+01 -1.053512e+02 3.670531e+02
-      vertex -1.908946e+01 -1.089079e+02 3.659931e+02
-      vertex -2.231948e+01 -1.041897e+02 3.639464e+02
+      vertex -2.159409e+01 -1.075057e+02 3.679843e+02
+      vertex -1.837623e+01 -1.109361e+02 3.668667e+02
+      vertex -2.020134e+01 -1.067329e+02 3.650542e+02
     endloop
   endfacet
-  facet normal 6.407143e-01 6.069619e-01 4.701941e-01
+  facet normal 7.080951e-01 5.026705e-01 4.959069e-01
     outer loop
-      vertex -2.069608e+01 -1.093729e+02 3.687825e+02
-      vertex -1.908946e+01 -1.089079e+02 3.659931e+02
-      vertex -2.323672e+01 -1.053512e+02 3.670531e+02
+      vertex -2.007669e+01 -1.111899e+02 3.695521e+02
+      vertex -1.837623e+01 -1.109361e+02 3.668667e+02
+      vertex -2.159409e+01 -1.075057e+02 3.679843e+02
     endloop
   endfacet
-  facet normal 3.688245e-01 8.479672e-01 3.806836e-01
+  facet normal 5.508301e-01 7.324028e-01 4.002154e-01
     outer loop
-      vertex -2.721162e+01 -1.029961e+02 3.660275e+02
-      vertex -2.231948e+01 -1.041897e+02 3.639464e+02
-      vertex -2.698762e+01 -1.016552e+02 3.628236e+02
+      vertex -2.465406e+01 -1.042031e+02 3.665530e+02
+      vertex -2.020134e+01 -1.067329e+02 3.650542e+02
+      vertex -2.407239e+01 -1.029067e+02 3.633801e+02
     endloop
   endfacet
-  facet normal 3.798298e-01 8.240867e-01 4.202505e-01
+  facet normal 5.508751e-01 7.043964e-01 4.476184e-01
     outer loop
-      vertex -2.323672e+01 -1.053512e+02 3.670531e+02
-      vertex -2.231948e+01 -1.041897e+02 3.639464e+02
-      vertex -2.721162e+01 -1.029961e+02 3.660275e+02
+      vertex -2.159409e+01 -1.075057e+02 3.679843e+02
+      vertex -2.020134e+01 -1.067329e+02 3.650542e+02
+      vertex -2.465406e+01 -1.042031e+02 3.665530e+02
     endloop
   endfacet
-  facet normal 1.521697e-01 9.136804e-01 3.768720e-01
+  facet normal 2.749055e-01 8.829154e-01 3.806407e-01
     outer loop
-      vertex -3.081591e+01 -1.021958e+02 3.656799e+02
-      vertex -2.698762e+01 -1.016552e+02 3.628236e+02
-      vertex -3.077455e+01 -1.008787e+02 3.624701e+02
+      vertex -2.823270e+01 -1.026969e+02 3.658981e+02
+      vertex -2.407239e+01 -1.029067e+02 3.633801e+02
+      vertex -2.808242e+01 -1.013619e+02 3.626928e+02
     endloop
   endfacet
-  facet normal 1.634973e-01 9.059304e-01 3.905876e-01
+  facet normal 2.900410e-01 8.661349e-01 4.070462e-01
     outer loop
-      vertex -2.721162e+01 -1.029961e+02 3.660275e+02
-      vertex -2.698762e+01 -1.016552e+02 3.628236e+02
-      vertex -3.081591e+01 -1.021958e+02 3.656799e+02
+      vertex -2.465406e+01 -1.042031e+02 3.665530e+02
+      vertex -2.407239e+01 -1.029067e+02 3.633801e+02
+      vertex -2.823270e+01 -1.026969e+02 3.658981e+02
     endloop
   endfacet
-  facet normal 6.562859e-02 9.254205e-01 3.732156e-01
+  facet normal 1.255067e-01 9.179510e-01 3.763163e-01
     outer loop
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
-      vertex -3.077455e+01 -1.008787e+02 3.624701e+02
-      vertex -3.424023e+01 -1.005778e+02 3.623334e+02
+      vertex -3.144527e+01 -1.021117e+02 3.656435e+02
+      vertex -2.808242e+01 -1.013619e+02 3.626928e+02
+      vertex -3.141997e+01 -1.007996e+02 3.624344e+02
     endloop
   endfacet
-  facet normal 7.201263e-02 9.224163e-01 3.794238e-01
+  facet normal 1.355727e-01 9.123301e-01 3.863597e-01
     outer loop
-      vertex -3.081591e+01 -1.021958e+02 3.656799e+02
-      vertex -3.077455e+01 -1.008787e+02 3.624701e+02
-      vertex -3.422813e+01 -1.018721e+02 3.655407e+02
+      vertex -2.823270e+01 -1.026969e+02 3.658981e+02
+      vertex -2.808242e+01 -1.013619e+02 3.626928e+02
+      vertex -3.144527e+01 -1.021117e+02 3.656435e+02
+    endloop
+  endfacet
+  facet normal 5.699052e-02 9.260432e-01 3.730900e-01
+    outer loop
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
+      vertex -3.141997e+01 -1.007996e+02 3.624344e+02
+      vertex -3.454674e+01 -1.005639e+02 3.623270e+02
+    endloop
+  endfacet
+  facet normal 6.284162e-02 9.236139e-01 3.781378e-01
+    outer loop
+      vertex -3.144527e+01 -1.021117e+02 3.656435e+02
+      vertex -3.141997e+01 -1.007996e+02 3.624344e+02
+      vertex -3.453333e+01 -1.018569e+02 3.655343e+02
     endloop
   endfacet
   facet normal 1.698021e-04 -3.066355e-01 -9.518270e-01
