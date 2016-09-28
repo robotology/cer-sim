@@ -7,7 +7,7 @@ Table of Contents
 -----------------
   * [Dependencies](#dependencies)
   * [Using the models](#using-the-models)
-  * [Updating the models](#update)
+  * [Updating the models](#updating-the-models)
 
 ### Dependencies
 The following dependencies are required to use the models:
