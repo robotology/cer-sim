@@ -3,6 +3,8 @@
 Created on Sun Sep 25 16:29:44 2016
 
 @author: Luca Fiorio
+
+Optimized for Python 3
 """
 import os
 import subprocess
@@ -24,7 +26,6 @@ GAZEBO_CONFIGURATION_FILE_PATH = os.path.join(RESOURCES_DIRECTORY, GAZEBO_CONFIG
 
 # RViz parameters
 RVIZ_DIRECTORY = os.path.join(workingDirectory, 'catkin_ws', 'src', 'cer_rviz', 'urdf') 
-RVIZ_MESH_PATH_TOCKEN = 'package://'
 
 # SimMechanicsToURDF parameters
 SIMMECHANICS_XML = "SIM_CER_ROBOT.xml"
@@ -34,10 +35,12 @@ OUTPUT_TYPE = "xml"
 URDF_FILENAME = "cer.urdf"
 MESH_PATH_IN_YAML_FILE = 'meshes'
 CONFIGURATION_PATH_IN_YAML_FILE = 'conf'
+URDF_MESH_PATH_TOCKEN = 'package://'
 
 # Other parameters
 XML_DECLARATION = "<?xml version=""1.0"" ?>"
 WARNING_README_NAME = 'README.md'
+BUILD_DIRECTORY = os.path.join(RESOURCES_DIRECTORY, 'build')
 
 # DH conversion parameters {parameters order: root_of_DH_chain, end_of_DH_chain, DH_parameters_filename}
 DH_CONVERSION_PARAMETERS = [['torso_tripod_root', 'head_leopard_right', 'r_camera_chain.ini'],
@@ -59,15 +62,27 @@ def checkDependency(dependecyName):
         print("The Dependency " + dependecyName + " is not correctly installed")
     FNULL.close()
     
-def generateURDF(directory, simMechanich_xml, yaml_filename, csv_joint_filename, output_type):
+def generateURDF(directory, build_directory, urdf_file_name_and_extension, simMechanich_xml, yaml_filename, csv_joint_filename, output_type):
     urdf = subprocess.check_output(["simmechanics_to_urdf", simMechanich_xml, 
                                     "--yaml", yaml_filename, "--csv-joint", 
                                     csv_joint_filename, "--output", output_type], cwd=directory, universal_newlines=True) 
-    return urdf;
+    urdf = XML_DECLARATION + os.linesep + urdf
+    urdf = urdf.replace('model://', URDF_MESH_PATH_TOCKEN)
+    urdf_filepath = os.path.join(build_directory, urdf_file_name_and_extension)
+    urdf_file = open(urdf_filepath,"w")
+    urdf_file.write(urdf)
+    urdf_file.close()
+    return True;
     
-def generateSDF(urdf):
+def generateSDF(directory, urdf_file_name_and_extension, sdf_file_name_and_extension):
+    urdf = os.path.join(directory, urdf_file_name_and_extension)
     sdf = subprocess.check_output(["gz", "sdf", "-p", urdf], universal_newlines=True) 
-    return sdf;
+    sdf = XML_DECLARATION + os.linesep + sdf
+    sdf_filepath = os.path.join(directory, sdf_file_name_and_extension)
+    sdf_file = open(sdf_filepath,"w")
+    sdf_file.write(sdf)
+    sdf_file.close()
+    return True;
     
 def generateDH(urdf_file_name, parameters, directory):
     subprocess.call(["urdf2dh", urdf_file_name, parameters[0], parameters[1], parameters[2]], cwd=directory) 
@@ -79,60 +94,67 @@ def addWarningReadme(folder):
     readme_file.write('AUTOMATICALLY GENERATED FILES: DO NOT EDIT!')
     readme_file.close()
     
-def copyMultipleFiles(source_folder, destination_folder):
+def copyMultipleFilesWithExtension(source_folder, destination_folder, extension):
+    source_files = os.listdir(source_folder)
+    for file_name in source_files:
+        if file_name.endswith(extension):
+            full_file_name = os.path.join(source_folder, file_name)
+            if (os.path.isfile(full_file_name)):
+                shutil.copy2(full_file_name, destination_folder) 
+
+def copyFolderFiles(source_folder, destination_folder):
     source_files = os.listdir(source_folder)
     for file_name in source_files:
         full_file_name = os.path.join(source_folder, file_name)
         if (os.path.isfile(full_file_name)):
-            shutil.copy(full_file_name, destination_folder)
-    
+            shutil.copy2(full_file_name, destination_folder)
+                
+
 # Checking dependencies
 for dependency in DEPENDENCIES:
     checkDependency(dependency)
 
-# URDF
-urdf = generateURDF(RESOURCES_DIRECTORY, SIMMECHANICS_XML, YAML_FILENAME, CSV_JOINT_FILENAME, OUTPUT_TYPE)
-urdf = XML_DECLARATION + os.linesep + urdf
+# Clean previous builds if still here (in case an error occurred)
+if os.path.exists(BUILD_DIRECTORY):
+    shutil.rmtree(BUILD_DIRECTORY)
+os.mkdir(BUILD_DIRECTORY)
 
+# GENERATE NECESSARY FILES:
+# URDF
+generateURDF(RESOURCES_DIRECTORY, BUILD_DIRECTORY, URDF_FILENAME, SIMMECHANICS_XML, YAML_FILENAME, CSV_JOINT_FILENAME, OUTPUT_TYPE)
+# SDF - TODO: start Gazebo directly from urdf and get rid of the sdf: http://gazebosim.org/tutorials/?tut=ros_urdf
+generateSDF(BUILD_DIRECTORY, URDF_FILENAME, SDF_FILENAME)
+# DH
+for parameters in DH_CONVERSION_PARAMETERS:
+    generateDH(URDF_FILENAME, parameters, BUILD_DIRECTORY)
+
+# COPY FILES IN PROPER FOLDERS
 # RViz
-rviz_mesh_directory = os.path.join(RVIZ_DIRECTORY, MESH_PATH_IN_YAML_FILE)
-rviz_urdf_filepath = RVIZ_DIRECTORY + os.sep + URDF_FILENAME
 if os.path.exists(RVIZ_DIRECTORY):
     shutil.rmtree(RVIZ_DIRECTORY)
+os.mkdir(RVIZ_DIRECTORY)
+shutil.copy2(os.path.join(BUILD_DIRECTORY, URDF_FILENAME), RVIZ_DIRECTORY)
+rviz_mesh_directory = os.path.join(RVIZ_DIRECTORY, MESH_PATH_IN_YAML_FILE)
 shutil.copytree(RESOURCES_MESH_DIRECTORY, rviz_mesh_directory)
-rviz_urdf = urdf.replace('model://', RVIZ_MESH_PATH_TOCKEN)
-urdf_file = open(rviz_urdf_filepath,"w")
-urdf_file.write(rviz_urdf)
-urdf_file.close()
 addWarningReadme(RVIZ_DIRECTORY)
-
-# SDF
-# TODO: start Gazebo directly from urdf and get rid of the sdf: http://gazebosim.org/tutorials/?tut=ros_urdf
-sdf = generateSDF(rviz_urdf_filepath)
-sdf = XML_DECLARATION + os.linesep + sdf
-
 # Gazebo
-gazebo_mesh_directory = os.path.join(GAZEBO_DIRECTORY, MESH_PATH_IN_YAML_FILE)
-gazebo_configuration_directory = os.path.join(GAZEBO_DIRECTORY, CONFIGURATION_PATH_IN_YAML_FILE)
-gazebo_sdf_filepath = GAZEBO_DIRECTORY + os.sep + SDF_FILENAME
 if os.path.exists(GAZEBO_DIRECTORY):
     shutil.rmtree(GAZEBO_DIRECTORY)
+os.mkdir(GAZEBO_DIRECTORY)
+gazebo_mesh_directory = os.path.join(GAZEBO_DIRECTORY, MESH_PATH_IN_YAML_FILE)
+gazebo_configuration_directory = os.path.join(GAZEBO_DIRECTORY, CONFIGURATION_PATH_IN_YAML_FILE)
 shutil.copytree(RESOURCES_MESH_DIRECTORY, gazebo_mesh_directory)
 os.mkdir(gazebo_configuration_directory)
-copyMultipleFiles(RESOURCES_CONFIGURATION_DIRECTORY, gazebo_configuration_directory)
-shutil.copy(GAZEBO_CONFIGURATION_FILE_PATH, GAZEBO_DIRECTORY)
-sdf_file = open(gazebo_sdf_filepath,"w")
-sdf_file.write(sdf)
-sdf_file.close()
+copyFolderFiles(RESOURCES_CONFIGURATION_DIRECTORY, gazebo_configuration_directory)
+shutil.copy2(GAZEBO_CONFIGURATION_FILE_PATH, GAZEBO_DIRECTORY)
+shutil.copy2(os.path.join(BUILD_DIRECTORY, SDF_FILENAME), GAZEBO_DIRECTORY)
 addWarningReadme(GAZEBO_DIRECTORY)
-
 # DH
-# TODO: get rid of this copy and delete
 if os.path.exists(DH_DIRECTORY):
     shutil.rmtree(DH_DIRECTORY)
 os.mkdir(DH_DIRECTORY)
-shutil.copy(rviz_urdf_filepath, DH_DIRECTORY)
-for parameters in DH_CONVERSION_PARAMETERS:
-    generateDH(URDF_FILENAME, parameters, DH_DIRECTORY)
-os.remove(os.path.join(DH_DIRECTORY,URDF_FILENAME))
+copyMultipleFilesWithExtension(BUILD_DIRECTORY, DH_DIRECTORY, '.ini')
 addWarningReadme(DH_DIRECTORY)
+
+# CLEAN BUILD DIRECTORY
+shutil.rmtree(BUILD_DIRECTORY)
