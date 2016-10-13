@@ -78,6 +78,7 @@ def generateSDF(directory, urdf_file_name_and_extension, sdf_file_name_and_exten
     urdf = os.path.join(directory, urdf_file_name_and_extension)
     sdf = subprocess.check_output(["gz", "sdf", "-p", urdf], universal_newlines=True) 
     sdf = XML_DECLARATION + os.linesep + sdf
+    sdf = sdf.replace(URDF_MESH_PATH_TOCKEN, 'model://')
     sdf_filepath = os.path.join(directory, sdf_file_name_and_extension)
     sdf_file = open(sdf_filepath,"w")
     sdf_file.write(sdf)
