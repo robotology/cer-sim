@@ -81,7 +81,6 @@
       </sensor>
       <gravity>1</gravity>
       <velocity_decay/>
-      <self_collide>0</self_collide>
     </link>
     <link name='mobile_base_l_tyre_link'>
       <pose frame=''>0 0.139 0 0 -0 0</pose>
@@ -1404,7 +1403,6 @@
       </sensor>
       <gravity>1</gravity>
       <velocity_decay/>
-      <self_collide>0</self_collide>
       <sensor name='asus_xtion_rgb' type='camera'>
         <always_on>1</always_on>
         <update_rate>30</update_rate>
