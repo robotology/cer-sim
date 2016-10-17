@@ -6,9 +6,9 @@ stringToRemoveFromMeshFileName: "_prt"
 
 # Rename options (map Creo names to URDF names)
 rename:
- SIM_CER_MOBILEBASE_BODY--SIM_CER_MOBILEBASE_L_TYRE: mobile_base_l_wheel_joint
- SIM_CER_MOBILEBASE_BODY--SIM_CER_MOBILEBASE_R_TYRE: mobile_base_r_wheel_joint
- SIM_CER_MOBILEBASE_BODY--SIM_CER_TORSO_SLIDER_EQ: torso_heave_eq_joint
+ SIM_CER_MOBILEBASE_BODY_2_LIDAR--SIM_CER_MOBILEBASE_L_TYRE: mobile_base_l_wheel_joint
+ SIM_CER_MOBILEBASE_BODY_2_LIDAR--SIM_CER_MOBILEBASE_R_TYRE: mobile_base_r_wheel_joint
+ SIM_CER_MOBILEBASE_BODY_2_LIDAR--SIM_CER_TORSO_SLIDER_EQ: torso_heave_eq_joint
  SIM_CER_TORSO_SLIDER_EQ--SIM_CER_TORSO_PIN_EQ: torso_roll_eq_joint
  SIM_CER_TORSO_PIN_EQ--SIM_CER_TORSO_PLATFORM: torso_pitch_eq_joint
  SIM_CER_TORSO_PLATFORM--SIM_CER_CHEST: torso_yaw_joint
@@ -40,14 +40,14 @@ rename:
  SIM_CER_R_HAND_PADDLE_PROXIMAL--SIM_CER_R_HAND_PADDLE_DISTAL: r_hand_paddle_distal_joint
  SIM_CER_R_HAND_ROOT--SIM_CER_R_HAND_THUMB_PROXIMAL: r_hand_thumb_proximal_joint
  SIM_CER_R_HAND_THUMB_PROXIMAL--SIM_CER_R_HAND_THUMB_DISTAL: r_hand_thumb_distal_joint
- RootPart--SIM_CER_MOBILEBASE_BODY: base_fixed_joint
+ RootPart--SIM_CER_MOBILEBASE_BODY_2_LIDAR: base_fixed_joint
  RootPart--SIM_CER_CHEST: torso_yaw_unknown
  RootPart--RootPart: base_joint_unknown
  RootGround--RootPart: root_joint_unknown
  RootPart--SIM_CER_R_CLAVICLE: r_shoulder_pitch_unknown
  RootPart--SIM_CER_L_CLAVICLE: l_shoulder_pitch_unknown
  RootPart: base_link_unknown
- SIM_CER_MOBILEBASE_BODY: mobile_base_body_link
+ SIM_CER_MOBILEBASE_BODY_2_LIDAR: mobile_base_body_link
  SIM_CER_MOBILEBASE_L_TYRE: mobile_base_l_tyre_link
  SIM_CER_MOBILEBASE_R_TYRE: mobile_base_r_tyre_link
  SIM_CER_TORSO_SLIDER_EQ: torso_slider_eq_link
@@ -105,6 +105,9 @@ exportedFrames:
   - frameName: SCSYS_MOBILE_BASE_LIDAR
     frameReferenceLink: mobile_base_body_link
     exportedFrameName: mobile_base_lidar
+  - frameName: SCSYS_MOBILE_BASE_BACK_LIDAR
+    frameReferenceLink: mobile_base_body_link
+    exportedFrameName: mobile_base_back_lidar
   - frameName: SCSYS_L_WRIST
     frameReferenceLink: l_hand_root_link
     exportedFrameName: l_wrist
@@ -206,6 +209,38 @@ sensors:
     - |
                 <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
                     <yarpConfigurationFile>model://cer/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+                </plugin>
+  - linkName: mobile_base_body_link
+    frameName: SCSYS_MOBILE_BASE_BACK_LIDAR
+    sensorName: "base_back_laser"
+    exportFrameInURDF: No
+    sensorType: "ray"
+    updateRate: 40
+    sensorBlobs:
+    - |
+                <ray>
+                 <scan>
+                  <horizontal>
+                   <samples>360</samples>
+                   <resolution>1</resolution>
+                   <min_angle>-3.14</min_angle>
+                   <max_angle>3.14</max_angle>
+                  </horizontal>
+                 </scan>
+                 <range>
+                  <min>0.10</min>
+                  <max>5.0</max>
+                  <resolution>0.01</resolution>
+                 </range>
+                 <noise>
+                  <type>gaussian</type>
+                  <mean>0.0</mean>
+                  <stddev>0.005</stddev>
+                 </noise>
+                </ray>
+    - |
+                <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
+                    <yarpConfigurationFile>model://cer/conf/gazebo_cer_back_laser_sensor.ini</yarpConfigurationFile>
                 </plugin>
   - linkName: head_link
     frameName: SCSYS_HEAD_LEOPARD_CYCLOPIC

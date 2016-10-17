@@ -1,12 +1,12 @@
 <COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
   <asset>
-    <created>2016-05-03T23:38:00.375723</created>
-    <modified>2016-05-03T23:38:00.375735</modified>
+    <created>2016-10-17T19:55:10.094365</created>
+    <modified>2016-10-17T19:55:10.094365</modified>
     <unit name="meter" meter="1.0"/>
     <up_axis>Y_UP</up_axis>
   </asset>
   <library_effects>
-    <effect name="DEFAULT_MTL-effect" id="DEFAULT_MTL-effect">
+    <effect name="obj2daeDefaultMaterial-effect" id="obj2daeDefaultMaterial-effect">
       <profile_COMMON>
         <technique sid="common">
           <phong>
@@ -14,10 +14,10 @@
               <color>0.0 0.0 0.0 1.0</color>
             </emission>
             <ambient>
-              <color>0.695 0.743 0.79 1.0</color>
+              <color>0.6 0.6 0.6 1.0</color>
             </ambient>
             <diffuse>
-              <color>0.695 0.743 0.79 1.0</color>
+              <color>0.6 0.6 0.6 1.0</color>
             </diffuse>
             <specular>
               <color>0.0 0.0 0.0 1.0</color>
@@ -46,7 +46,7 @@
         </extra>
       </profile_COMMON>
     </effect>
-    <effect name="obj2daeDefaultMaterial-effect" id="obj2daeDefaultMaterial-effect">
+    <effect name="DEFAULT_MTL-effect" id="DEFAULT_MTL-effect">
       <profile_COMMON>
         <technique sid="common">
           <phong>
@@ -54,10 +54,10 @@
               <color>0.0 0.0 0.0 1.0</color>
             </emission>
             <ambient>
-              <color>0.6 0.6 0.6 1.0</color>
+              <color>0.695 0.743 0.79 1.0</color>
             </ambient>
             <diffuse>
-              <color>0.6 0.6 0.6 1.0</color>
+              <color>0.695 0.743 0.79 1.0</color>
             </diffuse>
             <specular>
               <color>0.0 0.0 0.0 1.0</color>
@@ -151,267 +151,267 @@
           </technique_common>
         </source>
         <vertices id="vertices-vertices">
-          <input source="#vertices" semantic="POSITION"/>
+          <input semantic="POSITION" source="#vertices"/>
         </vertices>
         <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>276 276 22 22 24 24</p>
+        </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>215 215 55 55 57 57</p>
         </triangles>
-        <triangles count="175" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>313 313 116 116 119 119 138 138 117 117 121 121 302 302 119 119 139 139 313 313 119 119 302 302 144 144 121 121 122 122 140 140 138 138 121 121 144 144 140 140 121 121 145 145 122 122 123 123 145 145 144 144 122 122 146 146 123 123 124 124 146 146 145 145 123 123 147 147 124 124 125 125 147 147 146 146 124 124 148 148 125 125 126 126 148 148 147 147 125 125 149 149 126 126 127 127 149 149 148 148 126 126 150 150 127 127 128 128 150 150 149 149 127 127 151 151 128 128 129 129 151 151 150 150 128 128 152 152 129 129 130 130 152 152 151 151 129 129 153 153 130 130 131 131 153 153 152 152 130 130 136 136 132 132 131 131 154 154 131 131 132 132 154 154 153 153 131 131 232 232 134 134 137 137 159 159 154 154 132 132 323 323 160 160 134 134 323 323 134 134 232 232 302 302 139 139 142 142 161 161 140 140 144 144 291 291 142 142 162 162 302 302 142 142 291 291 167 167 144 144 145 145 163 163 161 161 144 144 167 167 163 163 144 144 168 168 145 145 146 146 168 168 167 167 145 145 169 169 146 146 147 147 169 169 168 168 146 146 170 170 147 147 148 148 170 170 169 169 147 147 171 171 148 148 149 149 171 171 170 170 148 148 172 172 149 149 150 150 172 172 171 171 149 149 173 173 150 150 151 151 173 173 172 172 150 150 174 174 151 151 152 152 174 174 173 173 151 151 175 175 152 152 153 153 175 175 174 174 152 152 176 176 153 153 154 154 176 176 175 175 153 153 159 159 155 155 154 154 177 177 154 154 155 155 177 177 176 176 154 154 323 323 157 157 160 160 182 182 177 177 155 155 312 312 183 183 157 157 323 323 312 312 157 157 291 291 162 162 165 165 184 184 163 163 167 167 280 280 165 165 185 185 291 291 165 165 280 280 190 190 167 167 168 168 186 186 184 184 167 167 190 190 186 186 167 167 191 191 168 168 169 169 191 191 190 190 168 168 192 192 169 169 170 170 192 192 191 191 169 169 193 193 170 170 171 171 193 193 192 192 170 170 194 194 171 171 172 172 194 194 193 193 171 171 195 195 172 172 173 173 195 195 194 194 172 172 196 196 173 173 174 174 196 196 195 195 173 173 197 197 174 174 175 175 197 197 196 196 174 174 198 198 175 175 176 176 198 198 197 197 175 175 199 199 176 176 177 177 199 199 198 198 176 176 182 182 178 178 177 177 200 200 177 177 178 178 200 200 199 199 177 177 312 312 180 180 183 183 205 205 200 200 178 178 301 301 206 206 180 180 312 312 301 301 180 180 280 280 185 185 188 188 207 207 186 186 190 190 269 269 188 188 208 208 280 280 188 188 269 269 213 213 190 190 191 191 209 209 207 207 190 190 213 213 209 209 190 190 214 214 191 191 192 192 214 214 213 213 191 191 215 215 192 192 193 193 215 215 214 214 192 192 216 216 193 193 194 194 216 216 215 215 193 193 217 217 194 194 195 195 217 217 216 216 194 194 218 218 195 195 196 196 218 218 217 217 195 195 219 219 196 196 197 197 219 219 218 218 196 196 220 220 197 197 198 198 220 220 219 219 197 197 221 221 198 198 199 199 221 221 220 220 198 198 222 222 199 199 200 200 222 222 221 221 199 199 205 205 201 201 200 200 223 223 200 200 201 201 223 223 222 222 200 200 301 301 203 203 206 206 228 228 223 223 201 201 290 290 229 229 203 203 301 301 290 290 203 203 269 269 208 208 211 211 230 230 209 209 213 213 228 228 224 224 223 223 290 290 226 226 229 229 290 290 279 279 226 226 265 265 233 233 232 232 323 323 232 232 233 233 267 267 265 265 232 232 263 263 234 234 233 233 322 322 233 233 234 234 265 265 263 263 233 233 323 323 233 233 322 322 261 261 235 235 234 234 321 321 234 234 235 235 263 263 261 261 234 234 322 322 234 234 321 321 257 257 236 236 235 235 320 320 235 235 236 236 259 259 257 257 235 235 261 261 259 259 235 235 321 321 235 235 320 320 255 255 237 237 236 236 319 319 236 236 237 237 257 257 255 255 236 236 320 320 236 236 319 319 253 253 238 238 237 237 318 318 237 237 238 238 255 255 253 253 237 237 319 319 237 237 318 318 251 251 239 239 238 238 317 317 238 238 239 239 253 253 251 251 238 238 318 318 238 238 317 317 249 249 240 240 239 239 316 316 239 239 240 240 251 251 249 249 239 239 317 317 239 239 316 316 247 247 241 241 240 240 315 315 240 240 241 241 249 249 247 247 240 240 316 316 240 240 315 315 245 245 242 242 241 241 314 314 241 241 242 242 247 247 245 245 241 241 315 315 241 241 314 314 245 245 243 243 242 242 314 314 242 242 313 313</p>
-        </triangles>
         <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>60 60 58 58 54 54</p>
-        </triangles>
-        <triangles count="2" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>268 268 262 262 264 264 268 268 264 264 266 266</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>274 274 16 16 18 18</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>44 44 42 42 15 15</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>274 274 273 273 16 16</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>42 42 19 19 17 17</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>273 273 14 14 16 16</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>46 46 44 44 13 13</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>273 273 272 272 14 14</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>42 42 17 17 15 15</p>
-        </triangles>
-        <triangles count="58" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>243 243 63 63 242 242 113 113 67 67 65 65 242 242 66 66 69 69 113 113 71 71 67 67 115 115 67 67 71 71 313 313 69 69 116 116 313 313 242 242 69 69 111 111 72 72 71 71 121 121 71 71 72 72 113 113 111 111 71 71 117 117 115 115 71 71 121 121 117 117 71 71 109 109 73 73 72 72 122 122 72 72 73 73 111 111 109 109 72 72 122 122 121 121 72 72 107 107 74 74 73 73 123 123 73 73 74 74 109 109 107 107 73 73 123 123 122 122 73 73 103 103 75 75 74 74 124 124 74 74 75 75 105 105 103 103 74 74 107 107 105 105 74 74 124 124 123 123 74 74 101 101 76 76 75 75 125 125 75 75 76 76 103 103 101 101 75 75 125 125 124 124 75 75 99 99 77 77 76 76 126 126 76 76 77 77 101 101 99 99 76 76 126 126 125 125 76 76 97 97 78 78 77 77 127 127 77 77 78 78 99 99 97 97 77 77 127 127 126 126 77 77 95 95 79 79 78 78 128 128 78 78 79 79 97 97 95 95 78 78 128 128 127 127 78 78 93 93 80 80 79 79 129 129 79 79 80 80 95 95 93 93 79 79 129 129 128 128 79 79 91 91 81 81 80 80 130 130 80 80 81 81 93 93 91 91 80 80 130 130 129 129 80 80 86 86 82 82 81 81 131 131 81 81 82 82 89 89 86 86 81 81 91 91 89 89 81 81 131 131 130 130 81 81 267 267 84 84 87 87 136 136 131 131 82 82 232 232 137 137 84 84 267 267 232 232 84 84</p>
-        </triangles>
-        <triangles count="22" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>262 262 88 88 90 90 268 268 88 88 262 262 260 260 90 90 92 92 262 262 90 90 260 260 258 258 92 92 94 94 260 260 92 92 258 258 258 258 94 94 96 96 256 256 96 96 98 98 258 258 96 96 256 256 254 254 98 98 100 100 256 256 98 98 254 254 252 252 100 100 102 102 254 254 100 100 252 252 250 250 102 102 104 104 252 252 102 102 250 250 246 246 104 104 106 106 248 248 104 104 246 246 250 250 104 104 248 248 244 244 106 106 108 108 246 246 106 106 244 244 114 114 108 108 110 110 114 114 110 110 112 112</p>
-        </triangles>
-        <triangles count="7" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>216 216 55 55 215 215 214 214 57 57 59 59 215 215 57 57 214 214 213 213 59 59 61 61 214 214 59 59 213 213 113 113 65 65 62 62 242 242 63 63 66 66</p>
-        </triangles>
-        <triangles count="2" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>114 114 64 64 108 108 244 244 108 108 64 64</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>274 274 18 18 20 20</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>38 38 21 21 19 19</p>
-        </triangles>
-        <triangles count="26" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>277 277 276 276 24 24 278 278 26 26 28 28 278 278 277 277 26 26 279 279 28 28 30 30 279 279 278 278 28 28 279 279 30 30 33 33 224 224 32 32 35 35 279 279 33 33 226 226 223 223 35 35 37 37 224 224 35 35 223 223 223 223 37 37 39 39 222 222 39 39 41 41 223 223 39 39 222 222 221 221 41 41 43 43 222 222 41 41 221 221 220 220 43 43 45 45 221 221 43 43 220 220 219 219 45 45 47 47 220 220 45 45 219 219 218 218 47 47 49 49 219 219 47 47 218 218 218 218 49 49 51 51 217 217 51 51 53 53 218 218 51 51 217 217 216 216 53 53 55 55 217 217 53 53 216 216</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>58 58 56 56 54 54</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>52 52 3 3 0 0</p>
-        </triangles>
-        <triangles count="2" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>54 54 52 52 0 0 60 60 54 54 0 0</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>231 231 2 2 4 4</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>52 52 5 5 3 3</p>
-        </triangles>
-        <triangles count="2" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>213 213 61 61 1 1 230 230 213 213 1 1</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>52 52 7 7 5 5</p>
         </triangles>
-        <triangles count="3" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>269 269 4 4 6 6 231 231 4 4 211 211 269 269 211 211 4 4</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>50 50 9 9 7 7</p>
-        </triangles>
         <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>269 269 6 6 8 8</p>
-        </triangles>
-        <triangles count="2" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>29 29 27 27 23 23 31 31 29 29 23 23</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>277 277 24 24 26 26</p>
         </triangles>
         <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>52 52 50 50 7 7</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>270 270 8 8 10 10</p>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>52 52 5 5 3 3</p>
         </triangles>
         <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>50 50 11 11 9 9</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>270 270 269 269 8 8</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>46 46 13 13 11 11</p>
         </triangles>
-        <triangles count="2" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>271 271 10 10 12 12 271 271 270 270 10 10</p>
-        </triangles>
-        <triangles count="2" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>48 48 46 46 11 11 50 50 48 48 11 11</p>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>273 273 14 14 16 16</p>
         </triangles>
         <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>272 272 12 12 14 14</p>
-        </triangles>
-        <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>44 44 15 15 13 13</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>272 272 271 271 12 12</p>
         </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>276 276 275 275 22 22</p>
+        </triangles>
         <triangles count="2" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>40 40 38 38 19 19 42 42 40 40 19 19</p>
         </triangles>
         <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>275 275 20 20 22 22</p>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>274 274 273 273 16 16</p>
+        </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>274 274 16 16 18 18</p>
         </triangles>
         <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>42 42 17 17 15 15</p>
+        </triangles>
+        <triangles count="175" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>313 313 116 116 119 119 138 138 117 117 121 121 302 302 119 119 139 139 313 313 119 119 302 302 144 144 121 121 122 122 140 140 138 138 121 121 144 144 140 140 121 121 145 145 122 122 123 123 145 145 144 144 122 122 146 146 123 123 124 124 146 146 145 145 123 123 147 147 124 124 125 125 147 147 146 146 124 124 148 148 125 125 126 126 148 148 147 147 125 125 149 149 126 126 127 127 149 149 148 148 126 126 150 150 127 127 128 128 150 150 149 149 127 127 151 151 128 128 129 129 151 151 150 150 128 128 152 152 129 129 130 130 152 152 151 151 129 129 153 153 130 130 131 131 153 153 152 152 130 130 136 136 132 132 131 131 154 154 131 131 132 132 154 154 153 153 131 131 232 232 134 134 137 137 159 159 154 154 132 132 323 323 160 160 134 134 323 323 134 134 232 232 302 302 139 139 142 142 161 161 140 140 144 144 291 291 142 142 162 162 302 302 142 142 291 291 167 167 144 144 145 145 163 163 161 161 144 144 167 167 163 163 144 144 168 168 145 145 146 146 168 168 167 167 145 145 169 169 146 146 147 147 169 169 168 168 146 146 170 170 147 147 148 148 170 170 169 169 147 147 171 171 148 148 149 149 171 171 170 170 148 148 172 172 149 149 150 150 172 172 171 171 149 149 173 173 150 150 151 151 173 173 172 172 150 150 174 174 151 151 152 152 174 174 173 173 151 151 175 175 152 152 153 153 175 175 174 174 152 152 176 176 153 153 154 154 176 176 175 175 153 153 159 159 155 155 154 154 177 177 154 154 155 155 177 177 176 176 154 154 323 323 157 157 160 160 182 182 177 177 155 155 312 312 183 183 157 157 323 323 312 312 157 157 291 291 162 162 165 165 184 184 163 163 167 167 280 280 165 165 185 185 291 291 165 165 280 280 190 190 167 167 168 168 186 186 184 184 167 167 190 190 186 186 167 167 191 191 168 168 169 169 191 191 190 190 168 168 192 192 169 169 170 170 192 192 191 191 169 169 193 193 170 170 171 171 193 193 192 192 170 170 194 194 171 171 172 172 194 194 193 193 171 171 195 195 172 172 173 173 195 195 194 194 172 172 196 196 173 173 174 174 196 196 195 195 173 173 197 197 174 174 175 175 197 197 196 196 174 174 198 198 175 175 176 176 198 198 197 197 175 175 199 199 176 176 177 177 199 199 198 198 176 176 182 182 178 178 177 177 200 200 177 177 178 178 200 200 199 199 177 177 312 312 180 180 183 183 205 205 200 200 178 178 301 301 206 206 180 180 312 312 301 301 180 180 280 280 185 185 188 188 207 207 186 186 190 190 269 269 188 188 208 208 280 280 188 188 269 269 213 213 190 190 191 191 209 209 207 207 190 190 213 213 209 209 190 190 214 214 191 191 192 192 214 214 213 213 191 191 215 215 192 192 193 193 215 215 214 214 192 192 216 216 193 193 194 194 216 216 215 215 193 193 217 217 194 194 195 195 217 217 216 216 194 194 218 218 195 195 196 196 218 218 217 217 195 195 219 219 196 196 197 197 219 219 218 218 196 196 220 220 197 197 198 198 220 220 219 219 197 197 221 221 198 198 199 199 221 221 220 220 198 198 222 222 199 199 200 200 222 222 221 221 199 199 205 205 201 201 200 200 223 223 200 200 201 201 223 223 222 222 200 200 301 301 203 203 206 206 228 228 223 223 201 201 290 290 229 229 203 203 301 301 290 290 203 203 269 269 208 208 211 211 230 230 209 209 213 213 228 228 224 224 223 223 290 290 226 226 229 229 290 290 279 279 226 226 265 265 233 233 232 232 323 323 232 232 233 233 267 267 265 265 232 232 263 263 234 234 233 233 322 322 233 233 234 234 265 265 263 263 233 233 323 323 233 233 322 322 261 261 235 235 234 234 321 321 234 234 235 235 263 263 261 261 234 234 322 322 234 234 321 321 257 257 236 236 235 235 320 320 235 235 236 236 259 259 257 257 235 235 261 261 259 259 235 235 321 321 235 235 320 320 255 255 237 237 236 236 319 319 236 236 237 237 257 257 255 255 236 236 320 320 236 236 319 319 253 253 238 238 237 237 318 318 237 237 238 238 255 255 253 253 237 237 319 319 237 237 318 318 251 251 239 239 238 238 317 317 238 238 239 239 253 253 251 251 238 238 318 318 238 238 317 317 249 249 240 240 239 239 316 316 239 239 240 240 251 251 249 249 239 239 317 317 239 239 316 316 247 247 241 241 240 240 315 315 240 240 241 241 249 249 247 247 240 240 316 316 240 240 315 315 245 245 242 242 241 241 314 314 241 241 242 242 247 247 245 245 241 241 315 315 241 241 314 314 245 245 243 243 242 242 314 314 242 242 313 313</p>
+        </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>270 270 269 269 8 8</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>42 42 19 19 17 17</p>
+        </triangles>
+        <triangles count="80" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>280 280 269 269 270 270 281 281 270 270 271 271 281 281 280 280 270 270 282 282 271 271 272 272 282 282 281 281 271 271 283 283 272 272 273 273 283 283 282 282 272 272 284 284 273 273 274 274 284 284 283 283 273 273 285 285 274 274 275 275 285 285 284 284 274 274 286 286 275 275 276 276 286 286 285 285 275 275 287 287 276 276 277 277 287 287 286 286 276 276 288 288 277 277 278 278 288 288 287 287 277 277 289 289 278 278 279 279 289 289 288 288 278 278 290 290 289 289 279 279 291 291 280 280 281 281 292 292 281 281 282 282 292 292 291 291 281 281 293 293 282 282 283 283 293 293 292 292 282 282 294 294 283 283 284 284 294 294 293 293 283 283 295 295 284 284 285 285 295 295 294 294 284 284 296 296 285 285 286 286 296 296 295 295 285 285 297 297 286 286 287 287 297 297 296 296 286 286 298 298 287 287 288 288 298 298 297 297 287 287 299 299 288 288 289 289 299 299 298 298 288 288 300 300 289 289 290 290 300 300 299 299 289 289 301 301 300 300 290 290 302 302 291 291 292 292 303 303 292 292 293 293 303 303 302 302 292 292 304 304 293 293 294 294 304 304 303 303 293 293 305 305 294 294 295 295 305 305 304 304 294 294 306 306 295 295 296 296 306 306 305 305 295 295 307 307 296 296 297 297 307 307 306 306 296 296 308 308 297 297 298 298 308 308 307 307 297 297 309 309 298 298 299 299 309 309 308 308 298 298 310 310 299 299 300 300 310 310 309 309 299 299 311 311 300 300 301 301 311 311 310 310 300 300 312 312 311 311 301 301 313 313 302 302 303 303 314 314 303 303 304 304 314 314 313 313 303 303 315 315 304 304 305 305 315 315 314 314 304 304 316 316 305 305 306 306 316 316 315 315 305 305 317 317 306 306 307 307 317 317 316 316 306 306 318 318 307 307 308 308 318 318 317 317 307 307 319 319 308 308 309 309 319 319 318 318 308 308 320 320 309 309 310 310 320 320 319 319 309 309 321 321 310 310 311 311 321 321 320 320 310 310 322 322 311 311 312 312 322 322 321 321 311 311 323 323 322 322 312 312</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>27 27 25 25 23 23</p>
         </triangles>
         <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>276 276 275 275 22 22</p>
-        </triangles>
-        <triangles count="3" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>34 34 31 31 21 21 36 36 34 34 21 21 38 38 36 36 21 21</p>
-        </triangles>
-        <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>276 276 22 22 24 24</p>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>272 272 12 12 14 14</p>
         </triangles>
         <triangles count="1" material="DEFAULT_MTL">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>31 31 23 23 21 21</p>
         </triangles>
         <triangles count="1" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>270 270 8 8 10 10</p>
+        </triangles>
+        <triangles count="2" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>213 213 61 61 1 1 230 230 213 213 1 1</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>50 50 11 11 9 9</p>
+        </triangles>
+        <triangles count="2" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>48 48 46 46 11 11 50 50 48 48 11 11</p>
+        </triangles>
+        <triangles count="26" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>277 277 276 276 24 24 278 278 26 26 28 28 278 278 277 277 26 26 279 279 28 28 30 30 279 279 278 278 28 28 279 279 30 30 33 33 224 224 32 32 35 35 279 279 33 33 226 226 223 223 35 35 37 37 224 224 35 35 223 223 223 223 37 37 39 39 222 222 39 39 41 41 223 223 39 39 222 222 221 221 41 41 43 43 222 222 41 41 221 221 220 220 43 43 45 45 221 221 43 43 220 220 219 219 45 45 47 47 220 220 45 45 219 219 218 218 47 47 49 49 219 219 47 47 218 218 218 218 49 49 51 51 217 217 51 51 53 53 218 218 51 51 217 217 216 216 53 53 55 55 217 217 53 53 216 216</p>
+        </triangles>
+        <triangles count="2" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>114 114 64 64 108 108 244 244 108 108 64 64</p>
+        </triangles>
+        <triangles count="2" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>29 29 27 27 23 23 31 31 29 29 23 23</p>
+        </triangles>
+        <triangles count="2" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>271 271 10 10 12 12 271 271 270 270 10 10</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>58 58 56 56 54 54</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>60 60 58 58 54 54</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>50 50 9 9 7 7</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>44 44 42 42 15 15</p>
+        </triangles>
+        <triangles count="3" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>269 269 4 4 6 6 231 231 4 4 211 211 269 269 211 211 4 4</p>
+        </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>231 231 2 2 4 4</p>
+        </triangles>
+        <triangles count="22" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>262 262 88 88 90 90 268 268 88 88 262 262 260 260 90 90 92 92 262 262 90 90 260 260 258 258 92 92 94 94 260 260 92 92 258 258 258 258 94 94 96 96 256 256 96 96 98 98 258 258 96 96 256 256 254 254 98 98 100 100 256 256 98 98 254 254 252 252 100 100 102 102 254 254 100 100 252 252 250 250 102 102 104 104 252 252 102 102 250 250 246 246 104 104 106 106 248 248 104 104 246 246 250 250 104 104 248 248 244 244 106 106 108 108 246 246 106 106 244 244 114 114 108 108 110 110 114 114 110 110 112 112</p>
+        </triangles>
+        <triangles count="2" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>268 268 262 262 264 264 268 268 264 264 266 266</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>44 44 15 15 13 13</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>52 52 50 50 7 7</p>
+        </triangles>
+        <triangles count="7" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>216 216 55 55 215 215 214 214 57 57 59 59 215 215 57 57 214 214 213 213 59 59 61 61 214 214 59 59 213 213 113 113 65 65 62 62 242 242 63 63 66 66</p>
+        </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>274 274 18 18 20 20</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>46 46 44 44 13 13</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>52 52 3 3 0 0</p>
+        </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>275 275 20 20 22 22</p>
+        </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>273 273 272 272 14 14</p>
+        </triangles>
+        <triangles count="3" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>34 34 31 31 21 21 36 36 34 34 21 21 38 38 36 36 21 21</p>
+        </triangles>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
           <p>275 275 274 274 20 20</p>
         </triangles>
-        <triangles count="80" material="MTL0">
-          <input source="#normals" semantic="NORMAL" offset="1"/>
-          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
-          <p>280 280 269 269 270 270 281 281 270 270 271 271 281 281 280 280 270 270 282 282 271 271 272 272 282 282 281 281 271 271 283 283 272 272 273 273 283 283 282 282 272 272 284 284 273 273 274 274 284 284 283 283 273 273 285 285 274 274 275 275 285 285 284 284 274 274 286 286 275 275 276 276 286 286 285 285 275 275 287 287 276 276 277 277 287 287 286 286 276 276 288 288 277 277 278 278 288 288 287 287 277 277 289 289 278 278 279 279 289 289 288 288 278 278 290 290 289 289 279 279 291 291 280 280 281 281 292 292 281 281 282 282 292 292 291 291 281 281 293 293 282 282 283 283 293 293 292 292 282 282 294 294 283 283 284 284 294 294 293 293 283 283 295 295 284 284 285 285 295 295 294 294 284 284 296 296 285 285 286 286 296 296 295 295 285 285 297 297 286 286 287 287 297 297 296 296 286 286 298 298 287 287 288 288 298 298 297 297 287 287 299 299 288 288 289 289 299 299 298 298 288 288 300 300 289 289 290 290 300 300 299 299 289 289 301 301 300 300 290 290 302 302 291 291 292 292 303 303 292 292 293 293 303 303 302 302 292 292 304 304 293 293 294 294 304 304 303 303 293 293 305 305 294 294 295 295 305 305 304 304 294 294 306 306 295 295 296 296 306 306 305 305 295 295 307 307 296 296 297 297 307 307 306 306 296 296 308 308 297 297 298 298 308 308 307 307 297 297 309 309 298 298 299 299 309 309 308 308 298 298 310 310 299 299 300 300 310 310 309 309 299 299 311 311 300 300 301 301 311 311 310 310 300 300 312 312 311 311 301 301 313 313 302 302 303 303 314 314 303 303 304 304 314 314 313 313 303 303 315 315 304 304 305 305 315 315 314 314 304 304 316 316 305 305 306 306 316 316 315 315 305 305 317 317 306 306 307 307 317 317 316 316 306 306 318 318 307 307 308 308 318 318 317 317 307 307 319 319 308 308 309 309 319 319 318 318 308 308 320 320 309 309 310 310 320 320 319 319 309 309 321 321 310 310 311 311 321 321 320 320 310 310 322 322 311 311 312 312 322 322 321 321 311 311 323 323 322 322 312 312</p>
+        <triangles count="1" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>269 269 6 6 8 8</p>
+        </triangles>
+        <triangles count="2" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>54 54 52 52 0 0 60 60 54 54 0 0</p>
+        </triangles>
+        <triangles count="1" material="DEFAULT_MTL">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>38 38 21 21 19 19</p>
+        </triangles>
+        <triangles count="58" material="MTL0">
+          <input semantic="NORMAL" source="#normals" offset="1"/>
+          <input semantic="VERTEX" source="#vertices-vertices" offset="0"/>
+          <p>243 243 63 63 242 242 113 113 67 67 65 65 242 242 66 66 69 69 113 113 71 71 67 67 115 115 67 67 71 71 313 313 69 69 116 116 313 313 242 242 69 69 111 111 72 72 71 71 121 121 71 71 72 72 113 113 111 111 71 71 117 117 115 115 71 71 121 121 117 117 71 71 109 109 73 73 72 72 122 122 72 72 73 73 111 111 109 109 72 72 122 122 121 121 72 72 107 107 74 74 73 73 123 123 73 73 74 74 109 109 107 107 73 73 123 123 122 122 73 73 103 103 75 75 74 74 124 124 74 74 75 75 105 105 103 103 74 74 107 107 105 105 74 74 124 124 123 123 74 74 101 101 76 76 75 75 125 125 75 75 76 76 103 103 101 101 75 75 125 125 124 124 75 75 99 99 77 77 76 76 126 126 76 76 77 77 101 101 99 99 76 76 126 126 125 125 76 76 97 97 78 78 77 77 127 127 77 77 78 78 99 99 97 97 77 77 127 127 126 126 77 77 95 95 79 79 78 78 128 128 78 78 79 79 97 97 95 95 78 78 128 128 127 127 78 78 93 93 80 80 79 79 129 129 79 79 80 80 95 95 93 93 79 79 129 129 128 128 79 79 91 91 81 81 80 80 130 130 80 80 81 81 93 93 91 91 80 80 130 130 129 129 80 80 86 86 82 82 81 81 131 131 81 81 82 82 89 89 86 86 81 81 91 91 89 89 81 81 131 131 130 130 81 81 267 267 84 84 87 87 136 136 131 131 82 82 232 232 137 137 84 84 267 267 232 232 84 84</p>
         </triangles>
       </mesh>
     </geometry>
   </library_geometries>
   <library_materials>
-    <material name="DEFAULT_MTL" id="DEFAULT_MTL">
-      <instance_effect url="#DEFAULT_MTL-effect"/>
-    </material>
     <material name="obj2daeDefaultMaterial" id="obj2daeDefaultMaterial">
       <instance_effect url="#obj2daeDefaultMaterial-effect"/>
+    </material>
+    <material name="DEFAULT_MTL" id="DEFAULT_MTL">
+      <instance_effect url="#DEFAULT_MTL-effect"/>
     </material>
     <material name="MTL0" id="MTL0">
       <instance_effect url="#MTL0-effect"/>
@@ -426,7 +426,17 @@
               <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
@@ -434,44 +444,34 @@
               <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+              <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
-              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
-              <instance_material symbol="MTL0" target="#MTL0"/>
               <instance_material symbol="MTL0" target="#MTL0"/>
             </technique_common>
           </bind_material>

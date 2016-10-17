@@ -9,7 +9,7 @@
 
   <createdFrom>"Pro/E Wildfire Creo 2.0 - 2015280"</createdFrom>
 
-  <createdOn>"09/21/16||19:39:47"</createdOn>
+  <createdOn>"10/17/16||17:51:36"</createdOn>
 
   <createdBy>"iCub"</createdBy>
 
@@ -36,7 +36,7 @@
             <name>"CG"</name>
             <displayName>""</displayName>
             <nodeID>"SIM_CER_ROBOT/RootPart::CG(AUTOGEN)"</nodeID>
-            <position>7.77422,0,543.853</position>
+            <position>8.02281,0,543.92</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -62,7 +62,7 @@
             <name>"CS2"</name>
             <displayName>""</displayName>
             <nodeID>"83/RootPart:-:SIM_CER_ROBOT/RootPart::SIM_CER_ROBOT/RootPart(AUTOGEN)"</nodeID>
-            <position>20.5003,0,312.649</position>
+            <position>20.9363,0,312.767</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -75,7 +75,7 @@
             <name>"CS3"</name>
             <displayName>""</displayName>
             <nodeID>"RootGround:-:SIM_CER_ROBOT/RootPart::SIM_CER_ROBOT/RootPart(AUTOGEN)"</nodeID>
-            <position>7.77422,0,543.853</position>
+            <position>8.02281,0,543.92</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -187,7 +187,7 @@
             <name>"CS1"</name>
             <displayName>""</displayName>
             <nodeID>"RootGround:-:SIM_CER_ROBOT/RootPart::RootGround(AUTOGEN)"</nodeID>
-            <position>7.77422,0,543.853</position>
+            <position>8.02281,0,543.92</position>
             <positionOrigin>"WORLD"</positionOrigin>
             <positionReferenceFrame>"WORLD"</positionReferenceFrame>
             <positionUnits>"mm"</positionUnits>
@@ -206,23 +206,23 @@
         <status>""</status>
         <bodies>
           <Body>
-            <name>"SIM_CER_MOBILEBASE_BODY"</name>
-            <nodeID>"83/59"</nodeID>
+            <name>"SIM_CER_MOBILEBASE_BODY_2_LIDAR"</name>
+            <nodeID>"83/96"</nodeID>
             <status>""</status>
             <mass>14</mass>
             <massUnits>"kg"</massUnits>
-            <inertia>0.342401,0,-0.0396992,0,0.362542,0,-0.0396992,0,0.168981</inertia>
+            <inertia>0.344723,0,-0.0395912,0,0.363574,0,-0.0395912,0,0.168259</inertia>
             <inertiaUnits>"kg*m^2"</inertiaUnits>
-            <volume>3.06804e+007</volume>
+            <volume>3.04358e+007</volume>
             <volumeUnits>"mm^3"</volumeUnits>
-            <surfaceArea>684016</surfaceArea>
+            <surfaceArea>734013</surfaceArea>
             <surfaceAreaUnits>"mm^2"</surfaceAreaUnits>
             <frames>
               <Frame>
                 <name>"CG"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59::CG(AUTOGEN)"</nodeID>
-                <position>3.53188,0,222.803</position>
+                <nodeID>"83/96::CG(AUTOGEN)"</nodeID>
+                <position>4.48186,0,223.059</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
                 <positionUnits>"mm"</positionUnits>
@@ -234,7 +234,7 @@
               <Frame>
                 <name>"CS1"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59::CS1(AUTOGEN)"</nodeID>
+                <nodeID>"83/96::CS1(AUTOGEN)"</nodeID>
                 <position>0,0,0</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -270,11 +270,24 @@
                 <orientationUnits>"rad"</orientationUnits>
                 <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
               </Frame>
-              <Frame ref="2">
+              <Frame>
                 <name>"CS4"</name>
+                <displayName>"SCSYS_MOBILE_BASE_BACK_LIDAR"</displayName>
+                <nodeID>"1791(USERADDED)"</nodeID>
+                <position>-80,0,191</position>
+                <positionOrigin>"WORLD"</positionOrigin>
+                <positionReferenceFrame>"WORLD"</positionReferenceFrame>
+                <positionUnits>"mm"</positionUnits>
+                <orientation>1,0,0,0,1,0,0,0,1</orientation>
+                <orientationType>"3x3 Transform"</orientationType>
+                <orientationUnits>"rad"</orientationUnits>
+                <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
+              </Frame>
+              <Frame ref="2">
+                <name>"CS5"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59:-:83/RootPart::83/59(AUTOGEN)"</nodeID>
-                <position>3.53188,0,222.803</position>
+                <nodeID>"83/96:-:83/RootPart::83/96(AUTOGEN)"</nodeID>
+                <position>4.48186,0,223.059</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
                 <positionUnits>"mm"</positionUnits>
@@ -284,9 +297,9 @@
                 <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
               </Frame>
               <Frame ref="11">
-                <name>"CS5"</name>
+                <name>"CS6"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59:-:83/93::83/59(AUTOGEN)"</nodeID>
+                <nodeID>"83/93:-:83/96::83/96(AUTOGEN)"</nodeID>
                 <position>0,139,160</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -297,9 +310,9 @@
                 <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
               </Frame>
               <Frame ref="13">
-                <name>"CS6"</name>
+                <name>"CS7"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59:-:83/95::83/59(AUTOGEN)"</nodeID>
+                <nodeID>"83/95:-:83/96::83/96(AUTOGEN)"</nodeID>
                 <position>0,-139,160</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -310,9 +323,9 @@
                 <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
               </Frame>
               <Frame ref="15">
-                <name>"CS7"</name>
+                <name>"CS8"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59:-:83/62::83/59(AUTOGEN)"</nodeID>
+                <nodeID>"83/62:-:83/96::83/96(AUTOGEN)"</nodeID>
                 <position>44,0,231</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -323,7 +336,7 @@
                 <orientationReferenceFrame>"WORLD"</orientationReferenceFrame>
               </Frame>
             </frames>
-            <geometryFileName>"SIM_CER_MOBILEBASE_BODY_prt.stl"</geometryFileName>
+            <geometryFileName>"SIM_CER_MOBILEBASE_BODY_2_LIDAR_prt.stl"</geometryFileName>
           </Body>
           <Body>
             <name>"RootPart"</name>
@@ -342,7 +355,7 @@
                 <name>"CG"</name>
                 <displayName>""</displayName>
                 <nodeID>"83/RootPart::CG(AUTOGEN)"</nodeID>
-                <position>20.5003,0,312.649</position>
+                <position>20.9363,0,312.767</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
                 <positionUnits>"mm"</positionUnits>
@@ -367,8 +380,8 @@
               <Frame ref="1">
                 <name>"CS2"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59:-:83/RootPart::83/RootPart(AUTOGEN)"</nodeID>
-                <position>3.53188,0,222.803</position>
+                <nodeID>"83/96:-:83/RootPart::83/RootPart(AUTOGEN)"</nodeID>
+                <position>4.48186,0,223.059</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
                 <positionUnits>"mm"</positionUnits>
@@ -381,7 +394,7 @@
                 <name>"CS3"</name>
                 <displayName>""</displayName>
                 <nodeID>"83/RootPart:-:SIM_CER_ROBOT/RootPart::83/RootPart(AUTOGEN)"</nodeID>
-                <position>20.5003,0,312.649</position>
+                <position>20.9363,0,312.767</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
                 <positionUnits>"mm"</positionUnits>
@@ -435,7 +448,7 @@
               <Frame ref="12">
                 <name>"CS2"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59:-:83/93::83/93(AUTOGEN)"</nodeID>
+                <nodeID>"83/93:-:83/96::83/93(AUTOGEN)"</nodeID>
                 <position>0,139,160</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -490,7 +503,7 @@
               <Frame ref="14">
                 <name>"CS2"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59:-:83/95::83/95(AUTOGEN)"</nodeID>
+                <nodeID>"83/95:-:83/96::83/95(AUTOGEN)"</nodeID>
                 <position>0,-139,160</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -545,7 +558,7 @@
               <Frame ref="16">
                 <name>"CS2"</name>
                 <displayName>""</displayName>
-                <nodeID>"83/59:-:83/62::83/62(AUTOGEN)"</nodeID>
+                <nodeID>"83/62:-:83/96::83/62(AUTOGEN)"</nodeID>
                 <position>44,0,231</position>
                 <positionOrigin>"WORLD"</positionOrigin>
                 <positionReferenceFrame>"WORLD"</positionReferenceFrame>
@@ -736,8 +749,8 @@
         </bodies>
         <joints>
           <SimpleJoint>
-            <name>"RootPart--SIM_CER_MOBILEBASE_BODY"</name>
-            <nodeID>"83/59:-:83/RootPart"</nodeID>
+            <name>"RootPart--SIM_CER_MOBILEBASE_BODY_2_LIDAR"</name>
+            <nodeID>"83/96:-:83/RootPart"</nodeID>
             <status>""</status>
             <base>
               <JointSide>
@@ -765,8 +778,8 @@
             </primitives>
           </SimpleJoint>
           <SimpleJoint>
-            <name>"SIM_CER_MOBILEBASE_BODY--SIM_CER_MOBILEBASE_L_TYRE"</name>
-            <nodeID>"83/59:-:83/93"</nodeID>
+            <name>"SIM_CER_MOBILEBASE_BODY_2_LIDAR--SIM_CER_MOBILEBASE_L_TYRE"</name>
+            <nodeID>"83/93:-:83/96"</nodeID>
             <status>""</status>
             <base>
               <JointSide>
@@ -794,8 +807,8 @@
             </primitives>
           </SimpleJoint>
           <SimpleJoint>
-            <name>"SIM_CER_MOBILEBASE_BODY--SIM_CER_MOBILEBASE_R_TYRE"</name>
-            <nodeID>"83/59:-:83/95"</nodeID>
+            <name>"SIM_CER_MOBILEBASE_BODY_2_LIDAR--SIM_CER_MOBILEBASE_R_TYRE"</name>
+            <nodeID>"83/95:-:83/96"</nodeID>
             <status>""</status>
             <base>
               <JointSide>
@@ -823,8 +836,8 @@
             </primitives>
           </SimpleJoint>
           <SimpleJoint>
-            <name>"SIM_CER_MOBILEBASE_BODY--SIM_CER_TORSO_SLIDER_EQ"</name>
-            <nodeID>"83/59:-:83/62"</nodeID>
+            <name>"SIM_CER_MOBILEBASE_BODY_2_LIDAR--SIM_CER_TORSO_SLIDER_EQ"</name>
+            <nodeID>"83/62:-:83/96"</nodeID>
             <status>""</status>
             <base>
               <JointSide>
