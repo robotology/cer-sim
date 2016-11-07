@@ -91,7 +91,7 @@ Subsequently, run the python script `generate_models.py`.
 **Any local change to the models files will be lost**.
 
 ### Adding the checkerboard
-The checkerboard is a board with a pattern of white and black squares ("chequered pattern"). The geometry file (*.dae) in the[mesh](resources/mesh/) folder represents a rectangular checkerboard with a 7 by 9 pattern.
+The checkerboard is a board with a pattern of white and black squares ("chequered pattern"). The geometry file (*.dae) in the [mesh](resources/mesh/dae/) folder represents a rectangular checkerboard with a 7 by 9 pattern.
 To add the checkerboard to the R1 model simply add the following code to the *.sdf file in the gazebo folder.
 Since in normal conditions the checkerboard is not necessary, the modified sdf model shouldn't be committed and changes are lost every time the model is  [regenerated](#Updating-the-models)
 
@@ -127,7 +127,9 @@ Since in normal conditions the checkerboard is not necessary, the modified sdf m
 ```
 
 Where we have:
+
 VALUE_1 = B + 0.1779
+
 VALUE_2 = A + 0.2585
 
 As shown in Figure 1, A is the distance between the terrain and the lower border of the white and black squares. While B represents the distance between the black and white squares front surfaces and the border of the covers of R1. The border of the covers can be easily accessed by extending the torso joint of the robot.
