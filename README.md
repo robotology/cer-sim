@@ -8,6 +8,7 @@ Table of Contents
   * [Dependencies](#dependencies)
   * [Using the models](#using-the-models)
   * [Updating the models](#updating-the-models)
+  * [Adding the checkerboard](#adding-the-checkerboard)
 
 ### Dependencies
 The following dependencies are required to use the models:
@@ -88,3 +89,47 @@ The proper procedure to update the models is to modify the files inside of the [
 Subsequently, run the python script `generate_models.py`. 
 
 **Any local change to the models files will be lost**.
+
+### Adding the checkerboard
+The checkerboard is a board with a pattern of white and black squares ("chequered pattern"). The geometry file (*.dae) in the[mesh](resources/mesh/) folder represents a rectangular checkerboard with a 7 by 9 pattern.
+To add the checkerboard to the R1 model simply add the following code to the *.sdf file in the gazebo folder.
+Since in normal conditions the checkerboard is not necessary, the modified sdf model shouldn't be committed and changes are lost every time the model is  [regenerated](#Updating-the-models)
+
+```
+    <link name='checkerboard_link'>
+      <pose frame=''>VALUE_1 0.0 VALUE_2 1.570795 0.0 3.14159</pose>
+      <inertial>
+        <pose frame=''>0 0.0 0 0 -0 0</pose>
+        <mass>2</mass>
+        <inertia>
+          <ixx>0.0200196</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0376169</iyy>
+          <iyz>-8.28446e-07</iyz>
+          <izz>0.0200156</izz>
+        </inertia>
+      </inertial>
+      <visual name='checkerboard_link_visual'>
+        <pose frame=''>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://cer/meshes/dae/checkerboard.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='checkerboard_joint' type='fixed'>
+      <child>checkerboard_link</child>
+      <parent>mobile_base_body_link</parent>
+    </joint>
+```
+
+Where we have:
+VALUE_1 = B + 0.1779
+VALUE_2 = A + 0.2585
+
+As shown in Figure 1, A is the distance between the terrain and the lower border of the white and black squares. While B represents the distance between the black and white squares front surfaces and the border of the covers of R1. The border of the covers can be easily accessed by extending the torso joint of the robot.
+
+![Figure 1](/resources/distances.jpg?raw=true "Figure 1")
