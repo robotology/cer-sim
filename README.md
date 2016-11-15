@@ -98,18 +98,6 @@ Since in normal conditions the checkerboard is not necessary, the modified sdf m
 ```
     <link name='checkerboard_link'>
       <pose frame=''>VALUE_1 0.0 VALUE_2 1.570795 0.0 3.14159</pose>
-      <inertial>
-        <pose frame=''>0 0.0 0 0 -0 0</pose>
-        <mass>2</mass>
-        <inertia>
-          <ixx>0.0200196</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>0.0376169</iyy>
-          <iyz>-8.28446e-07</iyz>
-          <izz>0.0200156</izz>
-        </inertia>
-      </inertial>
       <visual name='checkerboard_link_visual'>
         <pose frame=''>0 0 0 0 0 0</pose>
         <geometry>
