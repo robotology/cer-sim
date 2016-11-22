@@ -216,7 +216,7 @@ sensors:
     sensorBlobs:
     - |
         <camera name='left_camera'>
-          <pose>0 +0.0325 0 0 0 0</pose>
+          <pose>-0.0325 0 0 -1.57079 -1.57079 3.14159</pose>
           <horizontal_fov>1.5708</horizontal_fov>
           <image>
              <width>640</width>
@@ -229,7 +229,7 @@ sensors:
         </camera>
     - |
         <camera name='right_camera'>
-          <pose>0 -0.0325 0 0 0 0</pose>
+          <pose>0.0325 0 0 -1.57079 -1.57079 3.14159</pose>
           <horizontal_fov>1.5708</horizontal_fov>
           <image>
             <width>640</width>
@@ -252,7 +252,8 @@ sensors:
     updateRate: 30
     sensorBlobs: 
     - |
-                <camera>
+                <camera name='asus_xtion_depth_camera'>
+                    <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
                     <horizontal_fov>1.02259</horizontal_fov>
                     <distortion>
                         <k1>0</k1>
@@ -284,7 +285,8 @@ sensors:
     updateRate: 30
     sensorBlobs: 
     - |
-                <camera>
+                <camera name='asus_xtion_rgb_camera'>
+                    <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
                     <horizontal_fov>1.02259</horizontal_fov>
                     <distortion>
                         <k1>0</k1>

@@ -1345,7 +1345,7 @@
         <update_rate>30</update_rate>
         <pose frame=''>0.052167 0 -0.06748 -1.5708 -0 -1.5708</pose>
         <camera name='left_camera'>
-          <pose frame=''>0 0.0325 0 0 -0 0</pose>
+          <pose frame=''>-0.0325 0 0 -1.57079 -1.57079 3.14159</pose>
           <horizontal_fov>1.5708</horizontal_fov>
           <image>
             <width>640</width>
@@ -1357,7 +1357,7 @@
           </clip>
         </camera>
         <camera name='right_camera'>
-          <pose frame=''>0 -0.0325 0 0 -0 0</pose>
+          <pose frame=''>0.0325 0 0 -1.57079 -1.57079 3.14159</pose>
           <horizontal_fov>1.5708</horizontal_fov>
           <image>
             <width>640</width>
@@ -1377,7 +1377,8 @@
         <always_on>1</always_on>
         <update_rate>30</update_rate>
         <pose frame=''>0.059881 0.044487 0.04402 -1.5708 -0 -1.5708</pose>
-        <camera name='__default__'>
+        <camera name='asus_xtion_depth_camera'>
+          <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
           <horizontal_fov>1.02259</horizontal_fov>
           <distortion>
             <k1>0</k1>
@@ -1407,7 +1408,8 @@
         <always_on>1</always_on>
         <update_rate>30</update_rate>
         <pose frame=''>0.059881 0.018487 0.04402 -1.5708 -0 -1.5708</pose>
-        <camera name='__default__'>
+        <camera name='asus_xtion_rgb_camera'>
+          <pose frame=''>0 0 0 -1.57079 -1.57079 3.14159</pose>
           <horizontal_fov>1.02259</horizontal_fov>
           <distortion>
             <k1>0</k1>
