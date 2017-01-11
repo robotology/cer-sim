@@ -304,38 +304,36 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
 
     PC_Point *iter = (PC_Point*) &rosPC_data.data[0];
 
+    double u, v, depth;
     // convert depth to point cloud
-    for (int32_t j=0; j<height; j++)
+    for (int32_t j = 0; j < height; j++)
     {
-        for (int32_t i=0; i<width; i++)
+        for (int32_t i = 0; i < width; i++)
         {
-            double depth = depthDataRaw[index++] * scaleFactor;
-
-            double u = -(i - 0.5*(width-1));
-            double v = (0.5*(height-1) -j);
-
+            depth   = depthDataRaw[index++] * scaleFactor;
+            u       = -(i - 0.5*(width-1));
+            v       = (0.5*(height-1) -j);
             point.x = (NetFloat32) depth;
             point.y = (NetFloat32) depth * u/f;
             point.z = (NetFloat32) depth * v/f;
-
             int new_i;
-            if( depth > 0)
-                new_i = (i + (int) ( (0.03 *f/depth) +0.5) );
-            else
+//            if( depth > 0)
+//                new_i = (i + (int) ( (0.03 *f/depth) + 0.5) );
+//            else
                 new_i = i;
 
-            if( (new_i >= width) || (new_i < 0))
-            {
-                point.rgba[2] = 0;
-                point.rgba[1] = 0;
-                point.rgba[0] = 0;
-            }
-            else
-            {
+//            if( (new_i >= width) || (new_i < 0))
+//            {
+//                point.rgba[2] = 0;
+//                point.rgba[1] = 0;
+//                point.rgba[0] = 0;
+//            }
+//            else
+//            {
                 point.rgba[2] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +0];
                 point.rgba[1] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +1];
                 point.rgba[0] = (uint8_t) colorDataRaw[(j*width*3) + new_i*3 +2];
-            }
+//            }
 
             *iter = point;
             iter++;
