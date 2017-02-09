@@ -33,7 +33,7 @@ RGBD2PointCloud::RGBD2PointCloud()
     width           = 0;
     height          = 0;
     rosPC_data.header.seq = 0;
-    frame_id = "/camera_link";
+    frame_id = "/depth_center";
     scaleFactor = 1;
     mirrorX = 1;
     mirrorY = 1;
@@ -69,6 +69,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
         {
             nodeName = "/RGBD2PointCloudNode";
         }
+
     }
     
     
@@ -84,6 +85,11 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
         yInfo() << "\t  reference frame name,\n\t  x,y,z translations [m], \n\t  roll, pitch, yaw rotations [rad]\n";
         yInfo() << "\t  For example --tf base_link 0.1 0.0 0.0   1.56 0.0 0.0   -- no parenthesis";
         return false;
+    }
+
+    if(rf.check("frame_id"))
+    {
+        frame_id = rf.find("frame_id").asString();
     }
 
 
@@ -180,7 +186,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
 //         rotation[2]         = tf.get(7).asDouble();
 //     }
 
-    frame_id = rosParam.check("frame_id", Value("/camera_link")).asString();
+    frame_id = rosParam.check("frame_id", Value(frame_id)).asString();
     rf.check("mirrorX") ? mirrorX = -1 : mirrorX = 1;
     rf.check("mirrorY") ? mirrorY = -1 : mirrorY = 1;
     rf.check("mirrorZ") ? mirrorZ = -1 : mirrorZ = 1;
@@ -313,9 +319,9 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
             depth   = depthDataRaw[index++] * scaleFactor;
             u       = -(i - 0.5*(width-1));
             v       = (0.5*(height-1) -j);
-            point.x = (NetFloat32) depth;
-            point.y = (NetFloat32) depth * u/f;
-            point.z = (NetFloat32) depth * v/f;
+            point.x = -(NetFloat32) depth * u/f;
+            point.y = -(NetFloat32) depth * v/f;
+            point.z = (NetFloat32) depth;
             int new_i;
 //            if( depth > 0)
 //                new_i = (i + (int) ( (0.03 *f/depth) + 0.5) );
