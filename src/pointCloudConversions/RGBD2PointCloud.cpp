@@ -167,7 +167,7 @@ bool RGBD2PointCloud::configure(ResourceFinder& rf)
 //     Bottle tf = rf.findGroup("tf");
 //     if(!tf.isNull() )
 //     {
-//         if(tf.size() != 1+7)
+//         if(tf.size() != 1+7)rosPC_data
 //         {
 //             yError() << "TF parameter must have 7 elements: reference frame name, x,y,z [m] translations, roll, pitch, yaw rotations [rad]\n" \
 //             "For example --tf base_link 0.1 0.0 0.0     1.56 0.0 0.0   -- no parenthesis";
@@ -277,7 +277,7 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
         return false;
     }
 
-    float tmp_sec;
+    double tmp_sec;
     width  = d_width;
     height = d_height;
 
@@ -285,9 +285,8 @@ bool RGBD2PointCloud::convertRGBD_2_XYZRGB()
     rosPC_data.height = height;
     rosPC_data.row_step   = rosPC_data.point_step*width;
 
-    rosPC_data.header.stamp.nsec = (NetUint32) modf(depthStamp.getTime(), &tmp_sec);
-    rosPC_data.header.stamp.sec  = tmp_sec;
-
+    rosPC_data.header.stamp.nsec = (NetUint32) (modf(depthStamp.getTime(), &tmp_sec)*1000000000);
+    rosPC_data.header.stamp.sec  = (NetUint32) tmp_sec;
     int index = 0;
 
     unsigned char* colorDataRaw = (unsigned char*)colorImage.getRawImage();
