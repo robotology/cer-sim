@@ -23,6 +23,22 @@
             <uri>model://cer/meshes/dae/sim_cer_mobilebase_body.dae</uri>
           </mesh>
         </geometry>
+        <surface>
+           <contact>
+              <ode>
+                <kp>1000000.000000</kp>
+                <kd>1.000000</kd>
+                <max_vel>100.000000</max_vel>
+                <min_depth>0.000000</min_depth>
+              </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.01</mu>
+              <mu2>0.01</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name='mobile_base_body_link_visual'>
         <pose frame=''>0 0 -0.16 0 -0 0</pose>
@@ -101,8 +117,14 @@
                  <max_vel>100.000000</max_vel>
                  <min_depth>0.000000</min_depth>
               </ode>
-            </contact>
-         </surface>
+          </contact>
+          <friction>
+            <ode>
+              <mu>500</mu>
+              <mu2>10</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name='mobile_base_l_tyre_link_visual'>
         <pose frame=''>0 -0.139 -0.16 0 -0 0</pose>
@@ -172,8 +194,14 @@
                  <max_vel>100.000000</max_vel>
                  <min_depth>0.000000</min_depth>
               </ode>
-            </contact>
-         </surface>
+          </contact>
+          <friction>
+            <ode>
+              <mu>500</mu>
+              <mu2>10</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name='mobile_base_r_tyre_link_visual'>
         <pose frame=''>0 0.139 -0.16 0 -0 0</pose>
