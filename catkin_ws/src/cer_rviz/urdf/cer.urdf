@@ -1,4 +1,4 @@
-<?xml version=1.0 ?>
+<?xml version="1.0" ?>
 <robot name="SIM_CER_ROBOT">
   <link name="mobile_base_body_link">
     <inertial>
@@ -9,7 +9,7 @@
     <visual>
       <origin xyz="0 0 -0.16" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_mobilebase_body.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_mobilebase_body.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green">
         <color rgba="0 1 0 1"/>
@@ -18,7 +18,7 @@
     <collision>
       <origin xyz="0 0 -0.16" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_mobilebase_body.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_mobilebase_body.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -45,7 +45,7 @@
     <visual>
       <origin xyz="-0.044 0 -0.231" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_torso_slider_eq.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_torso_slider_eq.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black">
         <color rgba="0 0 0 1"/>
@@ -54,7 +54,7 @@
     <collision>
       <origin xyz="-0.044 0 -0.231" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_torso_slider_eq.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_torso_slider_eq.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -75,7 +75,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_torso_pin_eq.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_torso_pin_eq.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="red">
         <color rgba="1 0 0 1"/>
@@ -84,7 +84,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_torso_pin_eq.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_torso_pin_eq.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -105,7 +105,7 @@
     <visual>
       <origin xyz="-0.044 0 -0.63" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_torso_platform.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_torso_platform.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue">
         <color rgba="0 0 1 1"/>
@@ -114,7 +114,7 @@
     <collision>
       <origin xyz="-0.044 0 -0.63" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_torso_platform.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_torso_platform.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -142,7 +142,7 @@
     <visual>
       <origin xyz="-0.044 0 -0.63" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_chest.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_chest.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="yellow">
         <color rgba="1 1 0 1"/>
@@ -151,7 +151,7 @@
     <collision>
       <origin xyz="-0.044 0 -0.63" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_chest.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_chest.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -179,7 +179,7 @@
     <visual>
       <origin xyz="0.04 0.177 -1.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_clavicle.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_clavicle.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="pink">
         <color rgba="1 0 1 1"/>
@@ -188,7 +188,7 @@
     <collision>
       <origin xyz="0.04 0.177 -1.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_clavicle.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_clavicle.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -209,7 +209,7 @@
     <visual>
       <origin xyz="0.04 0.177 -1.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_shoulder.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_shoulder.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="cyan">
         <color rgba="0 1 1 1"/>
@@ -218,7 +218,7 @@
     <collision>
       <origin xyz="0.04 0.177 -1.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_shoulder.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_shoulder.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -239,14 +239,14 @@
     <visual>
       <origin xyz="0.04 0.211 -0.89" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_upperarm_sensor.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_upperarm_sensor.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin xyz="0.04 0.211 -0.89" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_upperarm_sensor.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_upperarm_sensor.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -274,7 +274,7 @@
     <visual>
       <origin xyz="0.211 0.04 0.8606" rpy="3.14159265359 0 1.57079632679"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_upperarm.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_upperarm.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white">
         <color rgba="1 1 1 1"/>
@@ -283,7 +283,7 @@
     <collision>
       <origin xyz="0.211 0.04 0.8606" rpy="3.14159265359 0 1.57079632679"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_upperarm.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_upperarm.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -302,7 +302,7 @@
     <visual>
       <origin xyz="0.04 0.211 -0.749" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_elbow_sphere.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_elbow_sphere.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dblue">
         <color rgba="0 0 0.8 1"/>
@@ -311,7 +311,7 @@
     <collision>
       <origin xyz="0.04 0.211 -0.749" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_elbow_sphere.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_elbow_sphere.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -332,7 +332,7 @@
     <visual>
       <origin xyz="0.04 0.211 -0.678" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_forearm.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_forearm.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_forearm_link_color">
         <color rgba="0.929 0.933 0.91 1.0"/>
@@ -341,7 +341,7 @@
     <collision>
       <origin xyz="0.04 0.211 -0.678" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_forearm.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_forearm.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -369,7 +369,7 @@
     <visual>
       <origin xyz="0.04 0.211 -0.749" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_wrist_slider.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_wrist_slider.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dgreen">
         <color rgba="0.1 0.8 0.1 1"/>
@@ -378,7 +378,7 @@
     <collision>
       <origin xyz="0.04 0.211 -0.749" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_wrist_slider.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_wrist_slider.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -399,7 +399,7 @@
     <visual>
       <origin xyz="0.04 0.179 -0.458" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_wrist_cup_eq.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_wrist_cup_eq.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="r_wrist_cup_eq_link_color">
         <color rgba="0.776 0.8 0.769 1.0"/>
@@ -408,7 +408,7 @@
     <collision>
       <origin xyz="0.04 0.179 -0.458" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_wrist_cup_eq.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_wrist_cup_eq.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -429,7 +429,7 @@
     <visual>
       <origin xyz="0.04 0.211 -0.458" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_root.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_root.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="gray">
         <color rgba="0.5 0.5 0.5 1"/>
@@ -438,7 +438,7 @@
     <collision>
       <origin xyz="0.04 0.211 -0.458" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_root.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_root.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -473,14 +473,14 @@
     <visual>
       <origin xyz="0.04 0.198143 -0.345494" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_paddle_proximal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_paddle_proximal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin xyz="0.04 0.198143 -0.345494" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_paddle_proximal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_paddle_proximal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -501,14 +501,14 @@
     <visual>
       <origin xyz="0.04 0.214471 -0.306748" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_paddle_distal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_paddle_distal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <origin xyz="0.04 0.214471 -0.306748" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_paddle_distal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_paddle_distal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -536,14 +536,14 @@
     <visual>
       <origin xyz="0.04 0.171352 -0.382282" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_thumb_proximal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_thumb_proximal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="red"/>
     </visual>
     <collision>
       <origin xyz="0.04 0.171352 -0.382282" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_thumb_proximal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_thumb_proximal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -564,14 +564,14 @@
     <visual>
       <origin xyz="0.04 0.130827 -0.371296" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_thumb_distal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_thumb_distal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.04 0.130827 -0.371296" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_r_hand_thumb_distal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_r_hand_thumb_distal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -599,14 +599,14 @@
     <visual>
       <origin xyz="0.04 -0.177 -1.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_clavicle.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_clavicle.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="yellow"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.177 -1.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_clavicle.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_clavicle.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -627,14 +627,14 @@
     <visual>
       <origin xyz="0.04 -0.177 -1.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_shoulder.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_shoulder.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="pink"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.177 -1.0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_shoulder.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_shoulder.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -655,14 +655,14 @@
     <visual>
       <origin xyz="0.04 -0.211 -0.89" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_upperarm_sensor.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_upperarm_sensor.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="cyan"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.211 -0.89" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_upperarm_sensor.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_upperarm_sensor.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -690,14 +690,14 @@
     <visual>
       <origin xyz="-0.211 0.04 0.8606" rpy="3.14159265359 0 1.57079632679"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_upperarm.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_upperarm.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin xyz="-0.211 0.04 0.8606" rpy="3.14159265359 0 1.57079632679"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_upperarm.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_upperarm.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -716,14 +716,14 @@
     <visual>
       <origin xyz="0.04 -0.211 -0.749" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_elbow_sphere.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_elbow_sphere.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.211 -0.749" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_elbow_sphere.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_elbow_sphere.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -744,7 +744,7 @@
     <visual>
       <origin xyz="0.04 -0.211 -0.678" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_forearm.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_forearm.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_forearm_link_color">
         <color rgba="0.929 0.933 0.91 1.0"/>
@@ -753,7 +753,7 @@
     <collision>
       <origin xyz="0.04 -0.211 -0.678" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_forearm.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_forearm.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -781,14 +781,14 @@
     <visual>
       <origin xyz="0.04 -0.211 -0.749" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_wrist_slider.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_wrist_slider.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dblue"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.211 -0.749" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_wrist_slider.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_wrist_slider.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -809,7 +809,7 @@
     <visual>
       <origin xyz="0.072 -0.211 -0.458" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_wrist_cup_eq.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_wrist_cup_eq.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="l_wrist_cup_eq_link_color">
         <color rgba="0.776 0.8 0.769 1.0"/>
@@ -818,7 +818,7 @@
     <collision>
       <origin xyz="0.072 -0.211 -0.458" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_wrist_cup_eq.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_wrist_cup_eq.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -839,14 +839,14 @@
     <visual>
       <origin xyz="0.04 -0.211 -0.458" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_root.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_root.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="dgreen"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.211 -0.458" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_root.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_root.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -881,14 +881,14 @@
     <visual>
       <origin xyz="0.04 -0.198143 -0.345494" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_paddle_proximal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_paddle_proximal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="gray"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.198143 -0.345494" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_paddle_proximal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_paddle_proximal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -909,14 +909,14 @@
     <visual>
       <origin xyz="0.04 -0.214471 -0.306748" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_paddle_distal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_paddle_distal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="green"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.214471 -0.306748" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_paddle_distal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_paddle_distal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -944,14 +944,14 @@
     <visual>
       <origin xyz="0.04 -0.171352 -0.382282" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_thumb_proximal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_thumb_proximal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="black"/>
     </visual>
     <collision>
       <origin xyz="0.04 -0.171352 -0.382282" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_thumb_proximal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_thumb_proximal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -972,14 +972,14 @@
     <visual>
       <origin xyz="0.039745 -0.130827 -0.371296" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_thumb_distal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_thumb_distal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="red"/>
     </visual>
     <collision>
       <origin xyz="0.039745 -0.130827 -0.371296" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_l_hand_thumb_distal.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_l_hand_thumb_distal.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1007,14 +1007,14 @@
     <visual>
       <origin xyz="0.05 0 -1.03" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_neck.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_neck.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="blue"/>
     </visual>
     <collision>
       <origin xyz="0.05 0 -1.03" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_neck.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_neck.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1035,7 +1035,7 @@
     <visual>
       <origin xyz="0.0383205 0 -1.18838" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_head.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_head.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="head_link_color">
         <color rgba="0.368932 0.368932 0.368932 1.0"/>
@@ -1044,7 +1044,7 @@
     <collision>
       <origin xyz="0.0383205 0 -1.18838" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_head.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_head.dae" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -1114,7 +1114,7 @@
     <visual>
       <origin xyz="0 0.139 -0.16" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_mobilebase_r_tyre.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_mobilebase_r_tyre.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="yellow"/>
     </visual>
@@ -1142,7 +1142,7 @@
     <visual>
       <origin xyz="0 -0.139 -0.16" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://cer/meshes/dae/sim_cer_mobilebase_l_tyre.dae" scale="0.001 0.001 0.001"/>
+        <mesh filename="package://cer_rviz/urdf/meshes/dae/sim_cer_mobilebase_l_tyre.dae" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="pink"/>
     </visual>
@@ -1221,7 +1221,7 @@
  </noise>
 </ray>
       <plugin name="laser_sensor" filename="libgazebo_yarp_lasersensor.so">
-    <yarpConfigurationFile>package://cer/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+    <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
@@ -1259,7 +1259,7 @@
   </clip>
 </camera>
       <plugin name="multicamera_plugin" filename="libgazebo_yarp_multicamera.so">
-    <yarpConfigurationFile>package://cer/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
+    <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
@@ -1294,7 +1294,7 @@
     </clip>
 </camera>
       <plugin filename="libgazebo_yarp_depthCamera.so" name="depth_camera_plugin">
-    <yarpConfigurationFile>package://cer/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
+    <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_depthCamera.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
@@ -1329,7 +1329,7 @@
     </clip>
 </camera>
       <plugin filename="libgazebo_yarp_camera.so" name="xtion_camera_rgb_plugin">
-    <yarpConfigurationFile>package://cer/conf/gazebo_cer_xtion_camera_rgb.ini</yarpConfigurationFile>
+    <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_xtion_camera_rgb.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
@@ -1340,71 +1340,71 @@
   <gazebo>
 <!-- TORSO user view -->
 <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_torso.ini</yarpConfigurationFile>
 </plugin>
 <!-- TORSO low level view -->
 <plugin name="controlboard_torso_tripod" filename="libgazeboTripod.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
 </plugin>
 
 <plugin name="controlboard_left_upper_arm" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_upper_arm.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_left_upper_arm.ini</yarpConfigurationFile>
 </plugin>
 <!-- LEFT WRIST user view -->  
 <plugin name="controlboard_left_wrist" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_wrist.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_left_wrist.ini</yarpConfigurationFile>
 </plugin>
 <!-- LEFT WRIST low level view -->
 <plugin name="controlboard_left_wrist_tripod" filename="libgazeboTripod.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
 </plugin>
 
 <plugin name="controlboard_right_upper_arm" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_upper_arm.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_right_upper_arm.ini</yarpConfigurationFile>
 </plugin>
 <!-- RIGHT WRIST user view -->
 <plugin name="controlboard_right_wrist" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_wrist.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_right_wrist.ini</yarpConfigurationFile>
 </plugin>
 <!-- RIGHT WRIST low level view -->
 <plugin name="controlboard_right_wrist_tripod" filename="libgazeboTripod.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
 </plugin>
 
 <plugin name="controlboard_right_arm" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
 </plugin>
 <plugin name="controlboard_left_arm" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
 </plugin>
 
 <plugin name="controlboard_head" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_head.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_head.ini</yarpConfigurationFile>
 </plugin>
 
 <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_hand.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_left_hand.ini</yarpConfigurationFile>
 </plugin>
 
 <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_hand.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_right_hand.ini</yarpConfigurationFile>
 </plugin> 
 
 <plugin name="mais_left_hand" filename="libgazebo_yarp_maissensor.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_left_hand_mais.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_left_hand_mais.ini</yarpConfigurationFile>
 </plugin>
 <plugin name="mais_right_hand" filename="libgazebo_yarp_maissensor.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_right_hand_mais.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_right_hand_mais.ini</yarpConfigurationFile>
 </plugin>
 
 <plugin name="controlboard_mobile_base" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
 </plugin>
 <plugin name="controlboard_all" filename="libgazebo_yarp_controlboard.so">
-  <yarpConfigurationFile>package://cer/conf/gazebo_cer_all.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_all.ini</yarpConfigurationFile>
 </plugin>
 <plugin name="world_interface" filename="libgazebo_yarp_worldinterface.so">
-  <yarpConfigurationFile>package://cer/conf/worldInterface.ini</yarpConfigurationFile>
+  <yarpConfigurationFile>package://cer_rviz/conf/worldInterface.ini</yarpConfigurationFile>
 </plugin>
 </gazebo>
   <gazebo reference="mobile_base_body_link">
