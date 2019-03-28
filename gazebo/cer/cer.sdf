@@ -20,7 +20,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer/meshes/dae/sim_cer_mobilebase_body.dae</uri>
+            <uri>model://cer/meshes/obj/sim_cer_mobilebase_body.obj</uri>
           </mesh>
         </geometry>
         <surface>
@@ -40,7 +40,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://cer/meshes/dae/sim_cer_mobilebase_body.dae</uri>
+            <uri>model://cer/meshes/obj/sim_cer_mobilebase_body.obj</uri>
           </mesh>
         </geometry>
         <material>
@@ -66,7 +66,7 @@
             </horizontal>
           </scan>
           <range>
-            <min>0.1</min>
+            <min>0.04</min>
             <max>5</max>
             <resolution>0.01</resolution>
           </range>
@@ -95,7 +95,7 @@
             </horizontal>
           </scan>
           <range>
-            <min>0.1</min>
+            <min>0.04</min>
             <max>5</max>
             <resolution>0.01</resolution>
           </range>
