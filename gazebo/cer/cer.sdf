@@ -1364,11 +1364,15 @@
           </mesh>
         </geometry>
         <material>
+          <diffuse>1 1 1 1</diffuse>
           <script>
             <uri>__default__</uri>
             <name>__default__</name>
           </script>
         </material>
+        <plugin name='face' filename='libgazebo_yarp_videotexture.so'>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_face.ini</yarpConfigurationFile>
+        </plugin>
       </visual>
       <velocity_decay/>
       <sensor name='multicamera_sensor' type='multicamera'>
