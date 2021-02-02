@@ -2330,6 +2330,9 @@
     <plugin name='double_laser' filename='libgazebo_yarp_doublelaser.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_doublelaser.ini</yarpConfigurationFile>
     </plugin>
+    <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
+      <yarpRobotInterfaceConfigurationFile>model://cer/conf/RobotInterfaceTest.xml</yarpRobotInterfaceConfigurationFile>
+    </plugin>
     <static>0</static>
     <pose frame=''>0 0 0.16 0 -0 0</pose>
   </model>
