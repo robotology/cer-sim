@@ -2321,9 +2321,6 @@
     <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_all' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_all.ini</yarpConfigurationFile>
-    </plugin>
     <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
       <yarpConfigurationFile>model://cer/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>

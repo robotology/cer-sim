@@ -4,6 +4,7 @@
 <robot name="robotinterface_additional_controlboard_nws" prefix="robotinterface_additional_controlboard_nws">
 
     <xi:include href="./RobotInterface_Lidars.xml" />
-    <xi:include href="./RobotInterface_depthCameras.xml" />
+<!--    <xi:include href="./RobotInterface_depthCameras.xml" /> -->
+    <xi:include href="./RobotInterface_controlBoard.xml" />
  
 </robot>
