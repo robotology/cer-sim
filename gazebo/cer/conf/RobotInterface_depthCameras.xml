@@ -9,18 +9,18 @@ asus_xtion_depth::SIM_CER_ROBOT::head_link::SIM_CER_ROBOT::head_link::asus_xtion
 -->                                                                            
 
 <device xmlns:xi="http://www.w3.org/2001/XInclude" name="depthWrapY" type="rgbdSensor_nws_yarp">
-    <param name="period"> 0.010                        </param>
+    <param name="period"> 10                        </param>
     <param name="name">   /robot_2wheels/depth:o    </param>
     <action phase="startup" level="5" type="attach">
         <paramlist name="networks">
-            <elem name="the_device">  SIM_CER_ROBOT::head_link::asus_xtion_depth::headDepthCamera </elem> 
+            <elem name="the_device"> headDepthCamera </elem> 
         </paramlist>
     </action>
     <action phase="shutdown" level="5" type="detach" />
 </device>
 
 <device xmlns:xi="http://www.w3.org/2001/XInclude" name="depthWrapR" type="rgbdSensor_nws_ros">
-    <param name="period"> 0.010                 </param>
+    <param name="period"> 10                 </param>
     <param name="nodeName">    /rgbdsensor_ros_node    </param>
     <param name="colorTopicName">  /ros_colortopic</param>
     <param name="depthTopicName">  /ros_depthtopic</param>
@@ -29,14 +29,14 @@ asus_xtion_depth::SIM_CER_ROBOT::head_link::SIM_CER_ROBOT::head_link::asus_xtion
     <param name="frame_Id">     ros_frame   </param>
     <action phase="startup" level="5" type="attach">
         <paramlist name="networks">
-            <elem name="the_device">  SIM_CER_ROBOT::head_link::asus_xtion_depth::headDepthCamera </elem> 
+            <elem name="the_device"> headDepthCamera </elem> 
         </paramlist>
     </action>
     <action phase="shutdown" level="5" type="detach" />
 </device>
 
 <device xmlns:xi="http://www.w3.org/2001/XInclude" name="depthWrapR2" type="rgbdSensor_nws_ros2">
-    <param name="period"> 0.010             </param>
+    <param name="period"> 10             </param>
     <param name="ROS_nodeName">    /ros2_node    </param>
     <param name="ROS_colorTopicName">  /ros2_colortopic</param>
     <param name="ROS_depthTopicName">  /ros2_depthtopic</param>
@@ -45,7 +45,7 @@ asus_xtion_depth::SIM_CER_ROBOT::head_link::SIM_CER_ROBOT::head_link::asus_xtion
     <param name="ROS_frame_Id">  ros2_frame    </param>
     <action phase="startup" level="5" type="attach">
         <paramlist name="networks">
-            <elem name="the_device">  SIM_CER_ROBOT::head_link::asus_xtion_depth::headDepthCamera </elem> 
+            <elem name="the_device"> headDepthCamera </elem> 
         </paramlist>
     </action>
     <action phase="shutdown" level="5" type="detach" />

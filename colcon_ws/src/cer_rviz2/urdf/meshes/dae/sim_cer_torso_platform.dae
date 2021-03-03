@@ -1,0 +1,148 @@
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2016-05-03T23:38:02.961436</created>
+    <modified>2016-05-03T23:38:02.961443</modified>
+    <unit name="meter" meter="1.0"/>
+    <up_axis>Y_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect name="DEFAULT_MTL-effect" id="DEFAULT_MTL-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0.0 0.0 0.0 1.0</color>
+            </emission>
+            <ambient>
+              <color>0.695 0.743 0.79 1.0</color>
+            </ambient>
+            <diffuse>
+              <color>0.695 0.743 0.79 1.0</color>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>0.0</float>
+            </shininess>
+            <reflective>
+              <color>0.0 0.0 0.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.0</float>
+            </reflectivity>
+            <transparent>
+              <color>0.0 0.0 0.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>0</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+    </effect>
+    <effect name="obj2daeDefaultMaterial-effect" id="obj2daeDefaultMaterial-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color>0.0 0.0 0.0 1.0</color>
+            </emission>
+            <ambient>
+              <color>0.6 0.6 0.6 1.0</color>
+            </ambient>
+            <diffuse>
+              <color>0.6 0.6 0.6 1.0</color>
+            </diffuse>
+            <specular>
+              <color>0.0 0.0 0.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>0.0</float>
+            </shininess>
+            <reflective>
+              <color>0.0 0.0 0.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.0</float>
+            </reflectivity>
+            <transparent>
+              <color>0.0 0.0 0.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+        <extra>
+          <technique profile="GOOGLEEARTH">
+            <double_sided>0</double_sided>
+          </technique>
+        </extra>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_geometries>
+    <geometry id="geometry" name="geometry">
+      <mesh>
+        <source id="vertices">
+          <float_array count="54" id="vertices-array">89 77.94229 625 89 77.94229 625 89 77.94229 625 -46 0 625 -46 0 625 -46 0 625 89 -77.94229 625 89 -77.94229 625 89 -77.94229 625 89 77.94229 635 89 77.94229 635 89 77.94229 635 89 -77.94229 635 89 -77.94229 635 89 -77.94229 635 -46 0 635 -46 0 635 -46 0 635</float_array>
+          <technique_common>
+            <accessor count="18" source="#vertices-array" stride="3">
+              <param type="float" name="X"/>
+              <param type="float" name="Y"/>
+              <param type="float" name="Z"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="normals">
+          <float_array count="54" id="normals-array">0 0 -1 1 0 0 -0.5 0.866025 0 0 0 -1 -0.5 0.866025 0 -0.5 -0.866025 0 0 0 -1 1 0 0 -0.5 -0.866025 0 0 0 1 1 0 0 -0.5 0.866025 0 0 0 1 1 0 0 -0.5 -0.866025 0 0 0 1 -0.5 0.866025 0 -0.5 -0.866025 0</float_array>
+          <technique_common>
+            <accessor count="18" source="#normals-array" stride="3">
+              <param type="float" name="X"/>
+              <param type="float" name="Y"/>
+              <param type="float" name="Z"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="vertices-vertices">
+          <input source="#vertices" semantic="POSITION"/>
+        </vertices>
+        <triangles count="8" material="DEFAULT_MTL">
+          <input source="#normals" semantic="NORMAL" offset="1"/>
+          <input source="#vertices-vertices" semantic="VERTEX" offset="0"/>
+          <p>6 6 3 3 0 0 11 11 2 2 4 4 13 13 7 7 1 1 13 13 1 1 10 10 17 17 5 5 8 8 16 16 11 11 4 4 17 17 8 8 14 14 15 15 12 12 9 9</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_materials>
+    <material name="DEFAULT_MTL" id="DEFAULT_MTL">
+      <instance_effect url="#DEFAULT_MTL-effect"/>
+    </material>
+    <material name="obj2daeDefaultMaterial" id="obj2daeDefaultMaterial">
+      <instance_effect url="#obj2daeDefaultMaterial-effect"/>
+    </material>
+  </library_materials>
+  <library_visual_scenes>
+    <visual_scene id="myscene">
+      <node name="mynode" id="mynode">
+        <instance_geometry url="#geometry">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="DEFAULT_MTL" target="#DEFAULT_MTL"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#myscene"/>
+  </scene>
+</COLLADA>
