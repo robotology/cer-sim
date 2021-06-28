@@ -3,52 +3,47 @@
 
 <devices>
 
-<!--  
-scoped names are:
-asus_xtion_depth::SIM_CER_ROBOT::head_link::SIM_CER_ROBOT::head_link::asus_xtion_depth::headDepthCamera
--->                                                                            
+    <device name="depthWrapY" type="rgbdSensor_nws_yarp">
+        <param name="period">10</param>
+        <param name="name"> /robot_2wheels/depth:o </param>
+        <action phase="startup" level="5" type="attach">
+            <paramlist name="networks">
+                <elem name="the_device"> headDepthCamera </elem>
+            </paramlist>
+        </action>
+        <action phase="shutdown" level="5" type="detach" />
+    </device>
 
-<device xmlns:xi="http://www.w3.org/2001/XInclude" name="depthWrapY" type="rgbdSensor_nws_yarp">
-    <param name="period"> 10                        </param>
-    <param name="name">   /robot_2wheels/depth:o    </param>
-    <action phase="startup" level="5" type="attach">
-        <paramlist name="networks">
-            <elem name="the_device"> headDepthCamera </elem> 
-        </paramlist>
-    </action>
-    <action phase="shutdown" level="5" type="detach" />
-</device>
+    <device name="depthWrapR" type="rgbdSensor_nws_ros">
+        <param name="period">10</param>
+        <param name="nodeName">/rgbdsensor_ros_node</param>
+        <param name="colorTopicName">/camera_rgbd/color/image_rect_color</param>
+        <param name="depthTopicName">/camera_rgbd/depth/image_rect</param>
+        <param name="colorInfoTopicName">/camera_rgbd/color/camera_info</param>
+        <param name="depthInfoTopicName">/camera_rgbd/depth/camera_info</param>
+        <param name="frame_Id">depth_center</param> <!-- FIXME depth_rgb + depth -->
+        <action phase="startup" level="5" type="attach">
+            <paramlist name="networks">
+                <elem name="the_device"> headDepthCamera </elem>
+            </paramlist>
+        </action>
+        <action phase="shutdown" level="5" type="detach" />
+    </device>
 
-<device xmlns:xi="http://www.w3.org/2001/XInclude" name="depthWrapR" type="rgbdSensor_nws_ros">
-    <param name="period"> 10                 </param>
-    <param name="nodeName">    /rgbdsensor_ros_node    </param>
-    <param name="colorTopicName">  /ros_colortopic</param>
-    <param name="depthTopicName">  /ros_depthtopic</param>
-    <param name="colorInfoTopicName">  /ros_colorinfotopic</param>
-    <param name="depthInfoTopicName">  /ros_depthinfotopic</param>
-    <param name="frame_Id">     ros_frame   </param>
-    <action phase="startup" level="5" type="attach">
-        <paramlist name="networks">
-            <elem name="the_device"> headDepthCamera </elem> 
-        </paramlist>
-    </action>
-    <action phase="shutdown" level="5" type="detach" />
-</device>
+    <device name="depthWrapR2" type="rgbdSensor_nws_ros2">
+        <param name="period">0.010</param>
+        <param name="nodeName">/rgbdsensor_ros2_node</param>
+        <param name="colorTopicName">/camera_rgbd/color/image_rect_color</param>
+        <param name="depthTopicName">/camera_rgbd/depth/image_rect</param>
+        <param name="colorInfoTopicName">/camera_rgbd/color/camera_info</param>
+        <param name="depthInfoTopicName">/camera_rgbd/depth/camera_info</param>
+        <param name="frame_Id">depth_center</param> <!-- FIXME depth_rgb + depth -->
+        <action phase="startup" level="5" type="attach">
+            <paramlist name="networks">
+                <elem name="the_device"> headDepthCamera </elem>
+            </paramlist>
+        </action>
+        <action phase="shutdown" level="5" type="detach" />
+    </device>
 
-<device xmlns:xi="http://www.w3.org/2001/XInclude" name="depthWrapR2" type="rgbdSensor_nws_ros2">
-    <param name="period"> 10             </param>
-    <param name="ROS_nodeName">    /ros2_node    </param>
-    <param name="ROS_colorTopicName">  /ros2_colortopic</param>
-    <param name="ROS_depthTopicName">  /ros2_depthtopic</param>
-    <param name="ROS_colorInfoTopicName">  /ros2_colorinfotopic</param>
-    <param name="ROS_depthInfoTopicName">  /ros2_depthinfotopic</param>
-    <param name="ROS_frame_Id">  ros2_frame    </param>
-    <action phase="startup" level="5" type="attach">
-        <paramlist name="networks">
-            <elem name="the_device"> headDepthCamera </elem> 
-        </paramlist>
-    </action>
-    <action phase="shutdown" level="5" type="detach" />
-</device>
-    
 </devices>
