@@ -48,16 +48,17 @@ las3
         </action>
         <action phase="shutdown" level="3" type="detach" />
     </device>
--->
     <device xmlns:xi="http://www.w3.org/2001/XInclude" name="cbw_ros" type="controlBoard_nws_ros">
-        <param name="nodeName"> /ros_cb_node </param>
-        <param name="topicName"> /joint_states </param>
+        <param name="node_name"> /ros_cb_node </param>
+        <param name="topic_name"> /joint_states </param>
         <action phase="startup" level="7" type="attach">
             <param name="device"> cbw_remapper </param>
         </action>
         <action phase="shutdown" level="3" type="detach" />
     </device>
 
+-->
+<!--
     <device xmlns:xi="http://www.w3.org/2001/XInclude" name="cbw_ros2" type="controlBoard_nws_ros2">
         <param name="nodeName"> /ros2_cb_node </param>
         <param name="topicName"> /joint_states </param>
@@ -66,4 +67,5 @@ las3
         </action>
         <action phase="shutdown" level="3" type="detach" />
     </device>
+-->
 </devices>
