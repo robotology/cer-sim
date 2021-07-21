@@ -26,21 +26,21 @@ las3
         <param name="joints"> 32 </param>
         <action phase="startup" level="5" type="attach">
             <paramlist name="networks">
-                <elem name="torso"> torso_device </elem>
-                <elem name="left_upper_arm_and_pronosup"> left_upper_arm_and_pronosup_device </elem>
-                <elem name="left_wrist"> left_wrist_device </elem>
-                <elem name="right_upper_arm_and_pronosup"> right_upper_arm_and_pronosup_device </elem>
-                <elem name="right_wrist"> right_wrist_device </elem>
-                <elem name="mobile_base"> mobile_base_device </elem>
-                <elem name="head"> head_device </elem>
-                <elem name="left_hand"> left_hand_device </elem>
-                <elem name="right_hand"> right_hand_device </elem>
+                <elem name="torso">torso_device</elem>
+                <elem name="left_upper_arm_and_pronosup"> left_upper_arm_and_pronosup </elem>
+                <elem name="left_wrist"> left_wrist </elem>
+                <elem name="right_upper_arm_and_pronosup"> right_upper_arm_and_pronosup </elem>
+                <elem name="right_wrist"> right_wrist </elem>
+                <elem name="mobile_base"> mobile_base </elem>
+                <elem name="head"> head </elem>
+                <elem name="left_hand"> left_hand </elem>
+                <elem name="right_hand"> right_hand </elem>
             </paramlist>
         </action>
         <action phase="shutdown" level="5" type="detach" />
     </device>
 
-<!--
+
     <device xmlns:xi="http://www.w3.org/2001/XInclude" name="cbw_yarp" type="controlBoard_nws_yarp">
         <param name="name"> /foo/head </param>
         <action phase="startup" level="7" type="attach">
@@ -57,7 +57,6 @@ las3
         <action phase="shutdown" level="3" type="detach" />
     </device>
 
--->
 <!--
     <device xmlns:xi="http://www.w3.org/2001/XInclude" name="cbw_ros2" type="controlBoard_nws_ros2">
         <param name="nodeName"> /ros2_cb_node </param>
