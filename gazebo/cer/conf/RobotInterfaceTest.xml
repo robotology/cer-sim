@@ -4,8 +4,11 @@
 <robot name="robotinterface_additional_controlboard_nws" prefix="robotinterface_additional_controlboard_nws" xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <xi:include href="./RobotInterface_Lidars.xml" />
-    <xi:include href="./RobotInterface_cameras.xml" />
+	    <!--    <xi:include href="./RobotInterface_cameras.xml" />-->
+<!--
     <xi:include href="./RobotInterface_depthCameras.xml" />
+     -->
     <xi:include href="./RobotInterface_controlBoard.xml" />
- 
+
+
 </robot>
