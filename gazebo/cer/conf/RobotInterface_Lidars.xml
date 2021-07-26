@@ -11,11 +11,31 @@ las3
 -->
 
 <device xmlns:xi="http://www.w3.org/2001/XInclude" name="lidarWrapY" type="rangefinder2D_nws_yarp">
-    <param name="period"> 0.010                        </param>
-    <param name="name">   /robot_2wheels/laser:o    </param>
+    <param name="period"> 10                        </param>
+    <param name="name">   /SIM_CER_ROBOT/laser/front:o    </param>
     <action phase="startup" level="5" type="attach">
         <paramlist name="networks">
-            <elem name="the_device">  las3 </elem> 
+            <elem name="the_device">  laser_front </elem> 
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="5" type="detach" />
+</device>
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="lidarWrapY" type="rangefinder2D_nws_yarp">
+    <param name="period"> 10                        </param>
+    <param name="name">   /SIM_CER_ROBOT/laser/back:o    </param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="the_device">  laser_back </elem> 
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="5" type="detach" />
+</device>
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="lidarWrapY" type="rangefinder2D_nws_yarp">
+    <param name="period"> 10                        </param>
+    <param name="name">   /SIM_CER_ROBOT/laser:o    </param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="the_device">  double_laser </elem> 
         </paramlist>
     </action>
     <action phase="shutdown" level="5" type="detach" />
@@ -28,7 +48,7 @@ las3
     <param name="frame_id">    mobile_base_double_lidar   </param>
     <action phase="startup" level="5" type="attach">
         <paramlist name="networks">
-            <elem name="the_device">las3 </elem>
+            <elem name="the_device">double_laser </elem>
         </paramlist>
     </action>
     <action phase="shutdown" level="5" type="detach" />
