@@ -1370,9 +1370,9 @@
             <name>__default__</name>
           </script>
         </material>
-        <plugin name='face' filename='libgazebo_yarp_videotexture.so'>
+	      <plugin name='face' filename='libgazebo_yarp_videotexture.so'>
           <yarpConfigurationFile>model://cer/conf/gazebo_cer_face.ini</yarpConfigurationFile>
-        </plugin>
+	      </plugin>
       </visual>
       <velocity_decay/>
       <sensor name='multicamera_sensor' type='multicamera'>
@@ -1403,9 +1403,6 @@
             <far>100</far>
           </clip>
         </camera>
-        <plugin name='multicamera_plugin' filename='libgazebo_yarp_multicamera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
-        </plugin>
       </sensor>
       <velocity_decay/>
       <sensor name='asus_xtion_depth' type='depth'>
@@ -1464,9 +1461,6 @@
             <far>3000</far>
           </clip>
         </camera>
-        <plugin name='xtion_camera_rgb_plugin' filename='libgazebo_yarp_camera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_xtion_camera_rgb.ini</yarpConfigurationFile>
-        </plugin>
       </sensor>
     </link>
     <joint name='neck_yaw_joint' type='revolute'>
@@ -2279,6 +2273,10 @@
     <plugin name='controlboard_torso_tripod' filename='libgazeboTripod.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
     </plugin>
+    <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+    </plugin>
+
     <plugin name='controlboard_left_upper_arm' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_upper_arm.ini</yarpConfigurationFile>
     </plugin>
@@ -2288,6 +2286,7 @@
     <plugin name='controlboard_left_wrist_tripod' filename='libgazeboTripod.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
+
     <plugin name='controlboard_right_upper_arm' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_upper_arm.ini</yarpConfigurationFile>
     </plugin>
@@ -2297,38 +2296,33 @@
     <plugin name='controlboard_right_wrist_tripod' filename='libgazeboTripod.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_right_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
-    </plugin>
-    <plugin name='controlboard_left_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
-    </plugin>
-    <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_head.ini</yarpConfigurationFile>
-    </plugin>
+
     <plugin name='controlboard_left_hand' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_hand.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_hand' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_hand.ini</yarpConfigurationFile>
     </plugin>
+
+    <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
+      <yarpConfigurationFile>model://cer/conf/gazebo_cer_head.ini</yarpConfigurationFile>
+    </plugin>
+
     <plugin name='mais_left_hand' filename='libgazebo_yarp_maissensor.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_hand_mais.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='mais_right_hand' filename='libgazebo_yarp_maissensor.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_hand_mais.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
-    </plugin>
+
     <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
       <yarpConfigurationFile>model://cer/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='double_laser' filename='libgazebo_yarp_doublelaser.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_doublelaser.ini</yarpConfigurationFile>
-    </plugin>
+    </plugin> 
     <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://cer/conf/RobotInterfaceTest.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceConfigurationFile>model://cer/conf/RobotInterface_cer.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
     <static>0</static>
     <pose frame=''>0 0 0.16 0 -0 0</pose>

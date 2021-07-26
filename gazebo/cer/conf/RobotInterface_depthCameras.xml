@@ -5,7 +5,7 @@
 
     <device name="depthWrapY" type="rgbdSensor_nws_yarp">
         <param name="period">10</param>
-        <param name="name"> /robot_2wheels/depth:o </param>
+        <param name="name"> /SIM_CER_ROBOT/depthCamera </param>
         <action phase="startup" level="5" type="attach">
             <paramlist name="networks">
                 <elem name="the_device"> headDepthCamera </elem>
