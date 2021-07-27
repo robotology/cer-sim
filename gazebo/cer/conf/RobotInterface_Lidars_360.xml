@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<devices>
+
+<!--  
+scoped names are:
+default::SIM_CER_ROBOT::mobile_base_body_link::base_laser::las1 
+default::SIM_CER_ROBOT::mobile_base_body_link::base_laser2::las2
+las3
+-->
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="lidarWrapY" type="rangefinder2D_nws_yarp">
+    <param name="period"> 10                        </param>
+    <param name="name">   /SIM_CER_ROBOT/laser:o    </param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="the_device">  las360 </elem> 
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="5" type="detach" />
+</device>
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="lidarWrapR" type="rangefinder2D_nws_ros">
+    <param name="period"> 10                 </param>
+    <param name="node_name">    /rangefinder_ros_node    </param>
+    <param name="topic_name">   /double_lidar   </param>
+    <param name="frame_id">    mobile_base_double_lidar   </param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="the_device">las360 </elem>
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="5" type="detach" />
+</device>
+<!--
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="lidarWrapR2" type="rangefinder2D_nws_ros2">
+    <param name="period"> 10             </param>
+    <param name="topic">  /double_lidar    </param>
+    <param name="frame">  mobile_base_double_lidar    </param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="the_device">  las3 </elem> 
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="5" type="detach" />
+</device>
+-->
+</devices>
+
