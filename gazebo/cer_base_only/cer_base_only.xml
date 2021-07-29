@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<robot name="CER-SIM-BASE-ONLY" prefix="CER-SIM-BASE-ONLY" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <devices>
+        <!-- mobile base -->
+        <xi:include href="../cer/conf/gazebo_cer_mobile_base/gazebo_cer_mobile_base_nws_yarp.xml" />
+ 
+        <!-- lidars -->
+        <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_back_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_front_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_ros.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_yarp.xml" />
+    </devices>
+</robot>

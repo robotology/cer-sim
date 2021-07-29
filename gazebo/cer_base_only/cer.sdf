@@ -76,8 +76,8 @@
             <stddev>0.005</stddev>
           </noise>
         </ray>
-        <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_laser_sensor.ini</yarpConfigurationFile>
+        <plugin name='lasersensor_front' filename='libgazebo_yarp_lasersensor.so'>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_front.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
       <sensor name='base_laser2' type='ray'>
@@ -105,8 +105,8 @@
             <stddev>0.005</stddev>
           </noise>
         </ray>
-        <plugin name='laser_sensor2' filename='libgazebo_yarp_lasersensor.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_laser_sensor2.ini</yarpConfigurationFile>
+        <plugin name='lasersensor_back' filename='libgazebo_yarp_lasersensor.so'>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_back.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
       
@@ -237,16 +237,16 @@
     </joint>
 
     <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
       <yarpConfigurationFile>model://cer/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='the_double_laser' filename='libgazebo_yarp_doublelaser.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_doublelaser.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser.ini</yarpConfigurationFile>
     </plugin>
     <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://cer/conf/RobotInterface_cer_base_only.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceConfigurationFile>model://cer_base_only/cer_base_only.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
     <static>0</static>
     <pose frame=''>0 0 0.16 0 -0 0</pose>
