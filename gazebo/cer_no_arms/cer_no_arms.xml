@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<robot name="CER-SIM-NO-ARMS" prefix="CER-SIM-NO-ARMS" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <devices>
+        <!-- all -->
+        <xi:include href="../cer/conf/gazebo_cer_all_no_arms/gazebo_cer_all_no_arms_remapper.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_all_no_arms/gazebo_cer_all_no_arms_nws_ros.xml" />
+
+        <!-- torso, head and base -->
+        <xi:include href="../cer/conf/gazebo_cer_head/gazebo_cer_head_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_torso/gazebo_cer_torso_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_mobile_base/gazebo_cer_mobile_base_nws_yarp.xml" />
+
+        <!-- lidars -->
+        <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_back_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_front_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_ros.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_yarp.xml" />
+
+        <!-- depth_camera -->
+        <xi:include href="../cer/conf/gazebo_cer_depthcamera/gazebo_cer_depthcamera_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_depthcamera/gazebo_cer_depthcamera_nws_ros.xml" />
+    </devices>
+</robot>

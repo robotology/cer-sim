@@ -77,7 +77,7 @@
           </noise>
         </ray>
         <plugin name='laser_sensor' filename='libgazebo_yarp_lasersensor.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_laser_sensor360.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor360.ini</yarpConfigurationFile>
         </plugin>
       </sensor>    
       <gravity>1</gravity>
@@ -207,13 +207,13 @@
     </joint>
 
     <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
+      <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
       <yarpConfigurationFile>model://cer/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
     <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://cer/conf/RobotInterface_cer_base_only_360.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceConfigurationFile>model://cer_base_only360/cer_base_only360.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
     <static>0</static>
     <pose frame=''>0 0 0.16 0 -0 0</pose>
