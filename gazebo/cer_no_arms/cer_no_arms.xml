@@ -15,6 +15,7 @@
         <!-- lidars -->
         <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_back_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_front_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_cerDoubleLidar.xml" />
         <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_ros.xml" />
         <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_yarp.xml" />
 
