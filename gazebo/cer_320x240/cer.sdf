@@ -1404,7 +1404,7 @@
           </clip>
         </camera>
         <plugin name='multicamera_plugin' filename='libgazebo_yarp_multicamera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
       <velocity_decay/>
@@ -2326,7 +2326,7 @@
       <yarpConfigurationFile>model://cer/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
     <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
-      <yarpRobotInterfaceConfigurationFile>model://cer/cer.xml</yarpRobotInterfaceConfigurationFile>
+      <yarpRobotInterfaceConfigurationFile>model://cer_320x240/cer_320x240.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
     <static>0</static>
     <pose frame=''>0 0 0.16 0 -0 0</pose>

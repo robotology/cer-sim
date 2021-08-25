@@ -16,11 +16,16 @@
         <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_back_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_front_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_cerDoubleLidar.xml" />
-        <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_ros.xml" />
         <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_doublelaser/gazebo_cer_doublelaser_nws_ros.xml" />
 
         <!-- depth_camera -->
         <xi:include href="../cer/conf/gazebo_cer_depthcamera/gazebo_cer_depthcamera_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_depthcamera/gazebo_cer_depthcamera_nws_ros.xml" />
+
+        <!-- multicamera -->
+        <xi:include href="../cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera_croppers.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera_nws_ros.xml" />
     </devices>
 </robot>
