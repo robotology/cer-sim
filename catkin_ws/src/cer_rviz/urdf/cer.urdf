@@ -29,13 +29,35 @@
     <child link="base_link"/>
     <dynamics damping="0.1"/>
   </joint>
-  <link name="mobile_base_lidar"/>
-  <joint name="mobile_base_lidar_fixed_joint" type="fixed">
-    <origin xyz="0.07 0 0.031" rpy="0 0 0"/>
-    <parent link="mobile_base_body_link"/>
-    <child link="mobile_base_lidar"/>
+  <link name="ground_link"/>
+  <joint name="ground_link_fixed_joint" type="fixed">
+    <origin xyz="0 0 -0.2" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="ground_link"/>
     <dynamics damping="0.1"/>
   </joint>
+  <link name="mobile_base_lidar_F"/>
+  <joint name="mobile_base_lidar_F_fixed_joint" type="fixed">
+    <origin xyz="0.07 0 0.031" rpy="0 0 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_lidar_F"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="mobile_base_lidar_B"/>
+  <joint name="mobile_base_lidar_B_fixed_joint" type="fixed">
+    <origin xyz="-0.085 0 0.031" rpy="0 0 3.14"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_lidar_B"/>
+    <dynamics damping="0.1"/>
+  </joint>
+  <link name="mobile_base_double_lidar"/>
+  <joint name="mobile_base_double_lidar_fixed_joint" type="fixed">
+    <origin xyz="0.0 0 0.031" rpy="0 0 0"/>
+    <parent link="mobile_base_body_link"/>
+    <child link="mobile_base_double_lidar"/>
+    <dynamics damping="0.1"/>
+  </joint>
+
   <link name="torso_slider_eq_link">
     <inertial>
       <origin xyz="0.015175 2.80975e-06 0.244533" rpy="0 0 0"/>
