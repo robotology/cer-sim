@@ -1,4 +1,7 @@
 /catkin_ws/build/
 /catkin_ws/devel/
 /catkin_ws/logs/
-catkin_ws/.catkin_tools/
+/catkin_ws/.catkin_tools/
+/colcon_ws/build/
+/colcon_ws/install/
+/colcon_ws/log/
