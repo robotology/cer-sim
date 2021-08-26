@@ -626,7 +626,7 @@
           </clip>
         </camera>
         <plugin name='multicamera_plugin' filename='libgazebo_yarp_multicamera.so'>
-          <yarpConfigurationFile>model://cer/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
+          <yarpConfigurationFile>model://cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera.ini</yarpConfigurationFile>
         </plugin>
       </sensor>
       <velocity_decay/>

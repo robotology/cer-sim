@@ -40,7 +40,7 @@
         <xi:include href="../cer/conf/gazebo_cer_depthcamera/gazebo_cer_depthcamera_nws_ros.xml" />
 
         <!-- multicamera -->
-        <xi:include href="../cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera_croppers.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera_croppers_320x240.xml" />
         <xi:include href="../cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_multicamera/gazebo_cer_multicamera_nws_ros.xml" />
     </devices>

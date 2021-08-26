@@ -1281,7 +1281,7 @@
   </clip>
 </camera>
       <plugin name="multicamera_plugin" filename="libgazebo_yarp_multicamera.so">
-    <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_multicamera.ini</yarpConfigurationFile>
+    <yarpConfigurationFile>package://cer_rviz/conf/gazebo_cer_multicamera/gazebo_cer_multicamera.ini</yarpConfigurationFile>
 </plugin>
     </sensor>
   </gazebo>
