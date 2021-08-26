@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<devices robot="CER-SIM" build="1">
+
+    <device name="wrapper_ros2_left" type="frameGrabber_nws_ros2">
+        <param name="node_name">/wrapper_ros2_left</param>
+        <param name="topic_name">/camera_left/image_rect_color</param>
+        <param name="frame_id">head_leopard_left</param>
+
+        <action phase="startup" level="10" type="attach">
+            <param name="device"> camera_cropper_left </param>
+        </action>
+        <action phase="shutdown" level="5" type="detach" />
+    </device>
+
+    <device name="wrapper_ros2_right" type="frameGrabber_nws_ros2">
+        <param name="node_name">/wrapper_ros2_right</param>
+        <param name="topic_name">/camera_right/image_rect_color</param>
+        <param name="frame_id">head_leopard_right</param>
+
+        <action phase="startup" level="10" type="attach">
+            <param name="device"> camera_cropper_right </param>
+        </action>
+        <action phase="shutdown" level="5" type="detach" />
+    </device>
+
+<!--
+    <device name="wrapper_ros2_full" type="frameGrabber_nws_ros2">
+        <param name="node_name">/wrapper_ros2_full</param>
+        <param name="topic_name">/camera_full/image_rect_color</param>
+        <param name="frame_id">head_leopard_cyclopic</param>
+
+        <action phase="startup" level="10" type="attach">
+            <param name="device"> multicamera_device </param>
+        </action>
+        <action phase="shutdown" level="5" type="detach" />
+    </device>
+-->
+
+</devices>
