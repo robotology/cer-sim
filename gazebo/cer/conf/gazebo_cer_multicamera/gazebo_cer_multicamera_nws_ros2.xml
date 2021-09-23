@@ -4,7 +4,7 @@
 <devices robot="CER-SIM" build="1">
 
     <device name="wrapper_ros2_left" type="frameGrabber_nws_ros2">
-        <param name="node_name">/wrapper_ros2_left</param>
+        <param name="node_name">wrapper_ros2_left</param>
         <param name="topic_name">/camera_left/image_rect_color</param>
         <param name="frame_id">head_leopard_left</param>
 
@@ -15,7 +15,7 @@
     </device>
 
     <device name="wrapper_ros2_right" type="frameGrabber_nws_ros2">
-        <param name="node_name">/wrapper_ros2_right</param>
+        <param name="node_name">wrapper_ros2_right</param>
         <param name="topic_name">/camera_right/image_rect_color</param>
         <param name="frame_id">head_leopard_right</param>
 
