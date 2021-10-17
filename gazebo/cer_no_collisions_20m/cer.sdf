@@ -73,7 +73,7 @@
           <noise>
             <type>gaussian</type>
             <mean>0</mean>
-            <stddev>0.18</stddev>
+            <stddev>0.1</stddev>
           </noise>
         </ray>
         <plugin name='lasersensor_front' filename='libgazebo_yarp_lasersensor.so'>
@@ -102,7 +102,7 @@
           <noise>
             <type>gaussian</type>
             <mean>0</mean>
-            <stddev>0.18</stddev>
+            <stddev>0.1</stddev>
           </noise>
         </ray>
         <plugin name='lasersensor_back' filename='libgazebo_yarp_lasersensor.so'>
