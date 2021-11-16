@@ -2273,9 +2273,6 @@
     <plugin name='controlboard_torso' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso/gazebo_cer_torso.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_torso_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
-    </plugin>
     <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
@@ -2286,20 +2283,12 @@
     <plugin name='controlboard_left_wrist' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_wrist/gazebo_cer_left_wrist.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_left_wrist_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_wrist/gazebo_cer_left_wrist_tripod.ini</yarpConfigurationFile>
-    </plugin>
-
     <plugin name='controlboard_right_upper_arm' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_upper_arm/gazebo_cer_right_upper_arm.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='controlboard_right_wrist' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_wrist/gazebo_cer_right_wrist.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_right_wrist_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_wrist/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
-    </plugin>
-
     <plugin name='controlboard_left_hand' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_hand/gazebo_cer_left_hand.ini</yarpConfigurationFile>
     </plugin>

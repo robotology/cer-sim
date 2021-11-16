@@ -10,11 +10,16 @@
         <!-- torso, head and base -->
         <xi:include href="../cer/conf/gazebo_cer_head/gazebo_cer_head_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_torso/gazebo_cer_torso_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_torso/gazebo_cer_torso_tripod_compute.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_torso/gazebo_cer_torso_tripod_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_mobile_base/gazebo_cer_mobile_base_nws_yarp.xml" />
 
         <!-- left arm, wrist and hand -->
         <xi:include href="../cer/conf/gazebo_cer_left_upper_arm/gazebo_cer_left_upper_arm_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_left_wrist/gazebo_cer_left_wrist_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_left_wrist/gazebo_cer_left_wrist_tripod_compute.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_left_wrist/gazebo_cer_left_wrist_tripod_nws_yarp.xml" />
+        
         <xi:include href="../cer/conf/gazebo_cer_left_hand/gazebo_cer_left_hand_nws_yarp.xml" />
 
         <xi:include href="../cer/conf/gazebo_cer_left_arm/gazebo_cer_left_arm_remapper.xml" />
@@ -23,6 +28,9 @@
         <!-- right arm, wrist and hand -->
         <xi:include href="../cer/conf/gazebo_cer_right_upper_arm/gazebo_cer_right_upper_arm_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_right_wrist/gazebo_cer_right_wrist_nws_yarp.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_right_wrist/gazebo_cer_right_wrist_tripod_compute.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_right_wrist/gazebo_cer_right_wrist_tripod_nws_yarp.xml" />
+        
         <xi:include href="../cer/conf/gazebo_cer_right_hand/gazebo_cer_right_hand_nws_yarp.xml" />
 
         <xi:include href="../cer/conf/gazebo_cer_right_arm/gazebo_cer_right_arm_remapper.xml" />

@@ -724,9 +724,6 @@
     <plugin name='controlboard_torso' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso/gazebo_cer_torso.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_torso_tripod' filename='libgazeboTripod.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_torso/gazebo_cer_torso_tripod.ini</yarpConfigurationFile>
-    </plugin>
     <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_head/gazebo_cer_head.ini</yarpConfigurationFile>
     </plugin>
