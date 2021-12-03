@@ -36,6 +36,11 @@
         <xi:include href="../cer/conf/gazebo_cer_right_arm/gazebo_cer_right_arm_remapper.xml" />
         <xi:include href="../cer/conf/gazebo_cer_right_arm/gazebo_cer_right_arm_nws_yarp.xml" />
 
+        <!-- odometry -->
+        <xi:include href="../cer/conf/gazebo_cer_odometry/gazebo_cer_odometry.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_odometry/gazebo_cer_odometry_nws_ros.xml" />
+        <xi:include href="../cer/conf/gazebo_cer_odometry/gazebo_cer_odometry_nws_yarp.xml" />
+
         <!-- lidars -->
         <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_back_nws_yarp.xml" />
         <xi:include href="../cer/conf/gazebo_cer_lasersensor/gazebo_cer_lasersensor_front_nws_yarp.xml" />
