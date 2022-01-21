@@ -1,4 +1,6 @@
 /catkin_ws/build/
 /catkin_ws/devel/
 /catkin_ws/src/CMakeLists.txt
-/src/pointCloudConversions/build
+/colcon_ws/build/
+/colcon_ws/install/
+/colcon_ws/log/
