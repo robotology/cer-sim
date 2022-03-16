@@ -1259,8 +1259,8 @@
             <format>R8G8B8</format>
           </image>
           <clip>
-            <near>0.02</near>
-            <far>3000</far>
+            <near>0.3</near>
+            <far>6</far>
           </clip>
         </camera>
         <plugin name='depth_camera_plugin' filename='libgazebo_yarp_depthCamera.so'>
@@ -1291,7 +1291,7 @@
           </image>
           <clip>
             <near>0.02</near>
-            <far>3000</far>
+            <far>100</far>
           </clip>
         </camera>
         <plugin name='xtion_camera_rgb_plugin' filename='libgazebo_yarp_camera.so'>
