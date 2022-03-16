@@ -1,4 +1,4 @@
 /catkin_ws/build/
 /catkin_ws/devel/
-/catkin_ws/src/CMakeLists.txt
-/src/pointCloudConversions/build
+/catkin_ws/logs/
+catkin_ws/.catkin_tools/
