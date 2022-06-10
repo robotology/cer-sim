@@ -39,7 +39,8 @@
 
         <!-- odometry -->
         <xi:include href="../cer/conf/gazebo_cer_odometry/gazebo_cer_odometry.xml" />
-        <xi:include href="../cer/conf/gazebo_cer_odometry/gazebo_cer_odometry_nws_ros.xml" />
+        <!-- <xi:include href="../cer/conf/gazebo_cer_odometry/gazebo_cer_odometry_nws_ros.xml" /> -->
+        <xi:include href="../cer/conf/gazebo_cer_odometry/gazebo_cer_odometry_nws_ros2.xml" />
         <xi:include href="../cer/conf/gazebo_cer_odometry/gazebo_cer_odometry_nws_yarp.xml" />
 
         <!-- lidars -->
