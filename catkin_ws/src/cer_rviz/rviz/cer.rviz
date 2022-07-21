@@ -429,7 +429,7 @@ Visualization Manager:
       Size (Pixels): 3
       Size (m): 0.10000000149011612
       Style: Flat Squares
-      Topic: /double_lidar
+      Topic: /laser
       Unreliable: false
       Use Fixed Frame: true
       Use rainbow: true
