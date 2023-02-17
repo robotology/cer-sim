@@ -9,12 +9,6 @@ install(
 )
 install(
   DIRECTORY
-    urdf
-  DESTINATION
-    share/${PROJECT_NAME}/
-)
-install(
-  DIRECTORY
     rviz2
   DESTINATION
     share/${PROJECT_NAME}/
