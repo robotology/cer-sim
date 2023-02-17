@@ -1,0 +1,13 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 2  # Hz
+
+    neck_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+neck_position_controller:
+  ros__parameters:
+    joints:
+      - neck_pitch_joint
+      - neck_yaw_joint
