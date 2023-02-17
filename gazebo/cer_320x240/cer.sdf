@@ -2297,12 +2297,6 @@
     <plugin name='controlboard_right_wrist_tripod' filename='libgazeboTripod.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_wrist_tripod.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_right_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_right_arm.ini</yarpConfigurationFile>
-    </plugin>
-    <plugin name='controlboard_left_arm' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_left_arm.ini</yarpConfigurationFile>
-    </plugin>
     <plugin name='controlboard_head' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_head.ini</yarpConfigurationFile>
     </plugin>
@@ -2321,14 +2315,14 @@
     <plugin name='controlboard_mobile_base' filename='libgazebo_yarp_controlboard.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_mobile_base.ini</yarpConfigurationFile>
     </plugin>
-    <plugin name='controlboard_all' filename='libgazebo_yarp_controlboard.so'>
-      <yarpConfigurationFile>model://cer/conf/gazebo_cer_all.ini</yarpConfigurationFile>
-    </plugin>
     <plugin name='world_interface' filename='libgazebo_yarp_worldinterface.so'>
       <yarpConfigurationFile>model://cer/conf/worldInterface.ini</yarpConfigurationFile>
     </plugin>
     <plugin name='double_laser' filename='libgazebo_yarp_doublelaser.so'>
       <yarpConfigurationFile>model://cer/conf/gazebo_cer_doublelaser.ini</yarpConfigurationFile>
+    </plugin>
+    <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
+      <yarpRobotInterfaceConfigurationFile>model://cer/conf/RobotInterface_cer.xml</yarpRobotInterfaceConfigurationFile>
     </plugin>
     <static>0</static>
     <pose frame=''>0 0 0.16 0 -0 0</pose>

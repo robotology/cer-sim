@@ -1,0 +1,58 @@
+solid SIM_CER_TORSO_PLATFORM
+  facet normal 0.000000e+00 0.000000e+00 -1.000000e+00
+    outer loop
+      vertex 8.900000e+01 -7.794229e+01 6.250000e+02
+      vertex -4.600000e+01 1.192094e-14 6.250000e+02
+      vertex 8.900000e+01 7.794229e+01 6.250000e+02
+    endloop
+  endfacet
+  facet normal -5.000000e-01 8.660254e-01 0.000000e+00
+    outer loop
+      vertex 8.900000e+01 7.794229e+01 6.350000e+02
+      vertex 8.900000e+01 7.794229e+01 6.250000e+02
+      vertex -4.600000e+01 1.192094e-14 6.250000e+02
+    endloop
+  endfacet
+  facet normal 1.000000e+00 1.093952e-15 0.000000e+00
+    outer loop
+      vertex 8.900000e+01 -7.794229e+01 6.350000e+02
+      vertex 8.900000e+01 -7.794229e+01 6.250000e+02
+      vertex 8.900000e+01 7.794229e+01 6.250000e+02
+    endloop
+  endfacet
+  facet normal 1.000000e+00 1.093952e-15 0.000000e+00
+    outer loop
+      vertex 8.900000e+01 -7.794229e+01 6.350000e+02
+      vertex 8.900000e+01 7.794229e+01 6.250000e+02
+      vertex 8.900000e+01 7.794229e+01 6.350000e+02
+    endloop
+  endfacet
+  facet normal -5.000000e-01 -8.660254e-01 0.000000e+00
+    outer loop
+      vertex -4.600000e+01 1.192094e-14 6.350000e+02
+      vertex -4.600000e+01 1.192094e-14 6.250000e+02
+      vertex 8.900000e+01 -7.794229e+01 6.250000e+02
+    endloop
+  endfacet
+  facet normal -5.000000e-01 8.660254e-01 0.000000e+00
+    outer loop
+      vertex -4.600000e+01 1.192094e-14 6.350000e+02
+      vertex 8.900000e+01 7.794229e+01 6.350000e+02
+      vertex -4.600000e+01 1.192094e-14 6.250000e+02
+    endloop
+  endfacet
+  facet normal -5.000000e-01 -8.660254e-01 0.000000e+00
+    outer loop
+      vertex -4.600000e+01 1.192094e-14 6.350000e+02
+      vertex 8.900000e+01 -7.794229e+01 6.250000e+02
+      vertex 8.900000e+01 -7.794229e+01 6.350000e+02
+    endloop
+  endfacet
+  facet normal 0.000000e+00 0.000000e+00 1.000000e+00
+    outer loop
+      vertex -4.600000e+01 1.192094e-14 6.350000e+02
+      vertex 8.900000e+01 -7.794229e+01 6.350000e+02
+      vertex 8.900000e+01 7.794229e+01 6.350000e+02
+    endloop
+  endfacet
+endsolid SIM_CER_TORSO_PLATFORM
