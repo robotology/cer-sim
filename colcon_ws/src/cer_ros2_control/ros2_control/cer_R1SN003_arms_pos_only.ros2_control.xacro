@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="cer_R1SN003_arms_pos_only_ros2_control" params="name:=^|CbHwFwPos initial_positions_file input_node:=^|ros2_cb_hw input_msgs_name:=^|ros2_cb_msgs input_cont_pos_write:=^|true">
+        <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions']}"/>
+
+        <ros2_control name="${name}" type="system">
+            <hardware>
+                <plugin>cb_hw_fw_pos/CbHwFwPos</plugin>
+                <param name="node_name">${input_node}</param>
+                <param name="cb_nws_msgs_name">${input_msgs_name}</param>
+                <param name="continuous_pos_write">${input_cont_pos_write}</param>
+            </hardware>
+            <joint name="r_shoulder_pitch_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="r_shoulder_roll_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="r_shoulder_yaw_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="r_elbow_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="r_wrist_pronosupination_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="r_wrist_heave_eq_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="r_wrist_roll_eq_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="r_wrist_pitch_eq_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="l_shoulder_pitch_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="l_shoulder_roll_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="l_shoulder_yaw_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="l_elbow_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="l_wrist_pronosupination_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="l_wrist_heave_eq_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="l_wrist_roll_eq_joint">
+                <command_interface name="position"/>
+            </joint>
+            <joint name="l_wrist_pitch_eq_joint">
+                <command_interface name="position"/>
+            </joint>
+        </ros2_control>
+    </xacro:macro>
+</robot>
