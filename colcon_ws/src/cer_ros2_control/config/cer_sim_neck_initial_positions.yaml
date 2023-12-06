@@ -1,0 +1,5 @@
+# Default initial positions for SIM_CER_ROBOT's ros2_control fake system
+
+initial_positions:
+  neck_pitch_joint: 0
+  neck_yaw_joint: 0

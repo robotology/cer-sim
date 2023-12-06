@@ -1,0 +1,33 @@
+# This config file is used by ros2_control
+controller_manager:
+  ros__parameters:
+    update_rate: 2  # Hz
+
+    right_arm_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+    left_arm_position_controller:
+      type: position_controllers/JointGroupPositionController
+
+right_arm_position_controller:
+  ros__parameters:
+    joints:
+      - r_shoulder_pitch_joint
+      - r_shoulder_roll_joint
+      - r_shoulder_yaw_joint
+      - r_elbow_joint
+      - r_wrist_pronosupination_joint
+      - r_wrist_heave_eq_joint
+      - r_wrist_roll_eq_joint
+      - r_wrist_pitch_eq_joint
+left_arm_position_controller:
+  ros__parameters:
+    joints:
+      - l_shoulder_pitch_joint
+      - l_shoulder_roll_joint
+      - l_shoulder_yaw_joint
+      - l_elbow_joint
+      - l_wrist_pronosupination_joint
+      - l_wrist_heave_eq_joint
+      - l_wrist_roll_eq_joint
+      - l_wrist_pitch_eq_joint

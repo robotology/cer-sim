@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="R1SN003">
+    <xacro:arg name="initial_positions_file" default="$(find cer_ros2_control)/config/cer_R1SN003_arms_initial_positions.yaml" />
+    <xacro:arg name="input_node" default="ros2_cb_hw" />
+    <xacro:arg name="input_component" default="CbHwFwPos" />
+    <xacro:arg name="input_msgs_name" default="ros2_cb_msgs" />
+    <xacro:arg name="input_cont_pos_write" default="true" />
+
+    <!-- Import SIM_CER_ROBOT urdf file -->
+    <xacro:include filename="$(find cer_description)/urdf/R1SN00x_urdf/R1SN003/cer.urdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="$(find cer_ros2_control)/ros2_control/cer_R1SN003_arms_pos_only.ros2_control.xacro" />
+
+    <xacro:cer_R1SN003_arms_pos_only_ros2_control name="$(arg input_component)"
+     initial_positions_file="$(arg initial_positions_file)" input_node="$(arg input_node)"
+     input_msgs_name="$(arg input_msgs_name)" input_cont_pos_write="$(arg input_cont_pos_write)" />
+</robot>

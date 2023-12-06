@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="SIM_CER_ROBOT">
+    <xacro:arg name="initial_positions_file" default="$(find cer_ros2_control)/config/cer_sim_neck_initial_positions.yaml" />
+    <xacro:arg name="input_node" default="neck_cb_hw_pos" />
+    <xacro:arg name="input_component" default="NeckCbHwFwPos" />
+    <xacro:arg name="input_msgs_name" default="ros2_cb_msgs" />
+    <xacro:arg name="input_cont_pos_write" default="true" />
+
+    <!-- Import SIM_CER_ROBOT urdf file -->
+    <xacro:include filename="$(find cer_description)/urdf/cer.urdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="$(find cer_ros2_control)/ros2_control/cer_sim_neck_pos_only.ros2_control.xacro" />
+
+    <xacro:cer_sim_neck_pos_only_ros2_control name="$(arg input_component)"
+     initial_positions_file="$(arg initial_positions_file)" input_node="$(arg input_node)"
+     input_msgs_name="$(arg input_msgs_name)" input_cont_pos_write="$(arg input_cont_pos_write)" />
+</robot>

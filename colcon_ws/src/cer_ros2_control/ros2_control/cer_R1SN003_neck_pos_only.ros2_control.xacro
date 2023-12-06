@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <xacro:macro name="cer_R1SN003_neck_pos_only_ros2_control" params="name:=^|NeckCbHwFwPos initial_positions_file input_node:=^|neck_cb_hw_pos input_msgs_name:=^|ros2_cb_msgs input_cont_pos_write:=^|true">
+        <xacro:property name="initial_positions" value="${xacro.load_yaml(initial_positions_file)['initial_positions']}"/>
+
+        <ros2_control name="${name}" type="system">
+            <hardware>
+                <plugin>cb_hw_fw_pos/CbHwFwPos</plugin>
+                <param name="node_name">${input_node}</param>
+                <param name="cb_nws_msgs_name">${input_msgs_name}</param>
+                <param name="continuous_pos_write">${input_cont_pos_write}</param>
+            </hardware>
+            <joint name="neck_pitch_joint">
+                <command_interface name="position">
+                    <param name="min">-0.7</param>
+                    <param name="max">0.7</param>
+                </command_interface>
+            </joint>
+            <joint name="neck_yaw_joint">
+                <command_interface name="position">
+                    <param name="min">-0.7</param>
+                    <param name="max">0.7</param>
+                </command_interface>
+            </joint>
+        </ros2_control>
+    </xacro:macro>
+</robot>
